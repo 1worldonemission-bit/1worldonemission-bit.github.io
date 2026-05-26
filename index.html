@@ -12,45 +12,61 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Manrope', sans-serif; }
         body { background-color: #fcfcfc; color: #1a1a1a; scroll-behavior: smooth; }
         
-        /* ШАПКА САЙТА (Стиль GWD) */
+        /* ШАПКА САЙТА С ВЫПАДАЮЩИМ МЕНЮ (Стиль GWD + Timber Block) */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 4%;
+            padding: 0 4%;
+            height: 80px;
             background: #ffffff;
             border-bottom: 1px solid #eee;
             position: fixed; width: 100%; top: 0; z-index: 1000;
         }
         .logo { font-weight: 700; font-size: 24px; letter-spacing: 2px; color: #1a1a1a; text-decoration: none; }
         .logo span { color: #5a6b5c; font-weight: 300; } 
-        nav a { margin: 0 15px; text-decoration: none; color: #4a4a4a; font-weight: 500; font-size: 15px; transition: 0.3s; }
-        nav a:hover { color: #5a6b5c; }
         
-        /* Маленькая аккуратная кнопка звонка в шапке */
-        .btn-callback-header {
-            background: none;
-            border: 1px solid #5a6b5c;
-            color: #5a6b5c;
-            padding: 10px 20px;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: 0.3s;
+        /* Стили навигации */
+        nav { display: flex; height: 100%; }
+        .nav-item { position: relative; display: flex; align-items: center; height: 100%; margin: 0 15px; }
+        .nav-link { text-decoration: none; color: #4a4a4a; font-weight: 500; font-size: 15px; transition: 0.3s; cursor: pointer; }
+        .nav-link:hover { color: #5a6b5c; }
+        
+        /* Стрелочка возле пунктов меню */
+        .nav-item::after {
+            content: ''; display: inline-block; margin-left: 5px;
+            width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent;
+            border-top: 4px solid #4a4a4a; transition: 0.3s;
         }
-        .btn-callback-header:hover {
-            background-color: #5a6b5c;
-            color: white;
-        }
+        .nav-item:hover::after { border-top-color: #5a6b5c; transform: rotate(180deg); }
+        .nav-item.no-drop::after { display: none; } /* Для пунктов без подменю */
 
-        /* ГЛАВНЫЙ БАННЕР (Timber Block стиль) */
+        /* ВСПЛЫВАЮЩЕЕ ПОДМЕНЮ */
+        .dropdown {
+            position: absolute; top: 80px; left: 50%; transform: translateX(-50%);
+            background: #ffffff; min-width: 240px; box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border: 1px solid #eee; opacity: 0; visibility: hidden; pointer-events: none;
+            transition: all 0.3s ease; padding: 15px 0;
+        }
+        .nav-item:hover .dropdown { opacity: 1; visibility: visible; pointer-events: auto; top: 80px; }
+        
+        .dropdown a {
+            display: block; padding: 10px 25px; text-decoration: none; color: #4a4a4a;
+            font-size: 14px; transition: 0.2s; font-weight: 500;
+        }
+        .dropdown a:hover { background-color: #f9f9f9; color: #5a6b5c; padding-left: 30px; }
+
+        /* Кнопка звонка */
+        .btn-callback-header {
+            background: none; border: 1px solid #5a6b5c; color: #5a6b5c;
+            padding: 10px 20px; font-size: 13px; text-transform: uppercase;
+            letter-spacing: 1px; cursor: pointer; font-weight: 500; transition: 0.3s;
+        }
+        .btn-callback-header:hover { background-color: #5a6b5c; color: white; }
+
+        /* ГЛАВНЫЙ БАННЕР */
         .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 0 4%;
+            height: 100vh; display: flex; align-items: center; padding: 0 4%;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             color: #ffffff;
         }
@@ -60,100 +76,47 @@
         .hero p { font-size: 18px; margin: 25px 0 40px 0; color: #f0f0f0; font-weight: 300; max-width: 600px; }
         
         .btn {
-            display: inline-block;
-            padding: 18px 35px;
-            background-color: #5a6b5c;
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 2px;
-            transition: background 0.3s;
-            border: none;
-            cursor: pointer;
+            display: inline-block; padding: 18px 35px; background-color: #5a6b5c; color: white;
+            text-decoration: none; font-weight: 500; text-transform: uppercase; font-size: 13px;
+            letter-spacing: 2px; transition: background 0.3s; border: none; cursor: pointer;
         }
         .btn:hover { background-color: #435044; }
 
-        /* БЛОК КАТАЛОГА (Стиль GWD) */
-        .section { padding: 100px 4% 60px 4%; }
+        /* БЛОК КАТАЛОГА */
+        .section { padding: 120px 4% 60px 4%; }
         .section-title { font-size: 36px; font-weight: 300; margin-bottom: 50px; letter-spacing: -0.5px; }
         .section-title strong { font-weight: 700; }
         
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        .project-card {
-            background: #ffffff;
-            border: 1px solid #eee;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-        }
-        .project-img {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-        }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .project-card { background: #ffffff; border: 1px solid #eee; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .project-img { height: 250px; background-size: cover; background-position: center; }
         .project-info { padding: 25px; }
         .project-title { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
         .project-details { display: flex; gap: 15px; color: #777; font-size: 14px; margin-bottom: 20px; }
         .project-price { font-size: 18px; font-weight: 700; color: #5a6b5c; }
 
-        /* ВСПЛЫВАЮЩЕЕ ОКНО (Модальное окно для заявки) */
+        /* ВСПЛЫВАЮЩЕЕ ОКНО ЗАЯВКИ */
         .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            opacity: 0; pointer-events: none;
-            transition: opacity 0.3s ease;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6);
+            display: flex; justify-content: center; align-items: center; z-index: 2000;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
         }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        
-        .modal-window {
-            background: #ffffff;
-            padding: 40px;
-            max-width: 450px;
-            width: 90%;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-        .modal-close {
-            position: absolute;
-            top: 15px; right: 20px;
-            font-size: 24px; cursor: pointer; color: #aaa;
-            transition: 0.2s;
-        }
+        .modal-window { background: #ffffff; padding: 40px; max-width: 450px; width: 90%; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .modal-close { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #aaa; transition: 0.2s; }
         .modal-close:hover { color: #000; }
         .modal-window h3 { font-size: 24px; font-weight: 700; margin-bottom: 10px; }
         .modal-window p { font-size: 14px; color: #666; margin-bottom: 25px; }
-        
-        /* Поля формы */
         .form-group { margin-bottom: 20px; }
-        .form-group input {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #ccc;
-            font-size: 15px;
-            outline: none;
-        }
+        .form-group input { width: 100%; padding: 14px; border: 1px solid #ccc; font-size: 15px; outline: none; }
         .form-group input:focus { border-color: #5a6b5c; }
         .modal-window .btn { width: 100%; text-align: center; }
 
         /* Адаптивность */
-        @media (max-width: 768px) {
-            header nav { display: none; }
+        @media (max-width: 992px) {
+            header nav { display: none; } /* Скрываем сложное меню на планшетах/мобилках */
             .hero h1 { font-size: 38px; }
-            .section { padding: 70px 4% 40px 4%; }
         }
     </style>
 </head>
@@ -161,13 +124,50 @@
 
     <header>
         <a href="#" class="logo">F<span>HOUSE</span></a>
+        
         <nav>
-            <a href="#projects">Проекты</a>
-            <a href="#services">Услуги</a>
-            <a href="#about">О компании</a>
-            <a href="#contacts">Контакты</a>
+            <!-- Пункт 1: Проекты -->
+            <div class="nav-item">
+                <span class="nav-link">Проекты</span>
+                <div class="dropdown">
+                    <a href="#projects">Все проекты</a>
+                    <a href="#projects">Индивидуальные</a>
+                    <a href="#projects">Дома из бруса</a>
+                    <a href="#projects">Дома из каменных блоков</a>
+                </div>
+            </div>
+            
+            <!-- Пункт 2: Услуги -->
+            <div class="nav-item">
+                <span class="nav-link">Услуги</span>
+                <div class="dropdown">
+                    <a href="#">Проектирование</a>
+                    <a href="#">Строительство под ключ</a>
+                    <a href="#">Инженерные системы</a>
+                    <a href="#">Внутренняя отделка</a>
+                </div>
+            </div>
+
+            <!-- Пункт 3: Портфолио -->
+            <div class="nav-item">
+                <span class="nav-link">Портфолио</span>
+                <div class="dropdown">
+                    <a href="#">Построенные дома</a>
+                    <a href="#">Фото этапов стройки</a>
+                </div>
+            </div>
+            
+            <!-- Пункт 4: О нас -->
+            <div class="nav-item">
+                <span class="nav-link">О нас</span>
+                <div class="dropdown">
+                    <a href="#">О компании</a>
+                    <a href="#">Гарантии и сервис</a>
+                    <a href="#">Контакты</a>
+                </div>
+            </div>
         </nav>
-        <!-- Вместо телефона — кнопка вызова окна -->
+
         <button class="btn-callback-header" onclick="openModal()">Заказать звонок</button>
     </header>
 
@@ -199,7 +199,7 @@
             <div class="project-card">
                 <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80');"></div>
                 <div class="project-info">
-                    <div class="project-title">Проект «Фахверк-Премиум»</div>
+                    <div class="project-title">Проект «Фахверк-Премиум Haus»</div>
                     <div class="project-details">
                         <span>Площадь: 195 м²</span>
                         <span>•</span>
@@ -224,7 +224,7 @@
         </div>
     </section>
 
-    <!-- СТРУКТУРА ВСПЛЫВАЮЩЕГО ОКНА -->
+    <!-- МОДАЛЬНОЕ ОКНО -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-window">
             <div class="modal-close" onclick="closeModal()">&times;</div>
@@ -243,30 +243,12 @@
         </div>
     </div>
 
-    <!-- СКРИПТ ДЛЯ РАБОТЫ ОКНА (Логика без сбоев) -->
     <script>
         const modal = document.getElementById('modalOverlay');
-
-        function openModal() {
-            modal.classList.add('active');
-        }
-
-        function closeModal() {
-            modal.classList.remove('active');
-        }
-
-        // Закрытие окна при клике на темный фон вокруг него
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
-            closeModal();
-        }
+        function openModal() { modal.classList.add('active'); }
+        function closeModal() { modal.classList.remove('active'); }
+        window.onclick = function(event) { if (event.target == modal) { closeModal(); } }
+        function handleSubmit(event) { event.preventDefault(); alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.'); closeModal(); }
     </script>
 
 </body>
