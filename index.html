@@ -12,7 +12,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Manrope', sans-serif; }
         body { background-color: #fcfcfc; color: #1a1a1a; scroll-behavior: smooth; }
         
-        /* ШАПКА САЙТА (Стиль GWD + Timber Block) */
+        /* ШАПКА САЙТА */
         header {
             display: flex;
             justify-content: space-between;
@@ -32,7 +32,7 @@
         .nav-link { text-decoration: none; color: #2a2a2a; font-weight: 500; font-size: 15px; transition: 0.3s; cursor: pointer; }
         .nav-link:hover { color: #5a6b5c; }
         
-        /* Маленькая стрелочка */
+        /* Стрелочка */
         .nav-item::after {
             content: ''; display: inline-block; margin-left: 6px;
             width: 0; height: 0; border-left: 3.5px solid transparent; border-right: 3.5px solid transparent;
@@ -40,23 +40,31 @@
         }
         .nav-item:hover::after { border-top-color: #5a6b5c; transform: rotate(180deg); }
 
-        /* ВСПЛЫВАЮЩИЕ ОБЛАЧКА (Floating Dropdown) */
+        /* ВСПЛЫВАЮЩЕЕ ОБЛАЧКО (Исправлен баг со сцепкой) */
         .dropdown {
             position: absolute; 
-            top: 85px; /* Отодвигаем ниже шапки, чтобы облачко "летело" */
+            top: 80px; /* Прижимаем ровно к краю шапки */
             left: 50%; 
-            transform: translateX(-50%) translateY(10px); /* Начальная точка чуть ниже для эффекта вылета */
+            transform: translateX(-50%) translateY(10px); 
             background: #ffffff; 
             min-width: 280px; 
-            border-radius: 14px; /* Круглые углы как у облачка */
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 5px 15px rgba(0,0,0,0.04); /* Мягкая дорогая тень */
+            border-radius: 14px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 5px 15px rgba(0,0,0,0.04); 
             border: 1px solid rgba(0,0,0,0.03); 
             opacity: 0; visibility: hidden; pointer-events: none;
-            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; 
+            transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s; 
             padding: 14px 0;
+            margin-top: 5px; /* Визуальный отступ, но поле сцепки сохраняется за счет невидимой зоны */
         }
         
-        /* Эффект при наведении — облачко плавно проявляется и приподнимается */
+        /* Невидимый мост-переходник, который держит мышку и не дает облачку закрыться */
+        .dropdown::before {
+            content: '';
+            position: absolute;
+            top: -15px; left: 0; width: 100%; height: 15px;
+            background: transparent;
+        }
+        
         .nav-item:hover .dropdown { 
             opacity: 1; 
             visibility: visible; 
@@ -79,16 +87,15 @@
         }
         .btn-callback-header:hover { background-color: #5a6b5c; color: white; }
 
-        /* ГЛАВНЫЙ БАННЕР */
+        /* ГЛАВНЫЙ БАННЕР (Новые ровные тексты под ключ) */
         .hero {
             height: 100vh; display: flex; align-items: center; padding: 0 4%;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             color: #ffffff;
         }
-        .hero-content { max-width: 800px; }
-        .hero h1 { font-size: 58px; font-weight: 300; line-height: 1.2; letter-spacing: -1px; }
-        .hero h1 strong { font-weight: 700; }
-        .hero p { font-size: 18px; margin: 25px 0 40px 0; color: #f0f0f0; font-weight: 300; max-width: 600px; }
+        .hero-content { max-width: 900px; }
+        .hero h1 { font-size: 54px; font-weight: 300; line-height: 1.25; letter-spacing: -1px; }
+        .hero p { font-size: 18px; margin: 25px 0 40px 0; color: #f0f0f0; font-weight: 300; max-width: 750px; line-height: 1.6; }
         
         .btn {
             display: inline-block; padding: 18px 35px; background-color: #5a6b5c; color: white;
@@ -130,7 +137,7 @@
 
         /* Адаптивность */
         @media (max-width: 1024px) {
-            header nav { display: none; } /* Скрываем на планшетах и мобилках */
+            header nav { display: none; }
             .hero h1 { font-size: 38px; }
         }
     </style>
@@ -141,7 +148,6 @@
         <a href="#" class="logo">F<span>HOUSE</span></a>
         
         <nav>
-            <!-- Пункт 1: Проекты (Облачко) -->
             <div class="nav-item">
                 <span class="nav-link">Проекты</span>
                 <div class="dropdown">
@@ -155,7 +161,6 @@
                 </div>
             </div>
             
-            <!-- Пункт 2: Услуги (Облачко) -->
             <div class="nav-item">
                 <span class="nav-link">Услуги</span>
                 <div class="dropdown">
@@ -170,16 +175,14 @@
                 </div>
             </div>
 
-            <!-- Пункт 3: Портфолио (Облачко) -->
             <div class="nav-item">
-                <span class="nav-link">Портфолио</span>
+                <span class="nav-link">Portfolio</span>
                 <div class="dropdown">
                     <a href="#">Построенные дома</a>
                     <a href="#">Фото этапов стройки</a>
                 </div>
             </div>
             
-            <!-- Пункт 4: О нас (Облачко) -->
             <div class="nav-item">
                 <span class="nav-link">О нас</span>
                 <div class="dropdown">
@@ -195,8 +198,8 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Проектирование и строительство домов <strong>F HOUSE</strong></h1>
-            <p>Создаем современные энергоэффективные загородные дома под ключ в Москве и Московской области.</p>
+            <h1>Проектирование и строительство домов под ключ</h1>
+            <p>Создаем современные энергоэффективные загородные дома в Москве и Московской области. Помогаем в оформлении всех типов ипотек.</p>
             <a href="#projects" class="btn">Смотреть проекты</a>
         </div>
     </section>
@@ -238,7 +241,7 @@
                     <div class="project-details">
                         <span>Площадь: 110 м²</span>
                         <span>•</span>
-                        <span>Материал: Газобетон</span>
+                        <span>Материал: ...</span>
                     </div>
                     <div class="project-price">от 4 900 000 ₽</div>
                 </div>
