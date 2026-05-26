@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Строительство современных домов под ключ</title>
+    <!-- Подключаем дорогой, чистый шрифт в стиле TimberBlock -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Manrope', sans-serif; }
+        body { background-color: #fcfcfc; color: #1a1a1a; }
+        
+        /* Шапка сайта (Стиль GWD - всё четко и на своих местах) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 4%;
+            background: #ffffff;
+            border-bottom: 1px solid #eee;
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+        }
+        .logo { font-weight: 700; font-size: 22px; letter-spacing: 1px; text-transform: uppercase; }
+        .logo span { color: #5a6b5c; } /* Фирменный древесно-зеленый акцент */
+        nav a { margin: 0 15px; text-decoration: none; color: #4a4a4a; font-weight: 500; font-size: 15px; transition: 0.3s; }
+        nav a:hover { color: #5a6b5c; }
+        .phone { font-weight: 700; color: #1a1a1a; text-decoration: none; font-size: 16px; }
 
+        /* Главный баннер (Премиальный минимализм Timber Block) */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 4%;
+            /* Временный красивый фон с домом, потом заменим на твой */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: #ffffff;
+            margin-top: 0;
+        }
+        .hero-content { max-width: 800px; }
+        .hero h1 { font-size: 56px; font-weight: 300; line-height: 1.2; mb: 20px; letter-spacing: -1px; }
+        .hero h1 strong { font-weight: 700; }
+        .hero p { font-size: 18px; margin: 25px 0 40px 0; color: #f0f0f0; font-weight: 300; max-width: 600px; }
+        
+        /* Кнопка как у Timber Block - строгая, стильная */
+        .btn {
+            display: inline-block;
+            padding: 18px 35px;
+            background-color: #5a6b5c; /* Эко-зеленый/древесный оттенок */
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 2px;
+            transition: background 0.3s;
+        }
+        .btn:hover { background-color: #435044; }
+
+        /* Адаптивность под мобилки */
+        @media (max-width: 768px) {
+            header nav { display: none; } /* Скрываем меню на мобилках для простоты */
+            .hero h1 { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">STROY<span>DOM</span></div>
+        <nav>
+            <a href="#projects">Проекты</a>
+            <a href="#services">Услуги</a>
+            <a href="#about">О компании</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+        <a href="tel:+79991112233" class="phone">+7 (999) 111-22-33</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Современные загородные дома <strong>под ключ</strong></h1>
+            <p>Проектирование и строительство энергоэффективных домов с панорамным остеклением по индивидуальным и европейским проектам.</p>
+            <a href="#projects" class="btn">Смотреть каталог</a>
+        </div>
+    </section>
+
+</body>
+</html>
