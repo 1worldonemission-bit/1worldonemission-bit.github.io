@@ -26,11 +26,9 @@
         .nav-link { text-decoration: none; color: #2a2a2a; font-weight: 500; font-size: 14px; transition: 0.3s; cursor: pointer; }
         .nav-link:hover { color: #dfb77d; }
         
-        /* Стрелочки только у пунктов с выпадающим меню */
         .nav-item.has-dropdown::after { content: ''; display: inline-block; margin-left: 6px; width: 0; height: 0; border-left: 3.5px solid transparent; border-right: 3.5px solid transparent; border-top: 4px solid #2a2a2a; transition: 0.3s; }
         .nav-item.has-dropdown:hover::after { border-top-color: #dfb77d; transform: rotate(180deg); }
 
-        /* Выделенный стиль для кнопок международной истории */
         .nav-link.global-menu-link { color: #dfb77d; font-weight: 600; }
         .nav-link.global-menu-link:hover { color: #cb9f62; }
 
@@ -46,23 +44,22 @@
         .dropdown a { display: block; padding: 11px 24px; text-decoration: none; color: #4a4a4a; font-size: 14px; transition: 0.2s; }
         .dropdown a:hover { background-color: #fcf9f5; color: #dfb77d; padding-left: 28px; border-radius: 6px; }
 
-        /* Кнопка в шапке */
         .btn-callback-header { background: none; border: 1px solid #dfb77d; color: #1a1a1a; padding: 11px 22px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; font-weight: 500; border-radius: 4px; transition: 0.3s; }
         .btn-callback-header:hover { background-color: #dfb77d; color: white; }
 
-        /* ГЛАВНЫЙ БАННЕР (Вернули твою любимую панораму) */
+        /* ГЛАВНЫЙ БАННЕР */
         .hero { height: 100vh; display: flex; align-items: center; padding: 0 4%; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover; color: #ffffff; }
         .hero-content { max-width: 900px; }
         .hero h1 { font-size: 54px; font-weight: 300; line-height: 1.25; letter-spacing: -1px; }
         .hero p { font-size: 18px; margin-top: 25px; color: #f0f0f0; font-weight: 300; max-width: 750px; line-height: 1.6; }
 
-        /* ОБЩИЕ СТИЛИ ДЛЯ БЛОКОВ */
+        /* ОБЩИЕ СТИЛИ */
         .section { padding: 100px 4%; }
         .section-bg { background-color: #fbf9f6; } 
         .section-title { font-size: 38px; font-weight: 300; margin-bottom: 45px; letter-spacing: -0.5px; }
         .section-title strong { font-weight: 700; }
 
-        /* СТИЛИ ДЛЯ ЦЕНТРАЛЬНОГО МЕЖДУНАРОДНОГО БЛОКА */
+        /* МЕЖДУНАРОДНЫЙ БЛОК */
         .global-central-box { 
             display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; 
             background: #ffffff; border: 1px solid #eee; padding: 50px; border-radius: 12px; 
@@ -75,7 +72,7 @@
         .btn-global-central { display: inline-block; margin-top: 20px; padding: 15px 35px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; border-radius: 4px; transition: 0.3s; }
         .btn-global-central:hover { background: #dfb77d; }
 
-        /* БЛОК КАТАЛОГА С ФИЛЬТРАМИ */
+        /* КАТАЛОГ С ФИЛЬТРАМИ */
         .filter-buttons { display: flex; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
         .filter-btn { padding: 12px 25px; background: #f5f5f5; border: none; font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.3s; border-radius: 30px; color: #4a4a4a; }
         .filter-btn.active, .filter-btn:hover { background: #dfb77d; color: white; }
@@ -88,7 +85,7 @@
         .project-details { display: flex; gap: 15px; color: #777; font-size: 14px; margin-bottom: 20px; }
         .project-price { font-size: 18px; font-weight: 700; color: #dfb77d; }
 
-        /* БЛОК ТЕХНОЛОГИЙ (ТАБЫ) */
+        /* ТЕХНОЛОГИИ */
         .tech-tabs { display: flex; border-bottom: 2px solid #eee; margin-bottom: 40px; }
         .tech-tab { padding: 20px 40px; font-size: 16px; font-weight: 700; cursor: pointer; color: #999; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: 0.3s; }
         .tech-tab.active { color: #dfb77d; border-bottom-color: #dfb77d; }
@@ -98,14 +95,14 @@
         .tech-text p { color: #555; line-height: 1.7; font-size: 16px; margin-bottom: 20px; }
         .tech-img { height: 380px; background-size: cover; background-position: center; border-radius: 8px; }
 
-        /* БЛОК ИПOTEКA */
+        /* ИПOTEКA */
         .ipoteka-banner { background: #26221c; color: white; padding: 60px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
         .ipoteka-text h3 { font-size: 32px; font-weight: 300; margin-bottom: 15px; }
         .ipoteka-text p { color: #ccc5ba; font-size: 16px; max-width: 600px; line-height: 1.6; }
         .btn-white { display: inline-block; padding: 18px 35px; background: #dfb77d; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; }
         .btn-white:hover { background: #cb9f62; }
 
-        /* БЛОК ПОСТРОЕННЫЕ ДОМА (ПОРТФОЛИО) */
+        /* ПОРТФОЛИО */
         .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .portfolio-item { height: 300px; background-size: cover; background-position: center; border-radius: 6px; position: relative; overflow: hidden; cursor: pointer; }
         .portfolio-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(38,34,28,0.7); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; color: white; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; }
@@ -115,7 +112,7 @@
         .decor-block { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .decor-img { height: 400px; background: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover; border-radius: 8px; }
 
-        /* БЛОК ОБРАТНОЙ СВЯЗИ */
+        /* ОБРАТНАЯ СВЯЗЬ */
         .feedback-box { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; background: #ffffff; border: 1px solid #eee; padding: 60px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
         .feedback-info h3 { font-size: 32px; margin-bottom: 20px; font-weight: 300; }
         .feedback-info p { color: #666; line-height: 1.6; margin-bottom: 30px; }
@@ -159,7 +156,6 @@
 
     <!-- ШАПКА -->
     <header>
-        <!-- Изменено на 1 HOUSE -->
         <a href="#" class="logo">1<span>HOUSE</span></a>
         <nav>
             <div class="nav-item has-dropdown"><span class="nav-link">Проекты</span>
@@ -177,7 +173,7 @@
                 <div class="dropdown">
                     <a href="#services">Проектирование</a>
                     <a href="#services">Строительство под ключ</a>
-                    <a href="#services">Инженерные системы</a>
+                    <a href="#services">Инженерные systems</a>
                     <a href="#services">Внутренняя отделка</a>
                     <a href="#services">Помощь в оформлении ипотеки</a>
                     <a href="#services">Подбор земельного участка</a>
@@ -192,7 +188,6 @@
                 </div>
             </div>
             
-            <!-- Добавленные пункты международной истории в меню -->
             <div class="nav-item"><a href="global.html#spain" class="nav-link global-menu-link">ВНЖ в Испании</a></div>
             <div class="nav-item"><a href="global.html#bali" class="nav-link global-menu-link">Недвижимость на Бали</a></div>
             <div class="nav-item"><a href="global.html#europe" class="nav-link global-menu-link">Недвижимость в Европе</a></div>
@@ -208,7 +203,7 @@
         </div>
     </section>
 
-    <!-- МЕЖДУНАРОДНЫЙ БЛОК В ЦЕНТРЕ СТРАНИЦЫ (Стильный герб-круг с обрезкой углов) -->
+    <!-- МЕЖДУНАРОДНЫЙ БЛОК В ЦЕНТРЕ СТРАНИЦЫ -->
     <section class="section section-bg" style="padding-bottom: 50px;">
         <div class="global-central-box">
             <div class="global-central-text">
@@ -218,8 +213,8 @@
                 <a href="global.html" class="btn-global-central">Открыть международную платформу</a>
             </div>
             <div class="global-central-seal">
-                <!-- Путь ведет на твой файл, а CSS делает его безупречным кругом с тенью -->
-                <img src="global-seal.jpg.png" alt="1 WORLD 1 MISSION 1 HOUSE" style="width: 100%; max-width: 320px; height: auto; border-radius: 50%; box-shadow: 0 10px 35px rgba(0,0,0,0.2);">
+                <!-- Внимание на src: прописан чистый global-seal.jpg с обходом кэша (?v=2) -->
+                <img src="global-seal.jpg?v=2" alt="1 WORLD 1 MISSION 1 HOUSE" style="width: 100%; max-width: 320px; height: auto; border-radius: 50%; box-shadow: 0 10px 35px rgba(0,0,0,0.2);">
             </div>
         </div>
     </section>
@@ -294,7 +289,7 @@
         <div class="tech-content" id="tech-2">
             <div class="tech-text">
                 <h3>Современный газобетон</h3>
-                <p>Идеальный баланс цены, долговечности and энергоэффективности. Стены из качественных блоков Ytong не требуют избыточного утепления, возводятся быстро и позволяют реализовать сложнейшие архитектурные хай-тек формы с плоской кровлей.</p>
+                <p>Идеальный баланс цены, долговечности и энергоэффективности. Стены из качественных блоков Ytong не требуют избыточного утепления, возводятся быстро и позволяют реализовать сложнейшие архитектурные хай-тек формы с плоской кровлей.</p>
                 <p><strong>Срок возведения контура:</strong> от 3 месяцев.</p>
             </div>
             <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80');"></div>
