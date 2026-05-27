@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Строительство деревянных домов премиум-класса из клееного бруса</title>
+    <title>Строительство деревянных домов премиум-класса</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Твой герб в качестве иконки вкладки -->
-    <link rel="icon" type="image/jpeg" href="images/logo-seal.jpg">
-
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Manrope', sans-serif; }
         body { background-color: #ffffff; color: #1a1a1a; scroll-behavior: smooth; }
         
-        /* ШАПКА С МЕЖДУНАРОДНЫМИ КНОПКАМИ */
+        /* ШАПКА САЙТА (Исходный чистый стиль) */
         header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 0 4%; height: 80px; background: #ffffff;
@@ -23,66 +20,54 @@
         }
         .logo { font-weight: 700; font-size: 22px; letter-spacing: 1px; color: #1a1a1a; text-decoration: none; }
         
-        nav { display: flex; height: 100%; }
-        .nav-item { position: relative; display: flex; align-items: center; height: 100%; margin: 0 12px; }
-        .nav-link { text-decoration: none; color: #2a2a2a; font-weight: 500; font-size: 14px; transition: 0.3s; cursor: pointer; }
+        nav { display: flex; height: 100%; align-items: center; }
+        .nav-item { margin: 0 15px; }
+        .nav-link { text-decoration: none; color: #2a2a2a; font-weight: 500; font-size: 14px; transition: 0.3s; }
         .nav-link:hover { color: #dfb77d; }
 
-        /* СТИЛИЗАЦИЯ МЕЖДУНАРОДНЫХ КНОПОК В МЕНЮ */
-        .nav-link.global-link {
-            color: #dfb77d; font-weight: 700; padding: 6px 12px; border: 1px solid rgba(223,183,125,0.4); border-radius: 4px; background: #fdfbf7;
-        }
-        .nav-link.global-link:hover {
-            background: #dfb77d; color: #ffffff; border-color: #dfb77d;
-        }
+        /* Международные ссылки теперь в общем аккуратном стиле меню */
+        .nav-link.global-link { color: #dfb77d; font-weight: 600; }
+        .nav-link.global-link:hover { color: #cb9f62; }
 
         .header-right { display: flex; align-items: center; gap: 20px; }
         .phone-link { color: #1a1a1a; text-decoration: none; font-weight: 700; font-size: 15px; }
         .btn-callback-header { background: #26221c; border: none; color: white; padding: 12px 24px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; font-weight: 500; border-radius: 4px; transition: 0.3s; }
         .btn-callback-header:hover { background-color: #dfb77d; }
 
-        /* ГЛАВНЫЙ ЭКРАН С ТВОИМ ДОМОМ ИЗ БРУСА */
+        /* ИСХОДНАЯ КРАСИВАЯ ПАНОРАМНАЯ КАРТИНКА НА ВЕСЬ ЭКРАН */
         .hero { 
             height: 100vh; display: flex; align-items: center; padding: 0 6%; 
-            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url('images/house.jpg') no-repeat center center/cover; 
-            color: #ffffff; position: relative; overflow: hidden; 
+            background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35)), url('images/house.jpg') no-repeat center center/cover; 
+            color: #ffffff; position: relative;
         }
-        .hero-content { max-width: 700px; z-index: 2; text-shadow: 0 4px 15px rgba(0,0,0,0.6); }
+        .hero-content { max-width: 700px; z-index: 2; text-shadow: 0 2px 10px rgba(0,0,0,0.4); }
         .hero h1 { font-size: 48px; font-weight: 700; line-height: 1.2; margin-bottom: 20px; letter-spacing: -1px; }
         .hero p { font-size: 20px; font-weight: 300; line-height: 1.6; margin-bottom: 35px; color: #f0f0f0; }
-        .btn-main { display: inline-block; padding: 18px 40px; background: #dfb77d; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .btn-main { display: inline-block; padding: 18px 40px; background: #dfb77d; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; }
         .btn-main:hover { background: #cb9f62; transform: translateY(-2px); }
 
-        /* ОБЩИЕ СТИЛИ ДЛЯ БЛОКОВ */
-        .section { padding: 120px 6%; }
+        /* ОБЩИЕ СТИЛИ БЛОКОВ */
+        .section { padding: 100px 6%; }
         .section-bg { background-color: #fbf9f6; }
         .section-title { font-size: 38px; font-weight: 300; margin-bottom: 50px; letter-spacing: -0.5px; }
         .section-title strong { font-weight: 700; color: #26221c; }
 
-        /* НОВЫЙ ЭКСКЛЮЗИВНЫЙ БЛОК: МЕЖДУНАРОДНЫЙ ХОЛДИНГ (МАНИФЕСТ + ГЕРБ) */
-        .global-manifest-box { 
-            background: #161412; color: #ffffff; padding: 80px; border-radius: 12px;
+        /* НОВЫЙ БЛОК ДЛЯ МЕЖДУНАРОДНОЙ ЧАСТИ (Сделан аккуратным разделом сайта) */
+        .global-section-box {
             display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.15); margin-top: -40px; position: relative; z-index: 5;
+            background: #ffffff; border: 1px solid #eee; padding: 50px; border-radius: 8px;
         }
-        .manifest-text h3 { font-size: 28px; font-weight: 700; color: #dfb77d; letter-spacing: 1px; margin-bottom: 20px; text-transform: uppercase; }
-        .manifest-text p { font-size: 17px; color: #e0e0e0; font-weight: 300; line-height: 1.7; margin-bottom: 25px; }
-        .manifest-text .quote-sub { font-size: 15px; color: #b5ada3; border-left: 2px solid #dfb77d; padding-left: 15px; line-height: 1.6; }
-        .manifest-btn-container { margin-top: 30px; }
-        
-        /* Крутой контейнер для герба с невидимым щитом */
-        .manifest-seal-container { position: relative; display: flex; justify-content: center; align-items: center; }
-        .manifest-seal-img { width: 100%; max-width: 320px; height: auto; border-radius: 50%; box-shadow: 0 0 40px rgba(223,183,125,0.1); filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4)); }
-        
-        /* НЕВИДИМЫЙ ЩИТ (Защита от воровства графики и Google Линзы) */
-        .invisible-shield { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'); z-index: 10; cursor: default; }
+        .global-text h3 { font-size: 28px; font-weight: 700; color: #26221c; margin-bottom: 20px; }
+        .global-text p { font-size: 16px; color: #555; line-height: 1.7; margin-bottom: 20px; }
+        .global-seal-container { display: flex; justify-content: center; align-items: center; }
+        .global-seal-img { width: 100%; max-width: 260px; height: auto; }
 
-        /* БЛОК КАТАЛОГА */
+        /* КАТАЛОГ ПРОЕКТОВ */
         .filter-buttons { display: flex; gap: 15px; margin-bottom: 40px; }
         .filter-btn { padding: 12px 25px; background: #f5f5f5; border: none; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; border-radius: 4px; color: #4a4a4a; }
         .filter-btn.active, .filter-btn:hover { background: #dfb77d; color: white; }
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        .project-card { background: #ffffff; border: 1px solid #eee; overflow: hidden; transition: 0.3s; border-radius: 6px; position: relative; }
+        .project-card { background: #ffffff; border: 1px solid #eee; overflow: hidden; transition: 0.3s; border-radius: 6px; }
         .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
         .project-img { height: 260px; background-size: cover; background-position: center; }
         .project-info { padding: 25px; }
@@ -98,27 +83,17 @@
         .tech-content.active { display: grid; }
         .tech-text h3 { font-size: 26px; margin-bottom: 20px; font-weight: 700; }
         .tech-text p { color: #555; line-height: 1.7; font-size: 16px; margin-bottom: 20px; }
-        .tech-img { height: 380px; background-size: cover; background-position: center; border-radius: 6px; position: relative; }
+        .tech-img { height: 380px; background-size: cover; background-position: center; border-radius: 6px; }
 
-        /* БЛОК ИПОТЕКИ */
+        /* ИПОТЕКА */
         .ipoteka-banner { background: #26221c; color: white; padding: 60px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
         .ipoteka-text h3 { font-size: 32px; font-weight: 300; margin-bottom: 15px; }
         .ipoteka-text p { color: #ccc5ba; font-size: 16px; max-width: 600px; line-height: 1.6; }
         .btn-white { display: inline-block; padding: 18px 35px; background: #dfb77d; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; }
         .btn-white:hover { background: #cb9f62; }
 
-        /* ПОРТФОЛИО */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .portfolio-item { height: 300px; background-size: cover; background-position: center; border-radius: 6px; position: relative; overflow: hidden; cursor: pointer; }
-        .portfolio-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(38,34,28,0.7); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; color: white; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; }
-        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
-
-        /* МЕБЕЛЬ И ДЕКОР */
-        .decor-block { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .decor-img { height: 400px; background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover; border-radius: 6px; position: relative; }
-
         /* ОБРАТНАЯ СВЯЗЬ */
-        .feedback-box { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; background: #ffffff; border: 1px solid #eee; padding: 60px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        .feedback-box { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; background: #ffffff; border: 1px solid #eee; padding: 60px; border-radius: 8px; }
         .feedback-info h3 { font-size: 32px; margin-bottom: 20px; font-weight: 300; }
         .feedback-info p { color: #666; line-height: 1.6; margin-bottom: 30px; }
         .form-large input, .form-large select { width: 100%; padding: 16px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; font-size: 15px; outline: none; }
@@ -127,52 +102,42 @@
         .btn-dark:hover { background: #dfb77d; }
 
         /* ФУТЕР */
-        footer { background: #141210; color: #ffffff; padding: 80px 6% 40px 6%; }
-        .footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 40px; margin-bottom: 60px; }
-        .footer-brand h4 { font-size: 22px; font-weight: 700; margin-bottom: 20px; letter-spacing: 1px; }
-        .footer-brand p { color: #8c8273; font-size: 14px; line-height: 1.6; max-width: 300px; }
-        .footer-col h5 { font-size: 13px; font-weight: 700; margin-bottom: 25px; color: #dfb77d; text-transform: uppercase; letter-spacing: 1px; }
+        footer { background: #141210; color: #ffffff; padding: 60px 6% 40px 6%; }
+        .footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 40px; }
+        .footer-brand h4 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+        .footer-brand p { color: #8c8273; font-size: 14px; line-height: 1.6; }
+        .footer-col h5 { font-size: 13px; font-weight: 700; margin-bottom: 25px; color: #dfb77d; text-transform: uppercase; }
         .footer-col ul { list-style: none; }
         .footer-col ul li { margin-bottom: 12px; }
-        .footer-col ul li a { color: #ccc5ba; text-decoration: none; font-size: 14px; transition: 0.2s; }
-        .footer-col ul li a:hover { color: #dfb77d; padding-left: 5px; }
-
-        .footer-partners { border-top: 1px solid #231f1b; padding-top: 40px; }
-        .partners-title { font-size: 12px; text-transform: uppercase; color: #6e6455; letter-spacing: 2px; margin-bottom: 25px; font-weight: 700; }
-        .partners-logos { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; opacity: 0.4; }
-        .partner-logo { font-size: 16px; font-weight: 700; color: #ffffff; letter-spacing: 1px; text-transform: uppercase; }
+        .footer-col ul li a { color: #ccc5ba; text-decoration: none; font-size: 14px; }
 
         /* МОДАЛЬНОЕ ОКНО */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-window { background: #ffffff; padding: 40px; max-width: 450px; width: 90%; position: relative; border-radius: 6px; color: #1a1a1a; }
+        .modal-window { background: #ffffff; padding: 40px; max-width: 450px; width: 90%; position: relative; border-radius: 6px; }
         .modal-close { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #aaa; }
         .form-group { margin-bottom: 20px; }
-        .form-group input { width: 100%; padding: 14px; border: 1px solid #ccc; font-size: 15px; outline: none; border-radius: 4px; }
+        .form-group input { width: 100%; padding: 14px; border: 1px solid #ccc; font-size: 15px; border-radius: 4px; }
 
         @media (max-width: 992px) {
             header nav { display: none; }
             .hero h1 { font-size: 34px; }
-            .global-manifest-box { grid-template-columns: 1fr; padding: 40px; text-align: center; }
-            .manifest-seal-container { order: -1; }
-            .manifest-seal-img { max-width: 200px; }
-            .tech-content, .decor-block, .feedback-box, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .global-section-box, .tech-content, .feedback-box, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ШАПКА С ПЕРЕХОДАМИ В ХОЛДИНГ -->
+    <!-- ШАПКА САЙТА С КНОПКАМИ В ЕДИНОМ СТИЛЕ -->
     <header>
         <a href="#" class="logo">1 ДОМ</a>
         <nav>
             <div class="nav-item"><a href="#projects" class="nav-link">Проекты</a></div>
             <div class="nav-item"><a href="#tech" class="nav-link">Технологии</a></div>
-            <div class="nav-item"><a href="#decor" class="nav-link">Комплектация</a></div>
             <div class="nav-item"><a href="#feedback" class="nav-link">Контакты</a></div>
             
-            <!-- МЕЖДУНАРОДНЫЕ КНОПКИ-ССЫЛКИ (Укажи пути к новому международному сайту холдинга, когда он будет готов) -->
-            <div class="nav-item"><a href="global.html#relocation" class="nav-link global-link">ВНЖ в Испанию</a></div>
+            <!-- Аккуратные ссылки без рамочных стилей, ведут на будущий global.html -->
+            <div class="nav-item"><a href="global.html#spain" class="nav-link global-link">ВНЖ в Испанию</a></div>
             <div class="nav-item"><a href="global.html#bali" class="nav-link global-link">Недвижимость на Бали</a></div>
             <div class="nav-item"><a href="global.html#europe" class="nav-link global-link">Недвижимость в Европе</a></div>
         </nav>
@@ -183,10 +148,8 @@
         </div>
     </header>
 
-    <!-- ГЛАВНЫЙ ЭКРАН С ТВОЕЙ СГЕНЕРИРОВАННОЙ КАРТИНКОЙ ДОМА -->
+    <!-- ГЛАВНЫЙ ЭКРАН (Чистая панорама из файла ChatGPT Image May 27, 2026, 06_26_26 AM.png) -->
     <section class="hero">
-        <!-- Невидимая защита фонового изображения от копирования через Google Линзу -->
-        <div class="invisible-shield"></div>
         <div class="hero-content">
             <h1>Премиальные дома из клееного бруса</h1>
             <p>Строительство технологичных загородных резиденций под ключ с гарантией качества и фиксированной сметой.</p>
@@ -194,40 +157,35 @@
         </div>
     </section>
 
-    <!-- НОВЫЙ БЛОК 1: ОБЪЕДИНЕННАЯ МЕЖДУНАРОДНАЯ ЧАСТЬ (Твой спич и твой герб-значок) -->
-    <section class="section section-bg" style="padding-bottom: 60px;">
-        <div class="global-manifest-box">
-            <div class="manifest-text">
-                <h3>1 World. 1 Mission. 1 House.</h3>
+    <!-- ОТДЕЛЬНЫЙ БЛОК ДЛЯ МЕЖДУНАРОДНОЙ ЧАСТИ (Спич + Значок) -->
+    <section class="section section-bg">
+        <div class="global-section-box">
+            <div class="global-text">
+                <h3>Международный холдинг 1 HOUSE</h3>
                 <p>Обретите свой дом там, куда указывает сердце. Какую бы дорогу в этом мире вы ни выбрали, холдинг 1 HOUSE пройдет её вместе с вами. От заснеженной сибирской тайги до калифорнийских холмов, от колоритных улочек Испании до тихих берегов Бали — мы берем на себя всю рутину, юридические задачи и аудит недвижимости.</p>
-                <p class="quote-sub">Мы бережем ваше время, чтобы вы могли сосредоточиться на главном: на своей жизни, близких и моментах, которые делают вас счастливыми.</p>
-                <div class="manifest-btn-container">
-                    <a href="global.html" class="btn-main" style="background: #ffffff; color: #161412;">Перейти в международный холдинг</a>
+                <p style="font-style: italic; color: #777;">Мы бережем ваше время, чтобы вы могли сосредоточиться на главном: на своей жизни, близких и моментах, которые делают вас счастливыми.</p>
+                <div style="margin-top: 30px;">
+                    <a href="global.html" class="btn-main">Подробнее о международном направлении</a>
                 </div>
             </div>
-            
-            <!-- Твой герб-значок с невидимым щитом внутри блока -->
-            <div class="manifest-seal-container">
-                <img src="images/logo-seal.jpg" alt="1 HOUSE International Seal" class="manifest-seal-img">
-                <div class="invisible-shield"></div>
+            <div class="global-seal-container">
+                <!-- Твой сгенерированный логотип-герб -->
+                <img src="images/logo-seal.jpg" alt="1 HOUSE International" class="global-seal-img">
             </div>
         </div>
     </section>
 
-    <!-- БЛОК КАТАЛОГА СТРОИТЕЛЬСТВА -->
+    <!-- КАТАЛОГ -->
     <section class="section" id="projects">
         <h2 class="section-title">Каталог <strong>наших проектов</strong></h2>
-        
         <div class="filter-buttons">
             <button class="filter-btn active" onclick="filterProjects('all')">Все дома</button>
             <button class="filter-btn" onclick="filterProjects('150')">до 200 м²</button>
             <button class="filter-btn" onclick="filterProjects('250')">от 200 до 400 м²</button>
         </div>
-        
         <div class="projects-grid">
             <div class="project-card" data-size="250">
                 <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="invisible-shield"></div>
                 <div class="project-info">
                     <div class="project-title">Усадьба «Тайга Премиум»</div>
                     <div class="project-details"><span>310 м²</span><span>•</span><span>Клееный брус</span></div>
@@ -236,7 +194,6 @@
             </div>
             <div class="project-card" data-size="150">
                 <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80');"></div>
-                <div class="invisible-shield"></div>
                 <div class="project-info">
                     <div class="project-title">Скандинавское шале «Осло»</div>
                     <div class="project-details"><span>185 м²</span><span>•</span><span>Клееный брус</span></div>
@@ -246,70 +203,46 @@
         </div>
     </section>
 
-    <!-- БЛОК ТЕХНОЛОГИЙ СТРОИТЕЛЬСТВА -->
+    <!-- ТЕХНОЛОГИИ -->
     <section class="section section-bg" id="tech">
         <h2 class="section-title">Технологии <strong>и материалы</strong></h2>
-        
         <div class="tech-tabs">
             <div class="tech-tab active" onclick="switchTech(0)">Клееный брус</div>
             <div class="tech-tab" onclick="switchTech(1)">Кирпич и газобетон</div>
         </div>
-
         <div class="tech-content active" id="tech-0">
             <div class="tech-text">
                 <h3>Премиальный клееный брус</h3>
-                <p>Экологичные, прочные дома из северной древесины высокой плотности. Минимальная усадка, эталонная геометрия стен и максимальное сохранение тепла в доме.</p>
+                <p>Экологичные, прочные дома из северной древесины высокой плотности. Минимальная усадка и максимальное сохранение тепла.</p>
             </div>
-            <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&w=800&q=80');"><div class="invisible-shield"></div></div>
+            <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&w=800&q=80');"></div>
         </div>
-
         <div class="tech-content" id="tech-1">
             <div class="tech-text">
                 <h3>Капитальные блоки и кирпич</h3>
-                <p>Строительство монолитно-кирпичных загородных резиденций любой сложности. Идеально для масштабных хай-тек проектов с плоской кровлей.</p>
+                <p>Строительство монолитно-кирпичных загородных резиденций любой сложности. Идеально для масштабных хай-тек проектов.</p>
             </div>
-            <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80');"><div class="invisible-shield"></div></div>
+            <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80');"></div>
         </div>
     </section>
 
-    <!-- БЛОК ИПОТЕКИ -->
+    <!-- ИПОТЕКА -->
     <section class="section">
         <div class="ipoteka-banner">
             <div class="ipoteka-text">
                 <h3>Льготная ипотека на ИЖС от 4.5%</h3>
-                <p>Строим аккредитованно во всех ведущих банках. Помогаем с одобрением, подготовкой документов и ведением сделки под ключ.</p>
+                <p>Строим аккредитованно во всех ведущих банках. Помогаем с одобрением и подготовкой документов.</p>
             </div>
             <button class="btn-white" onclick="openModal()">Рассчитать ипотеку</button>
         </div>
     </section>
 
-    <!-- ПОРТФОЛИО -->
-    <section class="section section-bg">
-        <h2 class="section-title">Построенные <strong>объекты</strong></h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=500&q=80');"><div class="invisible-shield"></div><div class="portfolio-overlay">Коттедж Истра</div></div>
-            <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=500&q=80');"><div class="invisible-shield"></div><div class="portfolio-overlay">Дом Новая Рига</div></div>
-        </div>
-    </section>
-
-    <!-- МЕБЕЛЬ И ДЕКОР -->
-    <section class="section" id="decor">
-        <div class="decor-block">
-            <div class="decor-img"><div class="invisible-shield"></div></div>
-            <div>
-                <h2 class="section-title" style="margin-bottom:20px;">Интерьерная <strong>комплектация</strong></h2>
-                <p style="color:#555; line-height:1.7; font-size:16px; margin-bottom:20px;">Мы не просто строим коробку дома. Наше интерьерное бюро разрабатывает кастомную мебель, подбирает декор и сдает объект полностью готовым для проживания.</p>
-                <button class="btn-callback-header" style="padding:15px 30px;" onclick="openModal()">Дизайн-проект в подарок</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ОБРАТНАЯ СВЯЗЬ -->
+    <!-- ФОРМА СВЯЗИ -->
     <section class="section section-bg" id="feedback">
         <div class="feedback-box">
             <div class="feedback-info">
                 <h3>Начнем проектирование <strong>вашего дома?</strong></h3>
-                <p>Оставьте контакты. Наш ведущий инженер-архитектор свяжется с вами, ответит на технические вопросы и подготовит первичный эскиз планировки.</p>
+                <p>Оставьте контакты. Наш ведущий инженер-архитектор свяжется с вами и ответит на технические вопросы.</p>
             </div>
             <form class="form-large" onsubmit="handleSubmit(event)">
                 <input type="text" placeholder="Ваше имя" required>
@@ -317,7 +250,6 @@
                 <select>
                     <option>Интересует Клееный Брус</option>
                     <option>Интересует Кирпич / Блоки</option>
-                    <option>Нужна консультация по участкам</option>
                 </select>
                 <button type="submit" class="btn-dark">Отправить запрос</button>
             </form>
@@ -334,35 +266,15 @@
             <div class="footer-col">
                 <h5>Услуги</h5>
                 <ul>
-                    <li><a href="#">Индивидуальное проектирование</a></li>
+                    <li><a href="#">Проектирование</a></li>
                     <li><a href="#">Строительство ИЖС</a></li>
-                    <li><a href="#">Комплектация интерьеров</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Документы</h5>
-                <ul>
-                    <li><a href="#">Типовой договор</a></li>
-                    <li><a href="#">Гарантийные обязательства</a></li>
-                    <li><a href="#">Смета и этапы работ</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>Холдинг</h5>
                 <ul>
                     <li><a href="global.html">1 HOUSE International</a></li>
-                    <li><a href="global.html#relocation">ВНЖ и Юристы</a></li>
                 </ul>
-            </div>
-        </div>
-
-        <div class="footer-partners">
-            <div class="partners-title">Банки-партнеры</div>
-            <div class="partners-logos">
-                <span class="partner-logo">СБЕРБАНК</span>
-                <span class="partner-logo">ВТБ</span>
-                <span class="partner-logo">ДОМ.РФ</span>
-                <span class="partner-logo">РОССЕЛЬХОЗБАНК</span>
             </div>
         </div>
     </footer>
@@ -372,7 +284,7 @@
         <div class="modal-window">
             <div class="modal-close" onclick="closeModal()">&times;</div>
             <h3>Заказать расчет стоимости</h3>
-            <p>Оставьте контакты, и мы перезвоним вам для уточнения деталей проекта в течение 15 минут.</p>
+            <p>Оставьте контакты, и мы перезвоним вам в течение 15 минут.</p>
             <form onsubmit="handleSubmit(event)">
                 <div class="form-group"><input type="text" placeholder="Имя" required></div>
                 <div class="form-group"><input type="tel" placeholder="Телефон" required></div>
@@ -381,7 +293,6 @@
         </div>
     </div>
 
-    <!-- СКРИПТЫ И КОМПЛЕКСНАЯ ЗАЩИТА -->
     <script>
         function filterProjects(size) {
             const cards = document.querySelectorAll('.project-card');
@@ -411,17 +322,6 @@
         function closeModal() { modal.classList.remove('active'); }
         window.onclick = function(event) { if (event.target == modal) { closeModal(); } }
         function handleSubmit(event) { event.preventDefault(); alert('Заявка принята. Специалист свяжется с вами в ближайшее время.'); closeModal(); }
-
-        /* ЗАЩИТА АВТОРСКИХ ИЗОБРАЖЕНИЙ (ДОМ И ГЕРБ) */
-        document.addEventListener('contextmenu', event => event.preventDefault());
-        document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('dragstart', event => event.preventDefault());
-        });
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C')) || (e.ctrlKey && (e.key === 'u' || e.key === 'c'))) {
-                e.preventDefault();
-            }
-        });
     </script>
 </body>
 </html>
