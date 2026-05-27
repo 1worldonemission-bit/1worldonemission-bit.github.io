@@ -47,10 +47,14 @@
         .btn-callback-header { background: none; border: 1px solid #dfb77d; color: #1a1a1a; padding: 11px 22px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; font-weight: 500; border-radius: 4px; transition: 0.3s; }
         .btn-callback-header:hover { background-color: #dfb77d; color: white; }
 
+        /* СТИЛЬ ДЛЯ ПОДЦВЕЧИВАНИЯ СЛОВА HOUSE В ТЕКСТАХ */
+        .house-accent { color: #dfb77d; font-weight: inherit; }
+
         /* ГЛАВНЫЙ БАННЕР */
         .hero { height: 100vh; display: flex; align-items: center; padding: 0 4%; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover; color: #ffffff; }
         .hero-content { max-width: 900px; }
         .hero h1 { font-size: 54px; font-weight: 300; line-height: 1.25; letter-spacing: -1px; }
+        .hero h1 span { color: #dfb77d; }
         .hero p { font-size: 18px; margin-top: 25px; color: #f0f0f0; font-weight: 300; max-width: 750px; line-height: 1.6; }
 
         /* ОБЩИЕ СТИЛИ */
@@ -125,6 +129,7 @@
         footer { background: #1a1815; color: #ffffff; padding: 80px 4% 40px 4%; }
         .footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 50px; margin-bottom: 60px; }
         .footer-brand h4 { font-size: 24px; font-weight: 700; margin-bottom: 20px; letter-spacing: 2px; }
+        .footer-brand h4 span { color: #dfb77d; font-weight: 300; }
         .footer-brand p { color: #b5ada3; font-size: 14px; line-height: 1.6; max-width: 300px; }
         .footer-col h5 { font-size: 16px; font-weight: 700; margin-bottom: 25px; color: #dfb77d; text-transform: uppercase; letter-spacing: 1px; }
         .footer-col ul { list-style: none; }
@@ -173,7 +178,7 @@
                 <div class="dropdown">
                     <a href="#services">Проектирование</a>
                     <a href="#services">Строительство под ключ</a>
-                    <a href="#services">Инженерные systems</a>
+                    <a href="#services">Инженерные системы</a>
                     <a href="#services">Внутренняя отделка</a>
                     <a href="#services">Помощь в оформлении ипотеки</a>
                     <a href="#services">Подбор земельного участка</a>
@@ -198,7 +203,7 @@
     <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Проектирование и строительство домов под ключ.</h1>
+            <h1>Проектирование и строительство домов под ключ с 1 <span>HOUSE</span>.</h1>
             <p>Создаем современные энергоэффективные загородные дома в Москве и Московской области. Помогаем в оформлении всех типов ипотек.</p>
         </div>
     </section>
@@ -207,14 +212,13 @@
     <section class="section section-bg" style="padding-bottom: 50px;">
         <div class="global-central-box">
             <div class="global-central-text">
-                <h3>Международный холдинг 1 HOUSE</h3>
-                <p>Обретите свой дом там, куда указывает сердце. Какую бы дорогу в этом мире вы ни выбрали, холдинг 1 HOUSE пройдет её вместе с вами. От заснеженной сибирской тайги до калифорнийских холмов, от колоритных улочек Испании до тихих берегов Бали — мы берем на себя всю рутину, юридические задачи и аудит недвижимости[cite: 1].</p>
-                <p class="speech-quote">Мы бережем ваше время, чтобы вы могли сосредоточиться на главном: на своей жизни, близких и моментах, которые делают вас счастливыми[cite: 1].</p>
+                <h3>Международная платформа 1 <span class="house-accent">HOUSE</span></h3>
+                <p>Обретите свой дом там, куда указывает сердце. Какую бы дорогу в этом мире вы ни выбрали, команда 1 <span class="house-accent">HOUSE</span> пройдет её вместе с вами. От заснеженной сибирской тайги до калифорнийских холмов, от колоритных улочек Испании до тихих берегов Бали — мы берем на себя всю рутину, юридические задачи и аудит недвижимости.</p>
+                <p class="speech-quote">Мы бережем ваше время, чтобы вы могли сосредоточиться на главном: на своей жизни, близких и моментах, которые делают вас счастливыми.</p>
                 <a href="global.html" class="btn-global-central">Открыть международную платформу</a>
             </div>
             <div class="global-central-seal">
-                <!-- Внимание на src: прописан чистый global-seal.jpg с обходом кэша (?v=2) -->
-                <img src="global-seal.jpg?v=2" alt="1 WORLD 1 MISSION 1 HOUSE" style="width: 100%; max-width: 320px; height: auto; border-radius: 50%; box-shadow: 0 10px 35px rgba(0,0,0,0.2);">
+                <img src="global-seal.jpg?v=3" alt="1 WORLD 1 MISSION 1 HOUSE" style="width: 100%; max-width: 320px; height: auto; border-radius: 50%; box-shadow: 0 10px 35px rgba(0,0,0,0.2);">
             </div>
         </div>
     </section>
@@ -268,13 +272,14 @@
             <div class="tech-tab" onclick="switchTech(2)">Газобетонные блоки</div>
         </div>
 
+        <!-- Твоя личная картинка wood-house.jpg с обходом кэша -->
         <div class="tech-content active" id="tech-0">
             <div class="tech-text">
                 <h3>Премиальный клееный брус</h3>
                 <p>Экологичные, «дышащие» дома в скандинавском стиле. Используем северную древесину высокой плотности. Минимальная усадка, идеальная геометрия и максимальное сохранение тепла в зимний период.</p>
                 <p><strong>Срок возведения теплого контура:</strong> от 2 месяцев.</p>
             </div>
-            <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="tech-img" style="background-image: url('wood-house.jpg?v=1');"></div>
         </div>
 
         <div class="tech-content" id="tech-1">
@@ -324,7 +329,7 @@
             <div class="decor-img" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80');"></div>
             <div>
                 <h2 class="section-title" style="margin-bottom:20px;">Мебель и <strong>интерьерный декор</strong></h2>
-                <p style="color:#555; line-height:1.7; font-size:16px; margin-bottom:20px;">Мы не просто передаем вам ключи от голых стен. Команда дизайнеров 1 House разрабатывает кастомную корпусную мебель, подбирает текстиль, освещение и элементы декора под ключ. Вы въезжаете в полностью готовое для счастливой жизни пространство.</p>
+                <p style="color:#555; line-height:1.7; font-size:16px; margin-bottom:20px;">Мы не просто передаем вам ключи от голых стен. Команда дизайнеров 1 <span class="house-accent">HOUSE</span> разрабатывает кастомную корпусную мебель, подбирает текстиль, освещение и элементы декора под ключ. Вы въезжаете в полностью готовое для счастливой жизни пространство.</p>
                 <button class="btn-callback-header" style="padding:15px 30px;" onclick="openModal()">Обсудить дизайн-проект</button>
             </div>
         </div>
