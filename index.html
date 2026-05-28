@@ -62,19 +62,32 @@
         .hero h1 { font-size: 54px; font-weight: 300; line-height: 1.25; letter-spacing: -1px; }
         .hero p { font-size: 18px; margin-top: 25px; color: #f0f0f0; font-weight: 300; max-width: 750px; line-height: 1.6; }
 
-        /* ОБЩИЕ СТИЛИ */
+        /* ОБЩИЕ СТИЛИ СЕКЦИЙ */
         .section { padding: 100px 4%; }
         .section-bg { background-color: #fbf9f6; } 
         .section-title { font-size: 38px; font-weight: 300; margin-bottom: 45px; letter-spacing: -0.5px; }
         .section-title strong { font-weight: 700; }
 
-        /* БЛОК ПОЧЕМУ МЫ */
-        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-top: 20px; }
-        .benefit-card { background: #ffffff; padding: 35px 25px; border-radius: 8px; border: 1px solid #eee; transition: 0.3s; }
-        .benefit-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.03); border-color: #dfb77d; }
-        .benefit-icon { font-size: 28px; color: #dfb77d; margin-bottom: 15px; }
-        .benefit-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: #26221c; }
-        .benefit-card p { font-size: 14px; color: #666; line-height: 1.6; font-weight: 300; }
+        /* СТРОГИЙ БЛОК ПОЧЕМУ МЫ (С ВЫРАВНИВАНИЕМ В РЯД) */
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .benefit-card { 
+            position: relative; height: 320px; border-radius: 8px; overflow: hidden; 
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 35px 30px; 
+            background-size: cover; background-position: center; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        /* Затемняющий градиент поверх фото для читаемости текста */
+        .benefit-card::before { 
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background: linear-gradient(to top, rgba(20,18,15,0.95) 0%, rgba(20,18,15,0.7) 50%, rgba(20,18,15,0.4) 100%); 
+            z-index: 1; transition: 0.3s;
+        }
+        .benefit-card:hover { transform: translateY(-5px); }
+        .benefit-card:hover::before { background: linear-gradient(to top, rgba(223,183,125,0.95) 0%, rgba(20,18,15,0.8) 70%); }
+        
+        .benefit-content { position: relative; z-index: 2; }
+        .benefit-card h4 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px; }
+        /* Строгое выравнивание текста по высоте и строкам */
+        .benefit-card p { font-size: 14px; color: #e0e0e0; line-height: 1.6; font-weight: 300; text-align: left; margin: 0; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 
         /* МЕЖДУНАРОДНЫЙ БЛОК */
         .global-central-box { 
@@ -83,35 +96,29 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
         .global-central-text h3 { font-size: 30px; font-weight: 700; color: #26221c; margin-bottom: 20px; }
-        .global-central-text p { font-size: 16px; color: #555; line-height: 1.7; margin-bottom: 20px; font-weight: 300; }
-        .global-central-text .speech-quote { font-style: italic; color: #777; border-left: 2px solid #dfb77d; padding-left: 15px; margin-top: 15px; }
+        .global-central-text p { font-size: 16px; color: #555; line-height: 1.7; margin-bottom: 20px; font-weight: 300; text-align: justify; }
+        .global-central-text .speech-quote { font-style: italic; color: #777; border-left: 2px solid #dfb77d; padding-left: 15px; margin-top: 15px; line-height: 1.6; }
         .global-central-seal { display: flex; justify-content: center; align-items: center; }
         .btn-global-central { display: inline-block; margin-top: 20px; padding: 15px 35px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; border-radius: 4px; transition: 0.3s; }
         .btn-global-central:hover { background: #dfb77d; }
 
-        /* КАТАЛОГ С ЭФФЕКТОМ UNSPLASH (MASONRY) */
+        /* КАТАЛОГ С ЭФФЕКТОМ UNSPLASH (ГОЛЫЕ КАРТИНКИ) */
         .filter-buttons { display: flex; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
         .filter-btn { padding: 12px 25px; background: #f5f5f5; border: none; font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.3s; border-radius: 30px; color: #4a4a4a; }
         .filter-btn.active, .filter-btn:hover { background: #dfb77d; color: white; }
         
-        /* Контейнер-сетка в стиле Unsplash */
-        .projects-masonry { columns: 3 350px; column-gap: 30px; width: 100%; }
+        .projects-masonry { columns: 3 350px; column-gap: 24px; width: 100%; }
         .project-card { 
-            background: #ffffff; border: 1px solid #eee; overflow: hidden; transition: 0.3s; border-radius: 8px;
-            display: inline-block; width: 100%; margin-bottom: 30px; break-inside: avoid;
+            background: #f5f5f5; overflow: hidden; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); border-radius: 6px;
+            display: inline-block; width: 100%; margin-bottom: 24px; break-inside: avoid;
         }
-        .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
-        .project-img { width: 100%; background-size: cover; background-position: center; display: block; }
+        .project-card:hover { transform: scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .project-img { width: 100%; background-size: cover; background-position: center; display: block; object-fit: cover; }
         
-        /* Разная высота для создания шахматного эффекта Unsplash */
-        .h-low { height: 240px; }
-        .h-med { height: 340px; }
-        .h-high { height: 440px; }
-
-        .project-info { padding: 25px; }
-        .project-title { font-size: 19px; font-weight: 700; margin-bottom: 10px; }
-        .project-details { display: flex; gap: 15px; color: #777; font-size: 14px; margin-bottom: 20px; }
-        .project-price { font-size: 17px; font-weight: 700; color: #dfb77d; }
+        /* Разная высота для чистого шахматного эффекта мозаики */
+        .h-low { height: 280px; }
+        .h-med { height: 420px; }
+        .h-high { height: 560px; }
 
         /* ТЕХНОЛОГИИ */
         .tech-tabs { display: flex; border-bottom: 2px solid #eee; margin-bottom: 40px; flex-wrap: wrap; }
@@ -120,7 +127,7 @@
         .tech-content { display: none; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .tech-content.active { display: grid; }
         .tech-text h3 { font-size: 26px; margin-bottom: 20px; font-weight: 700; }
-        .tech-text p { color: #555; line-height: 1.7; font-size: 16px; margin-bottom: 20px; }
+        .tech-text p { color: #555; line-height: 1.7; font-size: 16px; margin-bottom: 20px; text-align: justify; }
         .tech-img { height: 380px; background-size: cover; background-position: center; border-radius: 8px; }
 
         /* ИПOTEКA */
@@ -182,7 +189,7 @@
         }
     </style>
 </head>
-<body oncontextmenu="return false;"> <!-- Блокирует клик правой кнопкой мыши по всему сайту -->
+<body oncontextmenu="return false;">
 
     <!-- ШАПКА -->
     <header>
@@ -237,29 +244,37 @@
         </div>
     </section>
 
-    <!-- БЛОК ПОЧЕМУ МЫ -->
+    <!-- БЛОК ПОЧЕМУ МЫ (С КРАСИВЫМИ ФОНАМИ И ВЫРАВНИВАНИЕМ В РЯД) -->
     <section class="section" id="about">
         <h2 class="section-title">Почему выбирают 1 <strong class="house-accent">HOUSE</strong></h2>
         <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">🛡️</div>
-                <h4>Фиксированная смета</h4>
-                <p>Стоимость строительства прописывается в договоре и не меняется в процессе работы. Никаких скрытых платежей.</p>
+            <!-- Смета (Чертеж/Калькуляции) -->
+            <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=500&q=80');">
+                <div class="benefit-content">
+                    <h4>Фиксированная смета</h4>
+                    <p>Стоимость строительства прописывается в официальном договоре и остается неизменной в процессе работы. Мы полностью исключаем любые скрытые платежи и непредвиденные расходы со стороны заказчика.</p>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">🔍</div>
-                <h4>Независимый технадзор</h4>
-                <p>Каждый этап контролируется сертифицированными инженерами. Вы получаете фото и видеоотчеты в режиме реального времени.</p>
+            <!-- Технадзор (Инженер на объекте) -->
+            <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=500&q=80');">
+                <div class="benefit-content">
+                    <h4>Независимый технадзор</h4>
+                    <p>Каждый этап строительства контролируется независимыми сертифицированными инженерами. Вы получаете детальные фото- и видеоотчеты в режиме реального времени на протяжении всего цикла.</p>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">🏗️</div>
-                <h4>Гарантия качества</h4>
-                <p>Предоставляем официальную расширенную гарантию на конструктив здания, инженерные системы и отделочные работы.</p>
+            <!-- Гарантия (Качественные узлы/Дерево) -->
+            <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1449247709967-d4460ad044c8?auto=format&fit=crop&w=500&q=80');">
+                <div class="benefit-content">
+                    <h4>Гарантия качества</h4>
+                    <p>Мы полностью уверены в своих технологиях и материалах, поэтому предоставляем расширенную официальную гарантию на весь конструктив здания, внутренние инженерные системы и финишную отделку.</p>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">🏦</div>
-                <h4>Полная аккредитация</h4>
-                <p>Мы аккредитованы во всех ведущих банках РФ, что гарантирует безопасность сделки и быстрое одобрение льготных ипотек.</p>
+            <!-- Аккредитация (Архитектура банка/Строгость) -->
+            <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80');">
+                <div class="benefit-content">
+                    <h4>Полная аккредитация</h4>
+                    <p>Наша компания официально аккредитована во всех ведущих банках РФ. Это гарантирует абсолютную безопасность сделки для клиента и ускоряет процесс одобрения любых льготных программ ипотек.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -279,98 +294,59 @@
         </div>
     </section>
 
-    <!-- БЛОК 1: ПОПУЛЯРНЫЕ ПРОЕКТЫ (КАТАЛОГ UNSPLASH STYLED) -->
+    <!-- КАТАЛОГ ПРОЕКТОВ (ЧИСТЫЕ ФОТО В СТИЛЕ UNSPLASH) -->
     <section class="section" id="projects">
         <h2 class="section-title">Популярные <strong>проекты</strong></h2>
         
         <div class="filter-buttons">
             <button class="filter-btn active" onclick="filterProjects('panoramic')">Панорамные</button>
             <button class="filter-btn" onclick="filterProjects('usa')">Американские</button>
-            <button class="filter-btn" onclick="filterProjects('europe')">Европейские</button>
-            <button class="filter-btn" onclick="filterProjects('canada')">Канадские</button>
         </div>
         
-        <!-- Шахматная асимметричная сетка Unsplash -->
         <div class="projects-masonry">
-            <!-- 6 ТВОИХ ПАНОРАМНЫХ ДОМОВ (Активны по умолчанию) -->
+            <!-- 6 ТВОИХ ПАНОРАМНЫХ ДОМОВ (Категория: panoramic) -->
             <div class="project-card" data-category="panoramic">
-                <img src="panoramic-1.jpg" class="project-img h-med" alt="Панорамный проект 1" draggable="false">
-                <div class="project-info">
-                    <div class="project-title">Вилла «Horizon View»</div>
-                    <div class="project-details"><span>240 м²</span><span>•</span><span>Панорамное остекление</span></div>
-                    <div class="project-price">от 14 200 000 ₽</div>
-                </div>
+                <img src="panoramic-1.jpg" class="project-img h-med" alt="Панорамный проект" draggable="false">
             </div>
             <div class="project-card" data-category="panoramic">
-                <img src="panoramic-2.jpg" class="project-img h-high" alt="Панорамный проект 2" draggable="false">
-                <div class="project-info">
-                    <div class="project-title">Резиденция «Glasshouse»</div>
-                    <div class="project-details"><span>310 м²</span><span>•</span><span>Premium Хай-Тек</span></div>
-                    <div class="project-price">от 19 500 000 ₽</div>
-                </div>
+                <img src="panoramic-2.jpg" class="project-img h-high" alt="Панорамный проект" draggable="false">
             </div>
             <div class="project-card" data-category="panoramic">
-                <img src="panoramic-3.jpg" class="project-img h-low" alt="Панорамный проект 3" draggable="false">
-                <div class="project-info">
-                    <div class="project-title">Шале «Vista»</div>
-                    <div class="project-details"><span>190 м²</span><span>•</span><span>Второй свет</span></div>
-                    <div class="project-price">от 11 800 000 ₽</div>
-                </div>
+                <img src="panoramic-3.jpg" class="project-img h-low" alt="Панорамный проект" draggable="false">
             </div>
             <div class="project-card" data-category="panoramic">
-                <img src="panoramic-4.jpg" class="project-img h-high" alt="Панорамный проект 4" draggable="false">
-                <div class="project-info">
-                    <div class="project-title">Дом «Mirage»</div>
-                    <div class="project-details"><span>270 м²</span><span>•</span><span>Плоская кровля</span></div>
-                    <div class="project-price">от 16 900 000 ₽</div>
-                </div>
+                <img src="panoramic-4.jpg" class="project-img h-high" alt="Панорамный проект" draggable="false">
             </div>
             <div class="project-card" data-category="panoramic">
-                <img src="panoramic-5.jpg" class="project-img h-low" alt="Панорамный проект 5" draggable="false">
-                <div class="project-info">
-                    <div class="project-title">Коттедж «Lumina»</div>
-                    <div class="project-details"><span>165 м²</span><span>•</span><span>Энергоэффективный</span></div>
-                    <div class="project-price">от 9 400 000 ₽</div>
-                </div>
+                <img src="panoramic-5.jpg" class="project-img h-low" alt="Панорамный проект" draggable="false">
             </div>
             <div class="project-card" data-category="panoramic">
-                <img src="panoramic-6.jpg" class="project-img h-med" alt="Панорамный проект 6" draggable="false">
-                <div class="project-info">
-                    <div class="project-title">Вилла «Panorama Premium»</div>
-                    <div class="project-details"><span>420 м²</span><span>•</span><span>Монолит-стекло</span></div>
-                    <div class="project-price">от 26 000 000 ₽</div>
-                </div>
+                <img src="panoramic-6.jpg" class="project-img h-med" alt="Панорамный проект" draggable="false">
             </div>
 
-            <!-- Другие категории (для демонстрации фильтра) -->
+            <!-- 6 ТВОИХ АМЕРИКАНСКИХ ДОМОВ (Категория: usa) -->
             <div class="project-card" data-category="usa" style="display:none;">
-                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" class="project-img h-med" alt="США" draggable="false">
-                <div class="project-info">
-                    <div class="project-title">Проект «Монтана-180» (США)</div>
-                    <div class="project-details"><span>180 м²</span><span>•</span><span>Каркас премиум</span></div>
-                    <div class="project-price">от 8 200 000 ₽</div>
-                </div>
+                <img src="usa-1.jpg" class="project-img h-med" alt="Американский проект" draggable="false">
             </div>
-            <div class="project-card" data-category="europe" style="display:none;">
-                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" class="project-img h-med" alt="Европа" draggable="false">
-                <div class="project-info">
-                    <div class="project-title">Проект «Бавария-150» (Европа)</div>
-                    <div class="project-details"><span>150 м²</span><span>•</span><span>Газобетон / Кирпич</span></div>
-                    <div class="project-price">от 6 900 000 ₽</div>
-                </div>
+            <div class="project-card" data-category="usa" style="display:none;">
+                <img src="usa-2.jpg" class="project-img h-low" alt="Американский проект" draggable="false">
             </div>
-            <div class="project-card" data-category="canada" style="display:none;">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" class="project-img h-med" alt="Канада" draggable="false">
-                <div class="project-info">
-                    <div class="project-title">Проект «Ванкувер-210» (Канада)</div>
-                    <div class="project-details"><span>210 м²</span><span>•</span><span>Клееный брус</span></div>
-                    <div class="project-price">от 11 500 000 ₽</div>
-                </div>
+            <div class="project-card" data-category="usa" style="display:none;">
+                <img src="usa-3.jpg" class="project-img h-high" alt="Американский проект" draggable="false">
+            </div>
+            <div class="project-card" data-category="usa" style="display:none;">
+                <img src="usa-4.jpg" class="project-img h-med" alt="Американский проект" draggable="false">
+            </div>
+            <div class="project-card" data-category="usa" style="display:none;">
+                <img src="usa-5.jpg" class="project-img h-high" alt="Американский проект" draggable="false">
+            </div>
+            <div class="project-card" data-category="usa" style="display:none;">
+                <img src="usa-6.jpg" class="project-img h-low" alt="Американский проект" draggable="false">
             </div>
         </div>
     </section>
 
-    <!-- БЛОК 2: ТЕХНОЛОГИИ -->
+    <!-- НАШИ ТЕХНОЛОГИИ (С ТВОИМИ КАРТИНКАМИ) -->
     <section class="section section-bg" id="tech">
         <h2 class="section-title">Наши <strong>технологии</strong></h2>
         
@@ -381,7 +357,7 @@
             <div class="tech-tab" onclick="switchTech(3)">Каркасная технология</div>
         </div>
 
-        <!-- Твоя личная картинка wood-house.jpg -->
+        <!-- Твой файл wood-house.jpg -->
         <div class="tech-content active" id="tech-0">
             <div class="tech-text">
                 <h3>Премиальный клееный брус</h3>
@@ -391,25 +367,27 @@
             <div class="tech-img" style="background-image: url('wood-house.jpg?v=2');"></div>
         </div>
 
+        <!-- Твой файл brick-house.jpg -->
         <div class="tech-content" id="tech-1">
             <div class="tech-text">
                 <h3>Капитальные кирпичные дома</h3>
                 <p>Дома вековой надежности. Обладают эталонной прочностью, высочайшей звукоизоляцией и пожаробезопасностью. Мы строим из сертифицированного теплого крупноформатного кирпича и делаем красивую облицовку.</p>
                 <p><strong>Срок возведения контура:</strong> от 4 месяцев.</p>
             </div>
-            <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="tech-img" style="background-image: url('brick-house.jpg');"></div>
         </div>
 
+        <!-- Твой файл block-house.jpg -->
         <div class="tech-content" id="tech-2">
             <div class="tech-text">
                 <h3>Современный газобетон</h3>
                 <p>Идеальный баланс цены, долговечности и энергоэффективности. Стены из качественных блоков Ytong не требуют избыточного утепления, возводятся быстро и позволяют реализовать сложнейшие архитектурные хай-тек формы с плоской кровлей.</p>
                 <p><strong>Срок возведения контура:</strong> от 3 месяцев.</p>
             </div>
-            <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="tech-img" style="background-image: url('block-house.jpg');"></div>
         </div>
 
-        <!-- НОВАЯ СЕКЦИЯ: КАРКАС -->
+        <!-- Каркасная вкладка -->
         <div class="tech-content" id="tech-3">
             <div class="tech-text">
                 <h3>Энергоэффективные каркасные дома</h3>
@@ -425,7 +403,7 @@
         <div class="ipoteka-banner">
             <div class="ipoteka-text">
                 <h3>Ипотека на строительство от 4.5%</h3>
-                <p>Мы аккредитованы во всех ведущих банках. Помогаем собрать документы, сделать аудит участка и гарантированно получить одобрение по льготной, семейной или ИТ-ипотеке.</p>
+                <p> Мы аккредитованы во всех ведущих банках. Помогаем собрать документы, сделать аудит участка и гарантированно получить одобрение по льготной, семейной или ИТ-ипотеке.</p>
             </div>
             <button class="btn-white" onclick="openModal()">Рассчитать ипотеку</button>
         </div>
@@ -448,7 +426,7 @@
             <div class="decor-img" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80');"></div>
             <div>
                 <h2 class="section-title" style="margin-bottom:20px;">Мебель и <strong>интерьерный декор</strong></h2>
-                <p style="color:#555; line-height:1.7; font-size:16px; margin-bottom:20px;">Мы не просто передаем вам ключи от голых стен. Команда дизайнеров 1 <span class="house-accent">HOUSE</span> подберет под ваш индивидуальный проект кастомную мебель, текстиль, освещение и элементы декора. Благодаря прямым контрактам с нашими партнерами в Европе и Китае, для наших клиентов доступен самый широкий ассортимент эксклюзивных материалов и предметов интерьера, которые невозможно найти в масс-маркете. Вы въезжаете в полностью готовое для счастливой жизни пространство.</p>
+                <p style="color:#555; line-height:1.7; font-size:16px; margin-bottom:20px;"> Мы не просто передаем вам ключи от голых стен. Команда дизайнеров 1 <span class="house-accent">HOUSE</span> подберет под ваш индивидуальный проект кастомную мебель, текстиль, освещение и элементы декора. Благодаря прямым контрактам с нашими партнерами в Европе и Китае, для наших клиентов доступен самый широкий ассортимент эксклюзивных материалов и предметов интерьера, которые невозможно найти в масс-маркете. Вы въезжаете в полностью готовое для счастливой жизни пространство.</p>
                 <button class="btn-callback-header" style="padding:15px 30px;" onclick="openModal()">Обсудить дизайн-проект</button>
             </div>
         </div>
@@ -491,8 +469,6 @@
                 <ul>
                     <li><a href="#projects">Панорамные</a></li>
                     <li><a href="#projects">Американские</a></li>
-                    <li><a href="#projects">Канадские</a></li>
-                    <li><a href="#projects">Европейские</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -543,18 +519,15 @@
 
     <!-- СКРИПТЫ -->
     <script>
-        // Скрипт фильтрации с поддержкой Masonry Unsplash
         function filterProjects(category) {
             const cards = document.querySelectorAll('.project-card');
             const buttons = document.querySelectorAll('.filter-btn');
             
-            // Меняем активную кнопку
             buttons.forEach(btn => btn.classList.remove('active'));
             if(event && event.target) {
                 event.target.classList.add('active');
             }
             
-            // Показываем/скрываем карточки
             cards.forEach(card => {
                 if (card.getAttribute('data-category') === category) {
                     card.style.display = 'inline-block';
@@ -579,7 +552,6 @@
         window.onclick = function(event) { if (event.target == modal) { closeModal(); } }
         function handleSubmit(event) { event.preventDefault(); alert('Спасибо за заявку! Мы свяжемся с вами в течение ближайшего рабочего дня.'); closeModal(); }
         
-        // По умолчанию при загрузке включаем фильтр Панорамных проектов
         window.onload = function() {
             filterProjects('panoramic');
         };
