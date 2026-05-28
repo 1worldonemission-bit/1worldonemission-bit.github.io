@@ -57,7 +57,7 @@
         .house-accent { color: #dfb77d; font-weight: inherit; }
 
         /* ГЛАВНЫЙ БАННЕР */
-        .hero { height: 100vh; display: flex; align-items: center; padding: 0 4%; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover; color: #ffffff; }
+        .hero { height: 100vh; display: flex; align-items: center; padding: 0 4%; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover; color: #ffffff; }
         .hero-content { max-width: 900px; }
         .hero h1 { font-size: 54px; font-weight: 300; line-height: 1.25; letter-spacing: -1px; }
         .hero p { font-size: 18px; margin-top: 25px; color: #f0f0f0; font-weight: 300; max-width: 750px; line-height: 1.6; }
@@ -68,26 +68,31 @@
         .section-title { font-size: 38px; font-weight: 300; margin-bottom: 45px; letter-spacing: -0.5px; }
         .section-title strong { font-weight: 700; }
 
-        /* СТРОГИЙ БЛОК ПОЧЕМУ МЫ (С ВЫРАВНИВАНИЕМ В РЯД) */
+        /* ИСПРАВЛЕННЫЙ БЛОК ПОЧЕМУ МЫ */
         .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
         .benefit-card { 
-            position: relative; height: 320px; border-radius: 8px; overflow: hidden; 
-            display: flex; flex-direction: column; justify-content: flex-end; padding: 35px 30px; 
+            position: relative; height: 340px; border-radius: 8px; overflow: hidden; 
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 35px 25px; 
             background-size: cover; background-position: center; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        /* Затемняющий градиент поверх фото для читаемости текста */
         .benefit-card::before { 
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            background: linear-gradient(to top, rgba(20,18,15,0.95) 0%, rgba(20,18,15,0.7) 50%, rgba(20,18,15,0.4) 100%); 
+            background: linear-gradient(to top, rgba(15,13,11,0.95) 0%, rgba(15,13,11,0.75) 55%, rgba(15,13,11,0.4) 100%); 
             z-index: 1; transition: 0.3s;
         }
         .benefit-card:hover { transform: translateY(-5px); }
-        .benefit-card:hover::before { background: linear-gradient(to top, rgba(223,183,125,0.95) 0%, rgba(20,18,15,0.8) 70%); }
+        .benefit-card:hover::before { background: linear-gradient(to top, rgba(223,183,125,0.95) 0%, rgba(15,13,11,0.85) 75%); }
         
-        .benefit-content { position: relative; z-index: 2; }
-        .benefit-card h4 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px; }
-        /* Строгое выравнивание текста по высоте и строкам */
-        .benefit-card p { font-size: 14px; color: #e0e0e0; line-height: 1.6; font-weight: 300; text-align: left; margin: 0; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+        .benefit-content { position: relative; z-index: 2; width: 100%; }
+        .benefit-card h4 { font-size: 19px; font-weight: 700; margin-bottom: 14px; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        
+        /* Четкий, крупный, выровненный по ширине белый текст */
+        .benefit-card p { 
+            font-size: 15px; color: #ffffff; line-height: 1.6; font-weight: 400; 
+            text-align: justify; text-justify: inter-word; margin: 0; 
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            -webkit-hyphens: auto; -ms-hyphens: auto; hyphens: auto;
+        }
 
         /* МЕЖДУНАРОДНЫЙ БЛОК */
         .global-central-box { 
@@ -102,7 +107,7 @@
         .btn-global-central { display: inline-block; margin-top: 20px; padding: 15px 35px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; border-radius: 4px; transition: 0.3s; }
         .btn-global-central:hover { background: #dfb77d; }
 
-        /* КАТАЛОГ С ЭФФЕКТОМ UNSPLASH (ГОЛЫЕ КАРТИНКИ) */
+        /* КАТАЛОГ ПРОЕКТОВ */
         .filter-buttons { display: flex; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
         .filter-btn { padding: 12px 25px; background: #f5f5f5; border: none; font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.3s; border-radius: 30px; color: #4a4a4a; }
         .filter-btn.active, .filter-btn:hover { background: #dfb77d; color: white; }
@@ -115,7 +120,6 @@
         .project-card:hover { transform: scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
         .project-img { width: 100%; background-size: cover; background-position: center; display: block; object-fit: cover; }
         
-        /* Разная высота для чистого шахматного эффекта мозаики */
         .h-low { height: 280px; }
         .h-med { height: 420px; }
         .h-high { height: 560px; }
@@ -214,7 +218,7 @@
                     <a href="#services">Проектирование</a>
                     <a href="#services">Строительство под ключ</a>
                     <a href="#services">Подрядные работы</a>
-                    <a href="#services">Инженерные системы</a>
+                    <a href="#services">Инженерные systems</a>
                     <a href="#services">Внутренняя отделка</a>
                     <a href="#services">Помощь в оформлении ипотеки</a>
                     <a href="#services">Подбор земельного участка</a>
@@ -244,33 +248,33 @@
         </div>
     </section>
 
-    <!-- БЛОК ПОЧЕМУ МЫ (С КРАСИВЫМИ ФОНАМИ И ВЫРАВНИВАНИЕМ В РЯД) -->
+    <!-- ОПТИМИЗИРОВАННЫЙ БЛОК ПОЧЕМУ МЫ (С КРАСИВЫМИ ЛЕГКИМИ ФОНАМИ И ТЕКСТОМ В РЯД) -->
     <section class="section" id="about">
         <h2 class="section-title">Почему выбирают 1 <strong class="house-accent">HOUSE</strong></h2>
         <div class="benefits-grid">
-            <!-- Смета (Чертеж/Калькуляции) -->
-            <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=500&q=80');">
+            <!-- Смета -->
+            <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=75');">
                 <div class="benefit-content">
                     <h4>Фиксированная смета</h4>
                     <p>Стоимость строительства прописывается в официальном договоре и остается неизменной в процессе работы. Мы полностью исключаем любые скрытые платежи и непредвиденные расходы со стороны заказчика.</p>
                 </div>
             </div>
-            <!-- Технадзор (Инженер на объекте) -->
-            <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=500&q=80');">
+            <!-- Технадзор -->
+            <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=75');">
                 <div class="benefit-content">
                     <h4>Независимый технадзор</h4>
                     <p>Каждый этап строительства контролируется независимыми сертифицированными инженерами. Вы получаете детальные фото- и видеоотчеты в режиме реального времени на протяжении всего цикла.</p>
                 </div>
             </div>
-            <!-- Гарантия (Качественные узлы/Дерево) -->
-            <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1449247709967-d4460ad044c8?auto=format&fit=crop&w=500&q=80');">
+            <!-- Гарантия (Исправлен серый фон на качественное фото текстуры дерева/строительства) -->
+            <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=600&q=75');">
                 <div class="benefit-content">
                     <h4>Гарантия качества</h4>
                     <p>Мы полностью уверены в своих технологиях и материалах, поэтому предоставляем расширенную официальную гарантию на весь конструктив здания, внутренние инженерные системы и финишную отделку.</p>
                 </div>
             </div>
-            <!-- Аккредитация (Архитектура банка/Строгость) -->
-            <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80');">
+            <!-- Аккредитация -->
+            <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=75');">
                 <div class="benefit-content">
                     <h4>Полная аккредитация</h4>
                     <p>Наша компания официально аккредитована во всех ведущих банках РФ. Это гарантирует абсолютную безопасность сделки для клиента и ускоряет процесс одобрения любых льготных программ ипотек.</p>
@@ -357,7 +361,7 @@
             <div class="tech-tab" onclick="switchTech(3)">Каркасная технология</div>
         </div>
 
-        <!-- Твой файл wood-house.jpg -->
+        <!-- Клееный брус -->
         <div class="tech-content active" id="tech-0">
             <div class="tech-text">
                 <h3>Премиальный клееный брус</h3>
@@ -367,7 +371,7 @@
             <div class="tech-img" style="background-image: url('wood-house.jpg?v=2');"></div>
         </div>
 
-        <!-- Твой файл brick-house.jpg -->
+        <!-- Кирпич -->
         <div class="tech-content" id="tech-1">
             <div class="tech-text">
                 <h3>Капитальные кирпичные дома</h3>
@@ -377,7 +381,7 @@
             <div class="tech-img" style="background-image: url('brick-house.jpg');"></div>
         </div>
 
-        <!-- Твой файл block-house.jpg -->
+        <!-- Газобетон -->
         <div class="tech-content" id="tech-2">
             <div class="tech-text">
                 <h3>Современный газобетон</h3>
@@ -387,7 +391,7 @@
             <div class="tech-img" style="background-image: url('block-house.jpg');"></div>
         </div>
 
-        <!-- Каркасная вкладка -->
+        <!-- Каркас -->
         <div class="tech-content" id="tech-3">
             <div class="tech-text">
                 <h3>Энергоэффективные каркасные дома</h3>
@@ -403,7 +407,7 @@
         <div class="ipoteka-banner">
             <div class="ipoteka-text">
                 <h3>Ипотека на строительство от 4.5%</h3>
-                <p> Мы аккредитованы во всех ведущих банках. Помогаем собрать документы, сделать аудит участка и гарантированно получить одобрение по льготной, семейной или ИТ-ипотеке.</p>
+                <p>Мы аккредитованы во всех ведущих банках. Помогаем собрать документы, сделать аудит участка и гарантированно получить одобрение по льготной, семейной или ИТ-ипотеке.</p>
             </div>
             <button class="btn-white" onclick="openModal()">Рассчитать ипотеку</button>
         </div>
@@ -426,7 +430,7 @@
             <div class="decor-img" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80');"></div>
             <div>
                 <h2 class="section-title" style="margin-bottom:20px;">Мебель и <strong>интерьерный декор</strong></h2>
-                <p style="color:#555; line-height:1.7; font-size:16px; margin-bottom:20px;"> Мы не просто передаем вам ключи от голых стен. Команда дизайнеров 1 <span class="house-accent">HOUSE</span> подберет под ваш индивидуальный проект кастомную мебель, текстиль, освещение и элементы декора. Благодаря прямым контрактам с нашими партнерами в Европе и Китае, для наших клиентов доступен самый широкий ассортимент эксклюзивных материалов и предметов интерьера, которые невозможно найти в масс-маркете. Вы въезжаете в полностью готовое для счастливой жизни пространство.</p>
+                <p style="color:#555; line-height:1.7; font-size:16px; margin-bottom:20px;">Мы не просто передаем вам ключи от голых стен. Команда дизайнеров 1 <span class="house-accent">HOUSE</span> подберет под ваш индивидуальный проект кастомную мебель, текстиль, освещение и элементы декора. Благодаря прямым контрактам с нашими партнерами в Европе и Китае, для наших клиентов доступен самый широкий ассортимент эксклюзивных материалов и предметов интерьера, которые невозможно найти в масс-маркете. Вы въезжаете в полностью готовое для счастливой жизни пространство.</p>
                 <button class="btn-callback-header" style="padding:15px 30px;" onclick="openModal()">Обсудить дизайн-проект</button>
             </div>
         </div>
