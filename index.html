@@ -68,7 +68,7 @@
         .section-title { font-size: 38px; font-weight: 300; margin-bottom: 45px; letter-spacing: -0.5px; }
         .section-title strong { font-weight: 700; }
 
-        /* ИСПРАВЛЕННЫЙ БЛОК ПОЧЕМУ МЫ */
+        /* БЛОК ПОЧЕМУ МЫ */
         .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
         .benefit-card { 
             position: relative; height: 340px; border-radius: 8px; overflow: hidden; 
@@ -85,8 +85,6 @@
         
         .benefit-content { position: relative; z-index: 2; width: 100%; }
         .benefit-card h4 { font-size: 19px; font-weight: 700; margin-bottom: 14px; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-        
-        /* Четкий, крупный, выровненный по ширине белый текст */
         .benefit-card p { 
             font-size: 15px; color: #ffffff; line-height: 1.6; font-weight: 400; 
             text-align: justify; text-justify: inter-word; margin: 0; 
@@ -104,25 +102,27 @@
         .global-central-text p { font-size: 16px; color: #555; line-height: 1.7; margin-bottom: 20px; font-weight: 300; text-align: justify; }
         .global-central-text .speech-quote { font-style: italic; color: #777; border-left: 2px solid #dfb77d; padding-left: 15px; margin-top: 15px; line-height: 1.6; }
         .global-central-seal { display: flex; justify-content: center; align-items: center; }
+        .global-central-seal img { width: 100%; max-width: 320px; height: auto; border-radius: 50%; box-shadow: 0 10px 35px rgba(0,0,0,0.05); }
         .btn-global-central { display: inline-block; margin-top: 20px; padding: 15px 35px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; border-radius: 4px; transition: 0.3s; }
         .btn-global-central:hover { background: #dfb77d; }
 
-        /* КАТАЛОГ ПРОЕКТОВ */
-        .filter-buttons { display: flex; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
-        .filter-btn { padding: 12px 25px; background: #f5f5f5; border: none; font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.3s; border-radius: 30px; color: #4a4a4a; }
+        /* КОМПАКТНЫЙ КАТАЛОГ ПРОЕКТОВ (СЖАТ В 2 РАЗА) */
+        .filter-buttons { display: flex; gap: 15px; margin-bottom: 35px; flex-wrap: wrap; }
+        .filter-btn { padding: 11px 24px; background: #f5f5f5; border: none; font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.3s; border-radius: 30px; color: #4a4a4a; }
         .filter-btn.active, .filter-btn:hover { background: #dfb77d; color: white; }
         
-        .projects-masonry { columns: 3 350px; column-gap: 24px; width: 100%; }
+        .projects-masonry { columns: 4 250px; column-gap: 20px; width: 100%; }
         .project-card { 
             background: #f5f5f5; overflow: hidden; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); border-radius: 6px;
-            display: inline-block; width: 100%; margin-bottom: 24px; break-inside: avoid;
+            display: inline-block; width: 100%; margin-bottom: 20px; break-inside: avoid;
         }
-        .project-card:hover { transform: scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-        .project-img { width: 100%; background-size: cover; background-position: center; display: block; object-fit: cover; }
+        .project-card:hover { transform: scale(1.03); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        .project-img { width: 100%; display: block; object-fit: cover; }
         
-        .h-low { height: 280px; }
-        .h-med { height: 420px; }
-        .h-high { height: 560px; }
+        /* Компактные высоты карточек */
+        .h-low { height: 180px; }
+        .h-med { height: 260px; }
+        .h-high { height: 340px; }
 
         /* ТЕХНОЛОГИИ */
         .tech-tabs { display: flex; border-bottom: 2px solid #eee; margin-bottom: 40px; flex-wrap: wrap; }
@@ -134,7 +134,7 @@
         .tech-text p { color: #555; line-height: 1.7; font-size: 16px; margin-bottom: 20px; text-align: justify; }
         .tech-img { height: 380px; background-size: cover; background-position: center; border-radius: 8px; }
 
-        /* ИПOTEКA */
+        /* ИПОТЕКА */
         .ipoteka-banner { background: #26221c; color: white; padding: 60px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
         .ipoteka-text h3 { font-size: 32px; font-weight: 300; margin-bottom: 15px; }
         .ipoteka-text p { color: #ccc5ba; font-size: 16px; max-width: 600px; line-height: 1.6; }
@@ -150,6 +150,8 @@
         /* МЕБЕЛЬ И ДЕКОР */
         .decor-block { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .decor-img { height: 400px; background: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover; border-radius: 8px; }
+        .decor-text h3 { font-size: 32px; font-weight: 300; margin-bottom: 20px; }
+        .decor-text p { color: #555; line-height: 1.7; font-size: 16px; margin-bottom: 25px; text-align: justify; }
 
         /* ОБРАТНАЯ СВЯЗЬ */
         .feedback-box { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; background: #ffffff; border: 1px solid #eee; padding: 60px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
@@ -182,13 +184,13 @@
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
         .modal-window { background: #ffffff; padding: 40px; max-width: 450px; width: 90%; position: relative; border-radius: 8px; }
         .modal-close { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #aaa; }
-        .form-group { margin-bottom: 20px; }
-        .form-group input { width: 100%; padding: 14px; border: 1px solid #ccc; font-size: 15px; outline: none; border-radius: 4px; }
-        .modal-window .btn-dark { width: 100%; }
-
+        
         @media (max-width: 992px) {
             header nav { display: none; } .hero h1 { font-size: 36px; }
             .global-central-box, .tech-content, .decor-block, .feedback-box, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .projects-masonry { columns: 2; }
+        }
+        @media (max-width: 576px) {
             .projects-masonry { columns: 1; }
         }
     </style>
@@ -218,7 +220,7 @@
                     <a href="#services">Проектирование</a>
                     <a href="#services">Строительство под ключ</a>
                     <a href="#services">Подрядные работы</a>
-                    <a href="#services">Инженерные systems</a>
+                    <a href="#services">Инженерные системы</a>
                     <a href="#services">Внутренняя отделка</a>
                     <a href="#services">Помощь в оформлении ипотеки</a>
                     <a href="#services">Подбор земельного участка</a>
@@ -248,32 +250,28 @@
         </div>
     </section>
 
-    <!-- ОПТИМИЗИРОВАННЫЙ БЛОК ПОЧЕМУ МЫ (С КРАСИВЫМИ ЛЕГКИМИ ФОНАМИ И ТЕКСТОМ В РЯД) -->
+    <!-- БЛОК ПОЧЕМУ МЫ -->
     <section class="section" id="about">
         <h2 class="section-title">Почему выбирают 1 <strong class="house-accent">HOUSE</strong></h2>
         <div class="benefits-grid">
-            <!-- Смета -->
             <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=75');">
                 <div class="benefit-content">
                     <h4>Фиксированная смета</h4>
-                    <p>Стоимость строительства прописывается в официальном договоре и остается неизменной в процессе работы. Мы полностью исключаем любые скрытые платежи и непредвиденные расходы со стороны заказчика.</p>
+                    <p>Стоимость строительства прописывается в официальном договору и остается неизменной в процессе работы. Мы полностью исключаем любые скрытые платежи и непредвиденные расходы со стороны заказчика.</p>
                 </div>
             </div>
-            <!-- Технадзор -->
             <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=75');">
                 <div class="benefit-content">
                     <h4>Независимый технадзор</h4>
                     <p>Каждый этап строительства контролируется независимыми сертифицированными инженерами. Вы получаете детальные фото- и видеоотчеты в режиме реального времени на протяжении всего цикла.</p>
                 </div>
             </div>
-            <!-- Гарантия (Исправлен серый фон на качественное фото текстуры дерева/строительства) -->
             <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=600&q=75');">
                 <div class="benefit-content">
                     <h4>Гарантия качества</h4>
                     <p>Мы полностью уверены в своих технологиях и материалах, поэтому предоставляем расширенную официальную гарантию на весь конструктив здания, внутренние инженерные системы и финишную отделку.</p>
                 </div>
             </div>
-            <!-- Аккредитация -->
             <div class="benefit-card" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=75');">
                 <div class="benefit-content">
                     <h4>Полная аккредитация</h4>
@@ -283,7 +281,7 @@
         </div>
     </section>
 
-    <!-- МЕЖДУНАРОДНЫЙ БЛОК В ЦЕНТРЕ СТРАНИЦЫ -->
+    <!-- МЕЖДУНАРОДНЫЙ БЛОК -->
     <section class="section section-bg" style="padding-bottom: 50px;">
         <div class="global-central-box">
             <div class="global-central-text">
@@ -293,247 +291,274 @@
                 <a href="global.html" class="btn-global-central">Открыть международную платформу</a>
             </div>
             <div class="global-central-seal">
-                <img src="global-seal.jpg?v=4" alt="1 WORLD 1 MISSION 1 HOUSE" style="width: 100%; max-width: 320px; height: auto; border-radius: 50%; box-shadow: 0 10px 35px rgba(0,0,0,0.2);" draggable="false">
+                <img src="global-seal.jpg?v=4" alt="1 WORLD 1 MISSION 1 HOUSE">
             </div>
         </div>
     </section>
 
-    <!-- КАТАЛОГ ПРОЕКТОВ (ЧИСТЫЕ ФОТО В СТИЛЕ UNSPLASH) -->
+    <!-- КОМПАКТНЫЙ КАТАЛОГ ПРОЕКТОВ (МАСШТАБ УМЕНЬШЕН В 2 РАЗА) -->
     <section class="section" id="projects">
-        <h2 class="section-title">Популярные <strong>проекты</strong></h2>
+        <h2 class="section-title">Наши <strong>Проекты</strong></h2>
         
         <div class="filter-buttons">
-            <button class="filter-btn active" onclick="filterProjects('panoramic')">Панорамные</button>
+            <button class="filter-btn active" onclick="filterProjects('all')">Все проекты</button>
+            <button class="filter-btn" onclick="filterProjects('panoramic')">Панорамные</button>
             <button class="filter-btn" onclick="filterProjects('usa')">Американские</button>
+            <button class="filter-btn" onclick="filterProjects('canada')">Канадские</button>
+            <button class="filter-btn" onclick="filterProjects('europe')">Европейские</button>
         </div>
-        
+
         <div class="projects-masonry">
-            <!-- 6 ТВОИХ ПАНОРАМНЫХ ДОМОВ (Категория: panoramic) -->
-            <div class="project-card" data-category="panoramic">
-                <img src="panoramic-1.jpg" class="project-img h-med" alt="Панорамный проект" draggable="false">
+            <!-- ПАНОРАМНЫЕ ПРОЕКТЫ (4 фото) -->
+            <div class="project-card panoramic">
+                <img src="panoramic-1.jpg" alt="Панорамный проект" class="project-img h-med">
             </div>
-            <div class="project-card" data-category="panoramic">
-                <img src="panoramic-2.jpg" class="project-img h-high" alt="Панорамный проект" draggable="false">
+            <div class="project-card panoramic">
+                <img src="panoramic-2.jpg" alt="Панорамный проект" class="project-img h-high">
             </div>
-            <div class="project-card" data-category="panoramic">
-                <img src="panoramic-3.jpg" class="project-img h-low" alt="Панорамный проект" draggable="false">
+            <div class="project-card panoramic">
+                <img src="panoramic-3.jpg" alt="Панорамный проект" class="project-img h-low">
             </div>
-            <div class="project-card" data-category="panoramic">
-                <img src="panoramic-4.jpg" class="project-img h-high" alt="Панорамный проект" draggable="false">
-            </div>
-            <div class="project-card" data-category="panoramic">
-                <img src="panoramic-5.jpg" class="project-img h-low" alt="Панорамный проект" draggable="false">
-            </div>
-            <div class="project-card" data-category="panoramic">
-                <img src="panoramic-6.jpg" class="project-img h-med" alt="Панорамный проект" draggable="false">
+            <div class="project-card panoramic">
+                <img src="panoramic-4.jpg" alt="Панорамный проект" class="project-img h-med">
             </div>
 
-            <!-- 6 ТВОИХ АМЕРИКАНСКИХ ДОМОВ (Категория: usa) -->
-            <div class="project-card" data-category="usa" style="display:none;">
-                <img src="usa-1.jpg" class="project-img h-med" alt="Американский проект" draggable="false">
+            <!-- АМЕРИКАНСКИЕ ПРОЕКТЫ (Остались 1, 4, 5, 6) -->
+            <div class="project-card usa">
+                <img src="usa-1.jpg" alt="Американский проект" class="project-img h-high">
             </div>
-            <div class="project-card" data-category="usa" style="display:none;">
-                <img src="usa-2.jpg" class="project-img h-low" alt="Американский проект" draggable="false">
+            <div class="project-card usa">
+                <img src="usa-4.jpg" alt="Американский проект" class="project-img h-low">
             </div>
-            <div class="project-card" data-category="usa" style="display:none;">
-                <img src="usa-3.jpg" class="project-img h-high" alt="Американский проект" draggable="false">
+            <div class="project-card usa">
+                <img src="usa-5.jpg" alt="Американский проект" class="project-img h-med">
             </div>
-            <div class="project-card" data-category="usa" style="display:none;">
-                <img src="usa-4.jpg" class="project-img h-med" alt="Американский проект" draggable="false">
+            <div class="project-card usa">
+                <img src="usa-6.jpg" alt="Американский проект" class="project-img h-high">
             </div>
-            <div class="project-card" data-category="usa" style="display:none;">
-                <img src="usa-5.jpg" class="project-img h-high" alt="Американский проект" draggable="false">
+
+            <!-- КАНАДСКИЕ ПРОЕКТЫ (4 фото) -->
+            <div class="project-card canada">
+                <img src="canada-1.jpg" alt="Канадский проект" class="project-img h-med">
             </div>
-            <div class="project-card" data-category="usa" style="display:none;">
-                <img src="usa-6.jpg" class="project-img h-low" alt="Американский проект" draggable="false">
+            <div class="project-card canada">
+                <img src="canada-2.jpg" alt="Канадский проект" class="project-img h-low">
+            </div>
+            <div class="project-card canada">
+                <img src="canada-3.jpg" alt="Канадский проект" class="project-img h-high">
+            </div>
+            <div class="project-card canada">
+                <img src="canada-4.jpg" alt="Канадский проект" class="project-img h-med">
+            </div>
+
+            <!-- ЕВРОПЕЙСКИЕ ПРОЕКТЫ (4 photo) -->
+            <div class="project-card europe">
+                <img src="europe-1.jpg" alt="Европейский проект" class="project-img h-high">
+            </div>
+            <div class="project-card europe">
+                <img src="europe-2.jpg" alt="Европейский проект" class="project-img h-med">
+            </div>
+            <div class="project-card europe">
+                <img src="europe-3.jpg" alt="Европейский проект" class="project-img h-low">
+            </div>
+            <div class="project-card europe">
+                <img src="europe-4.jpg" alt="Европейский проект" class="project-img h-high">
             </div>
         </div>
     </section>
 
-    <!-- НАШИ ТЕХНОЛОГИИ (С ТВОИМИ КАРТИНКАМИ) -->
-    <section class="section section-bg" id="tech">
-        <h2 class="section-title">Наши <strong>технологии</strong></h2>
+    <!-- СЕКЦИЯ ТЕХНОЛОГИИ СТРОИТЕЛЬСТВА -->
+    <section class="section section-bg" id="services">
+        <h2 class="section-title">Технологии <strong>Строительства</strong></h2>
         
         <div class="tech-tabs">
-            <div class="tech-tab active" onclick="switchTech(0)">Клееный брус</div>
+            <div class="tech-tab active" onclick="switchTech(0)">Газобетонные блоки</div>
             <div class="tech-tab" onclick="switchTech(1)">Кирпичные дома</div>
-            <div class="tech-tab" onclick="switchTech(2)">Газобетонные блоки</div>
+            <div class="tech-tab" onclick="switchTech(2)">Клееный брус</div>
             <div class="tech-tab" onclick="switchTech(3)">Каркасная технология</div>
         </div>
 
-        <!-- Клееный брус -->
-        <div class="tech-content active" id="tech-0">
+        <!-- ТАБ 1: ГАЗОБЛОКИ -->
+        <div class="tech-content active">
             <div class="tech-text">
-                <h3>Премиальный клееный брус</h3>
-                <p>Экологичные, «дышащие» дома в скандинавском стиле. Используем северную древесину высокой плотности. Минимальная усадка, идеальная геометрия и максимальное сохранение тепла в зимний период.</p>
-                <p><strong>Срок возведения теплого контура:</strong> от 2 месяцев.</p>
+                <h3>Дома из газобетонных блоков</h3>
+                <p>Современный газобетон — один из лучших материалов для круглогодичного загородного жилья. Он сочетает в себе прочность камня и отличные теплоизоляционные свойства. Стены из газоблоков «дышат», формируя комфортный внутренний микроклимат, не подвержены гниению и абсолютно пожаробезопасны.</p>
+                <p>Благодаря идеальной геометрии блоков, кладка выполняется на специальный клей с минимальной толщиной швов, что полностью исключает появление «мостиков холода» и заметно снижает ваши будущие затраты на отопление дома.</p>
             </div>
-            <div class="tech-img" style="background-image: url('wood-house.jpg?v=2');"></div>
+            <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=800&q=80');"></div>
         </div>
 
-        <!-- Кирпич -->
-        <div class="tech-content" id="tech-1">
+        <!-- ТАБ 2: КИРПИЧ -->
+        <div class="tech-content">
             <div class="tech-text">
-                <h3>Капитальные кирпичные дома</h3>
-                <p>Дома вековой надежности. Обладают эталонной прочностью, высочайшей звукоизоляцией и пожаробезопасностью. Мы строим из сертифицированного теплого крупноформатного кирпича и делаем красивую облицовку.</p>
-                <p><strong>Срок возведения контура:</strong> от 4 месяцев.</p>
+                <h3>Классические кирпичные дома</h3>
+                <p>Строительство из кирпича и поризованных крупноформатных блоков — это выбор тех, кто ценит максимальную монументальность, долговечность и высочайший статус жилья. Кирпичный дом строится на века, практически не теряет в рыночной стоимости и легко передается из поколения в поколение.</p>
+                <p>Материал обладает колоссальной несущей способностью, великолепной звукоизоляцией и высочайшей теплоемкостью — он долго прогревается, но затем очень долго и плавно отдает тепло внутрь помещений.</p>
             </div>
-            <div class="tech-img" style="background-image: url('brick-house.jpg');"></div>
+            <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80');"></div>
         </div>
 
-        <!-- Газобетон -->
-        <div class="tech-content" id="tech-2">
+        <!-- ТАБ 3: КЛЕЕНЫЙ БРУС -->
+        <div class="tech-content">
             <div class="tech-text">
-                <h3>Современный газобетон</h3>
-                <p>Идеальный баланс цены, долговечности и энергоэффективности. Стены из качественных блоков Ytong не требуют избыточного утепления, возводятся быстро и позволяют реализовать сложнейшие архитектурные хай-тек формы с плоской кровлей.</p>
-                <p><strong>Срок возведения контура:</strong> от 3 месяцев.</p>
-            </div>
-            <div class="tech-img" style="background-image: url('block-house.jpg');"></div>
-        </div>
-
-        <!-- Каркас -->
-        <div class="tech-content" id="tech-3">
-            <div class="tech-text">
-                <h3>Энергоэффективные каркасные дома</h3>
-                <p>Современная канадская и финская технологии. Быстровозводимые конструкции с идеальным заводским утеплением, которые подходят для круглогодичного проживания и позволяют существенно экономить на отоплении.</p>
-                <p><strong>Срок возведения контура:</strong> от 1.5 месяцев.</p>
+                <h3>Дома из клееного бруса</h3>
+                <p>Премиальное деревянное домостроение для ценителей безупречной экологии, природной эстетики и уюта. Клееный брус проходит глубокую камерную сушку и высокоточную фабричную профилировку. Такой дом собирается на участке как конструктор в кратчайшие сроки.</p>
+                <p>Он дает минимальную усадку (до 1-2%), не растрескивается со временем и не требует сложной, дорогостоящей внутренней отделки — фактура натурального дерева великолепна сама по себе.</p>
             </div>
             <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80');"></div>
         </div>
+
+        <!-- ТАБ 4: КАРКАС -->
+        <div class="tech-content">
+            <div class="tech-text">
+                <h3>Каркасная технология (Скандинавский метод)</h3>
+                <p>Современные каркасные дома — лидеры по скорости возведения и энергоэффективности. В основе лежит прочный силовой каркас из сухой строганой доски, обработанный огнебиозащитой, внутри которого монтируется многослойное эффективное перекрестное утепление.</p>
+                <p>Такой дом удерживает тепло по принципу термоса, прогревается за считанные часы и позволяет реализовать самые смелые архитектурные формы, включая огромные панорамные окна в пол без теплопотерь.</p>
+            </div>
+            <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80');"></div>
+        </div>
     </section>
 
-    <!-- БЛОК 3: ИПOTEКA -->
-    <section class="section" id="ipoteka">
+    <!-- БЛОК ИПОТЕКА -->
+    <section class="section">
         <div class="ipoteka-banner">
             <div class="ipoteka-text">
-                <h3>Ипотека на строительство от 4.5%</h3>
-                <p>Мы аккредитованы во всех ведущих банках. Помогаем собрать документы, сделать аудит участка и гарантированно получить одобрение по льготной, семейной или ИТ-ипотеке.</p>
+                <h3>Ипотечные программы от 3.5%</h3>
+                <p>Строим дома по всем доступным программам льготных ипотек: семейная, IT-ипотека, комбо-программы и стандартные решения. Наш штатный брокер бесплатно подготовит и отправит документы сразу во все аккредитованные банки.</p>
             </div>
-            <button class="btn-white" onclick="openModal()">Рассчитать ипотеку</button>
+            <div>
+                <button class="btn-white" onclick="openModal()">Рассчитать ипотеку</button>
+            </div>
         </div>
     </section>
 
-    <!-- БЛОК 4: ПОРТФОЛИО -->
+    <!-- ПОРТФОЛИО СТРОЙКИ -->
     <section class="section section-bg" id="portfolio">
-        <h2 class="section-title">Наше <strong>портфолио</strong></h2>
+        <h2 class="section-title">Портфолио <strong>Объектов</strong></h2>
         <div class="portfolio-grid">
-            <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=500&q=80');"><div class="portfolio-overlay">Коттедж Новая Рига</div></div>
-            <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=500&q=80');"><div class="portfolio-overlay">Шале Рублевка</div></div>
-            <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=500&q=80');"><div class="portfolio-overlay">Дом Клязьма</div></div>
-            <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=500&q=80');"><div class="portfolio-overlay">Усадьба Истра</div></div>
+            <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1549517045-bc93de075e53?auto=format&fit=crop&w=600&q=75');">
+                <div class="portfolio-overlay">Укладка фундамента</div>
+            </div>
+            <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=75');">
+                <div class="portfolio-overlay">Возведение стен (газоблок)</div>
+            </div>
+            <div class="portfolio-item" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=75');">
+                <div class="portfolio-overlay">Кровельные работы</div>
+            </div>
         </div>
     </section>
 
-    <!-- БЛОК 5: МЕБЕЛЬ И ДЕКОР -->
+    <!-- МЕБЕЛЬ И ДЕКОР -->
     <section class="section" id="decor">
         <div class="decor-block">
-            <div class="decor-img" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80');"></div>
-            <div>
-                <h2 class="section-title" style="margin-bottom:20px;">Мебель и <strong>интерьерный декор</strong></h2>
-                <p style="color:#555; line-height:1.7; font-size:16px; margin-bottom:20px;">Мы не просто передаем вам ключи от голых стен. Команда дизайнеров 1 <span class="house-accent">HOUSE</span> подберет под ваш индивидуальный проект кастомную мебель, текстиль, освещение и элементы декора. Благодаря прямым контрактам с нашими партнерами в Европе и Китае, для наших клиентов доступен самый широкий ассортимент эксклюзивных материалов и предметов интерьера, которые невозможно найти в масс-маркете. Вы въезжаете в полностью готовое для счастливой жизни пространство.</p>
-                <button class="btn-callback-header" style="padding:15px 30px;" onclick="openModal()">Обсудить дизайн-проект</button>
+            <div class="decor-img"></div>
+            <div class="decor-text">
+                <h3>Индивидуальный подбор мебели и декора</h3>
+                <p>Мы не просто строим стены — мы создаем готовое пространство для комфортной жизни. Наша команда дизайнеров бережно и со вкусом подберет мебель, текстиль, освещение и элементы интерьерного декора специально под ваш индивидуальный проект. Никакой фабричной рутины: только выверенные стилистические решения, которые идеально подчеркнут характер и атмосферу вашего нового загородного дома.</p>
+                <button class="btn-dark" style="max-width: 250px;" onclick="openModal()">Консультация дизайнера</button>
             </div>
         </div>
     </section>
 
-    <!-- БЛОК 6: ОБРАТНАЯ СВЯЗЬ -->
-    <section class="section section-bg" id="services">
+    <!-- ОБРАТНАЯ СВЯЗЬ -->
+    <section class="section section-bg">
         <div class="feedback-box">
             <div class="feedback-info">
-                <h3>Начнем строительство <strong>вашего дома?</strong></h3>
-                <p>Оставьте заявку на бесплатную консультацию. Наш ведущий архитектор приедет к вам на участок, проведет первичный инженерный анализ грунта и поможет определиться со стилистикой будущего дома.</p>
+                <h3>Обсудим ваш будущий проект?</h3>
+                <p>Оставьте свои контакты. Наш ведущий архитектор-инженер свяжется с вами, ответит на любые технические вопросы, сориентирует по стоимости материалов и поможет составить первичное техническое задание для проектирования.</p>
             </div>
-            <form class="form-large" onsubmit="handleSubmit(event)">
+            <form class="form-large" onsubmit="alert('Заявка успешно отправлена!'); return false;">
                 <input type="text" placeholder="Ваше имя" required>
                 <input type="tel" placeholder="Номер телефона" required>
                 <select>
-                    <option disabled selected>Какая услуга вас интересует?</option>
-                    <option>Строительство под ключ</option>
-                    <option>Индивидуальное проектирование</option>
-                    <option>Подрядные работы</option>
-                    <option>Инженерные системы</option>
-                    <option>Внутренняя отделка</option>
-                    <option>Помощь в оформлении ипотеки</option>
-                    <option>Подбор участка и кадастр</option>
+                    <option>Интересует технология...</option>
+                    <option>Газобетонные блоки</option>
+                    <option>Кирпичные дома</option>
+                    <option>Клееный брус</option>
+                    <option>Каркасный дом</option>
                 </select>
-                <button type="submit" class="btn-dark">Отправить заявку</button>
+                <button class="btn-dark" type="submit">Отправить заявку</button>
             </form>
         </div>
     </section>
 
-    <!-- ФУТЕР -->
-    <footer id="footer">
+    <!-- ПОДВАЛ -->
+    <footer>
         <div class="footer-grid">
             <div class="footer-brand">
                 <h4>1<span>HOUSE</span></h4>
-                <p>Профессиональное проектирование и капитальное строительство загородной недвижимости в Москве и Московской области.</p>
+                <p>Проектирование, строительство и дизайн современных энергоэффективных загородных домов под ключ.</p>
             </div>
             <div class="footer-col">
-                <h5>Проекты</h5>
+                <h5>Технологии</h5>
                 <ul>
-                    <li><a href="#projects">Панорамные</a></li>
-                    <li><a href="#projects">Американские</a></li>
+                    <li><a href="#services">Газобетонные блоки</a></li>
+                    <li><a href="#services">Кирпичные дома</a></li>
+                    <li><a href="#services">Клееный брус</a></li>
+                    <li><a href="#services">Каркасные дома</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>Услуги</h5>
                 <ul>
                     <li><a href="#services">Проектирование</a></li>
-                    <li><a href="#services">Помощь с ипотекой</a></li>
-                    <li><a href="#services">Подбор участков</a></li>
-                    <li><a href="#decor">Мебель и декор</a></li>
+                    <li><a href="#services">Строительство</a></li>
+                    <li><a href="#services">Ипотека брокеридж</a></li>
+                    <li><a href="#decor">Подбор мебели</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>Контакты</h5>
                 <ul>
-                    <li><a href="#">Москва, Пресненская наб. 12</a></li>
+                    <li><a href="tel:+74950000000">+7 (495) 000-00-00</a></li>
                     <li><a href="mailto:info@1house.ru">info@1house.ru</a></li>
-                    <li><a href="#" onclick="openModal()">Заказать звонок</a></li>
+                    <li><p style="color:#cbd5cb; font-size:14px;">Москва, ул. Строителей, д. 1</p></li>
                 </ul>
             </div>
         </div>
-
+        
         <div class="footer-partners">
-            <div class="partners-title">Наши партнеры & Аккредитации</div>
+            <div class="partners-title">Наши стратегические партнеры</div>
             <div class="partners-logos">
                 <span class="partner-logo">СБЕРБАНК</span>
                 <span class="partner-logo">ВТБ</span>
                 <span class="partner-logo">АЛЬФА-БАНК</span>
                 <span class="partner-logo">ДОМ.РФ</span>
-                <span class="partner-logo">YTONG</span>
-                <span class="partner-logo">GRAND LINE</span>
+                <span class="partner-logo">РОССЕЛЬХОЗБАНК</span>
             </div>
         </div>
     </footer>
 
-    <!-- МОДАЛЬНОЕ ОКНО -->
-    <div class="modal-overlay" id="modalOverlay">
+    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ЗВОНКА -->
+    <div class="modal-overlay" id="callbackModal" onclick="if(event.target == this) closeModal()">
         <div class="modal-window">
-            <div class="modal-close" onclick="closeModal()">&times;</div>
-            <h3>Обратная связь</h3>
-            <p>Оставьте контакты, и мы перезвоним вам в течение ближайшего рабочего дня.</p>
-            <form onsubmit="handleSubmit(event)">
-                <div class="form-group"><input type="text" placeholder="Имя" required></div>
-                <div class="form-group"><input type="tel" placeholder="Телефон" required></div>
-                <button type="submit" class="btn-dark">Жду звонка</button>
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 style="font-size:24px; font-weight:300; margin-bottom:20px;">Заказать обратный звонок</h3>
+            <form onsubmit="alert('Спасибо! Мы скоро свяжемся с вами.'); closeModal(); return false;">
+                <div class="form-group">
+                    <input type="text" placeholder="Имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Телефон" required>
+                </div>
+                <button class="btn-dark" type="submit">Жду звонка</button>
             </form>
         </div>
     </div>
 
-    <!-- СКРИПТЫ -->
+    <!-- СКРИПТЫ УПРАВЛЕНИЯ -->
     <script>
+        // Фильтрация каталога проектов
         function filterProjects(category) {
-            const cards = document.querySelectorAll('.project-card');
             const buttons = document.querySelectorAll('.filter-btn');
-            
             buttons.forEach(btn => btn.classList.remove('active'));
-            if(event && event.target) {
+            if (event && event.target) {
                 event.target.classList.add('active');
             }
-            
+
+            const cards = document.querySelectorAll('.project-card');
             cards.forEach(card => {
-                if (card.getAttribute('data-category') === category) {
+                if (category === 'all' || card.classList.contains(category)) {
                     card.style.display = 'inline-block';
                 } else {
                     card.style.display = 'none';
@@ -541,25 +566,21 @@
             });
         }
 
+        // Переключение табов в технологиях
         function switchTech(index) {
             const tabs = document.querySelectorAll('.tech-tab');
             const contents = document.querySelectorAll('.tech-content');
+            
             tabs.forEach(tab => tab.classList.remove('active'));
             contents.forEach(content => content.classList.remove('active'));
+            
             tabs[index].classList.add('active');
-            document.getElementById(`tech-${index}`).classList.add('active');
+            contents[index].classList.add('active');
         }
-
-        const modal = document.getElementById('modalOverlay');
-        function openModal() { modal.classList.add('active'); }
-        function closeModal() { modal.classList.remove('active'); }
-        window.onclick = function(event) { if (event.target == modal) { closeModal(); } }
-        function handleSubmit(event) { event.preventDefault(); alert('Спасибо за заявку! Мы свяжемся с вами в течение ближайшего рабочего дня.'); closeModal(); }
         
-        window.onload = function() {
-            filterProjects('panoramic');
-        };
+        // Управление модальным окном
+        function openModal() { document.getElementById('callbackModal').classList.add('active'); }
+        function closeModal() { document.getElementById('callbackModal').classList.remove('active'); }
     </script>
-
 </body>
 </html>
