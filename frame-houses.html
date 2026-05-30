@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Современные каркасные дома под ключ — 1 HOUSE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Manrope', sans-serif; }
+        body { background-color: #ffffff; color: #1a1a1a; scroll-behavior: smooth; }
+        
+        img {
+            -webkit-user-select: none; user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        /* НАВИГАЦИЯ (Дублирует стиль главной) */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 4%; height: 80px; background: #ffffff;
+            border-bottom: 1px solid #f0f0f0; position: fixed; width: 100%; top: 0; z-index: 1000;
+        }
+        .logo { font-weight: 700; font-size: 24px; letter-spacing: 2px; color: #1a1a1a; text-decoration: none; }
+        .logo span { color: #dfb77d; font-weight: 300; } 
+        
+        nav { display: flex; height: 100%; }
+        .nav-item { display: flex; align-items: center; height: 100%; margin: 0 15px; }
+        .nav-link { text-decoration: none; color: #2a2a2a; font-weight: 500; font-size: 14px; transition: 0.3s; }
+        .nav-link:hover { color: #dfb77d; }
+
+        .btn-callback-header { background: none; border: 1px solid #dfb77d; color: #1a1a1a; padding: 11px 22px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; font-weight: 500; border-radius: 4px; transition: 0.3s; }
+        .btn-callback-header:hover { background-color: #dfb77d; color: white; }
+
+        /* ГЛАВНЫЙ БАННЕР СТРАНИЦЫ */
+        .page-hero { 
+            height: 70vh; display: flex; align-items: center; padding: 0 4%; 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover; 
+            color: #ffffff; margin-top: 80px;
+        }
+        .hero-content { max-width: 800px; }
+        .hero-content span { color: #dfb77d; text-transform: uppercase; font-size: 13px; letter-spacing: 2px; font-weight: 700; display: block; margin-bottom: 15px; }
+        .hero-content h1 { font-size: 48px; font-weight: 300; line-height: 1.2; letter-spacing: -1px; }
+        .hero-content h1 strong { font-weight: 700; }
+        .hero-content p { font-size: 18px; margin-top: 20px; color: #e0e0e0; font-weight: 300; line-height: 1.6; }
+
+        /* СЕКЦИИ */
+        .section { padding: 90px 4%; }
+        .section-bg { background-color: #fbf9f6; }
+        .section-title { font-size: 34px; font-weight: 300; margin-bottom: 45px; letter-spacing: -0.5px; }
+        .section-title strong { font-weight: 700; }
+
+        /* СМЫСЛОВЫЕ БЛОКИ (УТП) */
+        .utp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .utp-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 15px; color: #26221c; }
+        .utp-card p { font-size: 15px; color: #555; line-height: 1.7; text-align: justify; font-weight: 300; }
+
+        /* СТИЛЬНАЯ МИНИ-ГАЛЕРЕЯ (4 КАРТИНКИ) */
+        .gallery-chess { display: flex; gap: 20px; width: 100%; justify-content: space-between; align-items: center; }
+        .gallery-item { flex: 1; min-width: 0; background: #f5f5f5; overflow: hidden; border-radius: 6px; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .gallery-item:hover { transform: scale(1.02); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .gallery-item img { width: 100%; display: block; object-fit: cover; }
+        
+        /* Разная высота для шахматного эффекта, как на главной */
+        .h-low { height: 240px; }
+        .h-med { height: 300px; }
+        .h-high { height: 360px; }
+
+        /* ЭТАПЫ СТРОИТЕЛЬСТВА */
+        .steps-flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-top: 20px; }
+        .step-node { position: relative; padding-top: 30px; border-top: 2px solid #dfb77d; }
+        .step-number { font-size: 14px; font-weight: 700; color: #dfb77d; margin-bottom: 10px; text-transform: uppercase; }
+        .step-node h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+        .step-node p { font-size: 14px; color: #666; line-height: 1.6; font-weight: 300; }
+
+        /* БЛОК ПРИЗЫВА К ДЕЙСТВИЮ */
+        .cta-box { background: #26221c; color: white; padding: 60px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+        .cta-text h3 { font-size: 30px; font-weight: 300; margin-bottom: 10px; }
+        .cta-text p { color: #ccc5ba; font-size: 16px; max-width: 600px; line-height: 1.6; font-weight: 300; }
+        
+        .btn-gold { display: inline-block; padding: 18px 35px; background: #dfb77d; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; }
+        .btn-gold:hover { background: #cb9f62; }
+        .btn-dark { display: inline-block; padding: 18px 35px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; width: 100%; text-align: center; }
+        .btn-dark:hover { background: #dfb77d; }
+
+        /* ФОРМА ОБРАТНОЙ СВЯЗЬ */
+        .form-container { max-width: 500px; background: #ffffff; border: 1px solid #eee; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.01); margin: 0 auto; }
+        .form-container h3 { font-size: 24px; font-weight: 300; margin-bottom: 25px; text-align: center; }
+        .form-container input { width: 100%; padding: 16px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; outline: none; }
+        .form-container input:focus { border-color: #dfb77d; }
+
+        /* ПОДВАЛ */
+        footer { background: #1a1815; color: #ffffff; padding: 40px 4%; text-align: center; font-size: 14px; border-top: 1px solid #2e2a24; }
+        footer p { color: #8c8273; }
+
+        /* МОВАЛЬНОЕ ОКНО */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s; }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal-window { background: #ffffff; padding: 40px; max-width: 450px; width: 90%; position: relative; border-radius: 8px; }
+        .modal-close { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #aaa; }
+
+        @media (max-width: 992px) {
+            header nav { display: none; }
+            .page-hero { height: 50vh; }
+            .page-hero h1 { font-size: 32px; }
+            .gallery-chess { flex-wrap: wrap; }
+            .gallery-item { flex: 1 1 calc(50% - 20px); }
+            .cta-box { grid-template-columns: 1fr; flex-direction: column; text-align: center; padding: 40px 20px; }
+        }
+        @media (max-width: 576px) {
+            .gallery-item { flex: 1 1 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ШАПКА -->
+    <header>
+        <a href="index.html" class="logo">1<span>HOUSE</span></a>
+        <nav>
+            <div class="nav-item"><a href="index.html#about" class="nav-link">О нас</a></div>
+            <div class="nav-item"><a href="index.html#projects" class="nav-link">Проекты</a></div>
+            <div class="nav-item"><a href="index.html#services" class="nav-link">Технологии</a></div>
+            <div class="nav-item"><a href="index.html#decor" class="nav-link">Мебель и декор</a></div>
+        </nav>
+        <button class="btn-callback-header" onclick="openModal()">Заказать звонок</button>
+    </header>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <span>Скандинавский метод</span>
+            <h1>Энергоэффективные <strong>каркасные дома</strong> под ключ</h1>
+            <p>Технология премиального сегмента: строим из сухой строганой доски камерной сушки с перекрестным утеплением. Полная готовность к отделке за 90 дней.</p>
+        </div>
+    </section>
+
+    <!-- СМЫСЛЫ И ПРЕИМУЩЕСТВА -->
+    <section class="section">
+        <h2 class="section-title">Технологические <strong>стандарты</strong></h2>
+        <div class="utp-grid">
+            <div class="utp-card">
+                <h3>01. Принцип «Термоса»</h3>
+                <p>Благодаря многослойному пирогу стен и перекрестному утеплению, каркасный дом удерживает тепло в 3 раза эффективнее кирпичного. Затраты на отопление зимой сводятся к минимуму, а летом внутри сохраняется приятная прохлада.</p>
+            </div>
+            <div class="utp-card">
+                <h3>02. Сухой силовой каркас</h3>
+                <p>Мы используем только калиброванную доску, прошедшую камерную сушку и обработку огнебиозащитными составами. Это гарантирует идеальную геометрию здания, отсутствие щелей и усадки — к отделке можно приступать сразу.</p>
+            </div>
+            <div class="utp-card">
+                <h3>03. Панорамное остекление</h3>
+                <p>Конструктивные особенности каркаса позволяют безболезненно интегрировать огромные окна в пол. Мы устанавливаем энергосберегающие мультифункциональные стеклопакеты, сохраняющие внутренний микроклимат.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ГАЛЕРЕЯ ИЗ 4 КАРТИНОК В ОДИН РЯД -->
+    <section class="section section-bg">
+        <h2 class="section-title">Архитектурные <strong>решения</strong></h2>
+        <div class="gallery-chess">
+            <div class="gallery-item">
+                <img src="./frame-house.jpg" alt="Скандинавский стиль" class="project-img h-med" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=500&q=70" alt="Современный каркасный дом" class="project-img h-high" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=500&q=70" alt="Минимализм в архитектуре" class="project-img h-low" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=500&q=70" alt="Проект с террасой" class="project-img h-med" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- ЭТАПЫ РЕАЛИЗАЦИИ -->
+    <section class="section">
+        <h2 class="section-title">Как мы <strong>строим</strong></h2>
+        <div class="steps-flow">
+            <div class="step-node">
+                <div class="step-number">01. Проект</div>
+                <h4>Адаптация и расчет</h4>
+                <p>Привязка проекта к участку, разработка КД (конструкторской документации) и финальное утверждение сметы.</p>
+            </div>
+            <div class="step-node">
+                <div class="step-number">02. База</div>
+                <h4>Фундамент и каркас</h4>
+                <p>Монтаж железобетонных свай или плиты, сборка жесткого силового каркаса и стропильной системы.</p>
+            </div>
+            <div class="step-node">
+                <div class="step-number">03. Тепловой контур</div>
+                <h4>Кровля и утепление</h4>
+                <p>Монтаж кровли, укладка премиального плитного утеплителя, устройство супердиффузионных мембран.</p>
+            </div>
+            <div class="step-node">
+                <div class="step-number">04. Финиш</div>
+                <h4>Фасад и сети</h4>
+                <p>Внешняя облицовка (имитация бруса, кликфальц или планкен), разводка внутренних инженерных коммуникаций.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРИЗЫВ К ДЕЙСТВИЮ (CTA) -->
+    <section class="section section-bg">
+        <div class="cta-box">
+            <div class="cta-text">
+                <h3>Рассчитаем стоимость за 15 минут?</h3>
+                <p>Отправьте параметры вашего участка или выберите типовые габариты. Мы подготовим развернутый коммерческий расчет с фиксированной ценой.</p>
+            </div>
+            <div>
+                <button class="btn-gold" onclick="openModal()">Получить расчет</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- НА ПРЯМУЮ НА СТРАНИЦЕ - ФОРМА -->
+    <section class="section">
+        <div class="form-container">
+            <h3>Оставить заявку</h3>
+            <form onsubmit="alert('Заявка принята! Архитектор свяжется с вами в течение получаса.'); return false;">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Телефон" required>
+                <button class="btn-dark" type="submit">Связаться со мной</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer>
+        <p>&copy; 2026 1 HOUSE. Проектирование и строительство загородных домов. Все права защищены.</p>
+    </footer>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="modal-overlay" id="callbackModal" onclick="if(event.target == this) closeModal()">
+        <div class="modal-window">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 style="font-size:24px; font-weight:300; margin-bottom:20px; text-align:center;">Обратная связь</h3>
+            <form onsubmit="alert('Спасибо! Мы скоро свяжемся с вами.'); closeModal(); return false;">
+                <input type="text" placeholder="Имя" required>
+                <input type="tel" placeholder="Телефон" required>
+                <button class="btn-dark" type="submit">Жду звонка</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('callbackModal').classList.add('active'); }
+        function closeModal() { document.getElementById('callbackModal').classList.remove('remove'); document.getElementById('callbackModal').classList.remove('active'); }
+    </script>
+</body>
+</html>
