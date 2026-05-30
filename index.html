@@ -134,7 +134,6 @@
         .tech-text h3 { font-size: 26px; margin-bottom: 20px; font-weight: 700; }
         .tech-text p { color: #555; line-height: 1.7; font-size: 16px; margin-bottom: 20px; text-align: justify; }
         
-        /* Исправленный контейнер картинок технологий */
         .tech-img-box { height: 380px; width: 100%; border-radius: 8px; overflow: hidden; background: #f5f5f5; }
         .tech-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
@@ -202,7 +201,6 @@
 </head>
 <body oncontextmenu="return false;">
 
-    <!-- ШАПКА -->
     <header>
         <a href="#" class="logo">1<span>HOUSE</span></a>
         <nav>
@@ -246,7 +244,6 @@
         <button class="btn-callback-header" onclick="openModal()">Заказать звонок</button>
     </header>
 
-    <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero">
         <div class="hero-content">
             <h1>Проектирование и строительство домов под ключ.</h1>
@@ -254,7 +251,6 @@
         </div>
     </section>
 
-    <!-- БЛОК ПОЧЕМУ МЫ -->
     <section class="section" id="about">
         <h2 class="section-title">Почему выбирают 1 <strong class="house-accent">HOUSE</strong></h2>
         <div class="benefits-grid">
@@ -285,7 +281,6 @@
         </div>
     </section>
 
-    <!-- МЕЖДУНАРОДНЫЙ БЛОК -->
     <section class="section section-bg" style="padding-bottom: 50px;">
         <div class="global-central-box">
             <div class="global-central-text">
@@ -300,7 +295,6 @@
         </div>
     </section>
 
-    <!-- КАТАЛОГ ПРОЕКТОВ В ОДИН РЯД -->
     <section class="section" id="projects">
         <h2 class="section-title">Наши <strong>Проекты</strong></h2>
         
@@ -312,7 +306,6 @@
         </div>
 
         <div class="projects-masonry">
-            <!-- ПАНОРАМНЫЕ ПРОЕКТЫ -->
             <div class="project-card panoramic">
                 <img src="./panoramic-1.jpg" alt="Панорамный проект" class="project-img h-med" loading="lazy">
             </div>
@@ -326,7 +319,6 @@
                 <img src="./panoramic-4.jpg" alt="Панорамный проект" class="project-img h-med" loading="lazy">
             </div>
 
-            <!-- АМЕРИКАНСКИЕ ПРОЕКТЫ -->
             <div class="project-card usa">
                 <img src="./usa-1.jpg" alt="Американский проект" class="project-img h-high" loading="lazy">
             </div>
@@ -340,7 +332,6 @@
                 <img src="./usa-6.jpg" alt="Американский проект" class="project-img h-high" loading="lazy">
             </div>
 
-            <!-- КАНАДСКИЕ ПРОЕКТЫ -->
             <div class="project-card canada">
                 <img src="./canada-1.jpg" alt="Канадский проект" class="project-img h-med" loading="lazy">
             </div>
@@ -354,7 +345,6 @@
                 <img src="./canada-4.jpg" alt="Канадский проект" class="project-img h-med" loading="lazy">
             </div>
 
-            <!-- ЕВРОПЕЙСКИЕ ПРОЕКТЫ -->
             <div class="project-card europe">
                 <img src="./europe-1.jpg" alt="Европейский проект" class="project-img h-high" loading="lazy">
             </div>
@@ -370,7 +360,6 @@
         </div>
     </section>
 
-    <!-- ТЕХНОЛОГИИ СТРОИТЕЛЬСТВА (ОПТИМИЗИРОВАННЫЙ ВЫВОД КАРТИНОК) -->
     <section class="section section-bg" id="services">
         <h2 class="section-title">Технологии <strong>Строительства</strong></h2>
         
@@ -381,7 +370,6 @@
             <div class="tech-tab" onclick="switchTech(3)">Каркасная технология</div>
         </div>
 
-        <!-- ТАБ 1: ГАЗОБЛОКИ -->
         <div class="tech-content active">
             <div class="tech-text">
                 <h3>Дома из газобетонных блоков</h3>
@@ -389,11 +377,10 @@
                 <p>Благодаря идеальной геометрии блоков, кладка выполняется на специальный клей с минимальной толщиной швов, что полностью исключает появление «мостиков холода» и заметно снижает ваши будущие затраты на отопление дома.</p>
             </div>
             <div class="tech-img-box">
-                <img src="./gasblock.jpg" alt="Газобетон" loading="lazy">
+                <img src="./gas-block.jpg" alt="Газобетон" loading="lazy">
             </div>
         </div>
 
-        <!-- ТАБ 2: КИРПИЧ -->
         <div class="tech-content">
             <div class="tech-text">
                 <h3>Классические кирпичные дома</h3>
@@ -401,11 +388,10 @@
                 <p>Материал обладает колоссальной несущей способностью, великолепной звукоизоляцией и высочайшей теплоемкостью — он долго прогревается, но затем очень долго и плавно отдает тепло внутрь помещений.</p>
             </div>
             <div class="tech-img-box">
-                <img src="./brick.jpg" alt="Кирпич" loading="lazy">
+                <img src="./brick-house.jpg" alt="Кирпич" loading="lazy">
             </div>
         </div>
 
-        <!-- ТАБ 3: КЛЕЕНЫЙ БРУС -->
         <div class="tech-content">
             <div class="tech-text">
                 <h3>Дома из клееного бруса</h3>
@@ -413,11 +399,10 @@
                 <p>Он дает минимальную усадку (до 1-2%), не растрескивается со временем и не требует сложной, дорогостоящей внутренней отделки — фактура натурального дерева великолепна сама по себе.</p>
             </div>
             <div class="tech-img-box">
-                <img src="./glued-timber.jpg" alt="Клееный брус" loading="lazy">
+                <img src="./wood-house.jpg" alt="Клееный брус" loading="lazy">
             </div>
         </div>
 
-        <!-- ТАБ 4: КАРКАС -->
         <div class="tech-content">
             <div class="tech-text">
                 <h3>Каркасная технология (Скандинавский метод)</h3>
@@ -430,7 +415,6 @@
         </div>
     </section>
 
-    <!-- БЛОК ИПОТЕКА -->
     <section class="section">
         <div class="ipoteka-banner">
             <div class="ipoteka-text">
@@ -443,7 +427,6 @@
         </div>
     </section>
 
-    <!-- ПОРТФОЛИО СТРОЙКИ -->
     <section class="section section-bg" id="portfolio">
         <h2 class="section-title">Портфолио <strong>Объектов</strong></h2>
         <div class="portfolio-grid">
@@ -459,7 +442,6 @@
         </div>
     </section>
 
-    <!-- МЕБЕЛЬ И ДЕКОР -->
     <section class="section" id="decor">
         <div class="decor-block">
             <div class="decor-img"></div>
@@ -471,7 +453,6 @@
         </div>
     </section>
 
-    <!-- ОБРАТНАЯ СВЯЗЬ -->
     <section class="section section-bg">
         <div class="feedback-box">
             <div class="feedback-info">
@@ -493,7 +474,6 @@
         </div>
     </section>
 
-    <!-- ПОДВАЛ -->
     <footer>
         <div class="footer-grid">
             <div class="footer-brand">
@@ -540,7 +520,6 @@
         </div>
     </footer>
 
-    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ЗВОНКА -->
     <div class="modal-overlay" id="callbackModal" onclick="if(event.target == this) closeModal()">
         <div class="modal-window">
             <span class="modal-close" onclick="closeModal()">&times;</span>
@@ -557,7 +536,6 @@
         </div>
     </div>
 
-    <!-- СКРИПТЫ УПРАВЛЕНИЯ -->
     <script>
         // Фильтрация каталога проектов
         function filterProjects(category) {
