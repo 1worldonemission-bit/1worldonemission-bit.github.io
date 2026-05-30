@@ -53,7 +53,6 @@
         .btn-callback-header { background: none; border: 1px solid #dfb77d; color: #1a1a1a; padding: 11px 22px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; font-weight: 500; border-radius: 4px; transition: 0.3s; }
         .btn-callback-header:hover { background-color: #dfb77d; color: white; }
 
-        /* СТИЛЬ ДЛЯ ПОДЦВЕЧИВАНИЯ СЛОВА HOUSE В ТЕКСТАХ */
         .house-accent { color: #dfb77d; font-weight: inherit; }
 
         /* ГЛАВНЫЙ БАННЕР */
@@ -204,11 +203,10 @@
             <div class="nav-item"><a href="#about" class="nav-link">О нас</a></div>
             <div class="nav-item has-dropdown"><span class="nav-link">Проекты</span>
                 <div class="dropdown">
-                    <a href="#projects">Все проекты</a>
-                    <a href="#projects">Панорамные проекты</a>
-                    <a href="#projects">Американские проекты</a>
-                    <a href="#projects">Канадские проекты</a>
-                    <a href="#projects">Европейские проекты</a>
+                    <a href="#projects" onclick="filterProjects('panoramic')">Панорамные проекты</a>
+                    <a href="#projects" onclick="filterProjects('usa')">Американские проекты</a>
+                    <a href="#projects" onclick="filterProjects('canada')">Канадские проекты</a>
+                    <a href="#projects" onclick="filterProjects('europe')">Европейские проекты</a>
                     <a href="#projects">Дома по каркасной технологии</a>
                     <a href="#projects">Дома из бруса</a>
                     <a href="#projects">Дома из газоблоков</a>
@@ -296,13 +294,12 @@
         </div>
     </section>
 
-    <!-- КОМПАКТНЫЙ КАТАЛОГ ПРОЕКТОВ (МАСШТАБ УМЕНЬШЕН В 2 РАЗА) -->
+    <!-- КОМПАКТНЫЙ КАТАЛОГ ПРОЕКТОВ (БЕЗ КНОПКИ "ВСЕ") -->
     <section class="section" id="projects">
         <h2 class="section-title">Наши <strong>Проекты</strong></h2>
         
         <div class="filter-buttons">
-            <button class="filter-btn active" onclick="filterProjects('all')">Все проекты</button>
-            <button class="filter-btn" onclick="filterProjects('panoramic')">Панорамные</button>
+            <button class="filter-btn active" onclick="filterProjects('panoramic')">Панорамные</button>
             <button class="filter-btn" onclick="filterProjects('usa')">Американские</button>
             <button class="filter-btn" onclick="filterProjects('canada')">Канадские</button>
             <button class="filter-btn" onclick="filterProjects('europe')">Европейские</button>
@@ -351,7 +348,7 @@
                 <img src="canada-4.jpg" alt="Канадский проект" class="project-img h-med">
             </div>
 
-            <!-- ЕВРОПЕЙСКИЕ ПРОЕКТЫ (4 photo) -->
+            <!-- ЕВРОПЕЙСКИЕ ПРОЕКТЫ (4 фото) -->
             <div class="project-card europe">
                 <img src="europe-1.jpg" alt="Европейский проект" class="project-img h-high">
             </div>
@@ -367,7 +364,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ ТЕХНОЛОГИИ СТРОИТЕЛЬСТВА -->
+    <!-- СЕКЦИЯ ТЕХНОЛОГИИ СТРОИТЕЛЬСТВА (ЛОКАЛЬНЫЕ КАРТИНКИ) -->
     <section class="section section-bg" id="services">
         <h2 class="section-title">Технологии <strong>Строительства</strong></h2>
         
@@ -385,7 +382,7 @@
                 <p>Современный газобетон — один из лучших материалов для круглогодичного загородного жилья. Он сочетает в себе прочность камня и отличные теплоизоляционные свойства. Стены из газоблоков «дышат», формируя комфортный внутренний микроклимат, не подвержены гниению и абсолютно пожаробезопасны.</p>
                 <p>Благодаря идеальной геометрии блоков, кладка выполняется на специальный клей с минимальной толщиной швов, что полностью исключает появление «мостиков холода» и заметно снижает ваши будущие затраты на отопление дома.</p>
             </div>
-            <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="tech-img" style="background-image: url('stone.jpg');"></div>
         </div>
 
         <!-- ТАБ 2: КИРПИЧ -->
@@ -395,7 +392,7 @@
                 <p>Строительство из кирпича и поризованных крупноформатных блоков — это выбор тех, кто ценит максимальную монументальность, долговечность и высочайший статус жилья. Кирпичный дом строится на века, практически не теряет в рыночной стоимости и легко передается из поколения в поколение.</p>
                 <p>Материал обладает колоссальной несущей способностью, великолепной звукоизоляцией и высочайшей теплоемкостью — он долго прогревается, но затем очень долго и плавно отдает тепло внутрь помещений.</p>
             </div>
-            <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="tech-img" style="background-image: url('brick.jpg');"></div>
         </div>
 
         <!-- ТАБ 3: КЛЕЕНЫЙ БРУС -->
@@ -405,7 +402,7 @@
                 <p>Премиальное деревянное домостроение для ценителей безупречной экологии, природной эстетики и уюта. Клееный брус проходит глубокую камерную сушку и высокоточную фабричную профилировку. Такой дом собирается на участке как конструктор в кратчайшие сроки.</p>
                 <p>Он дает минимальную усадку (до 1-2%), не растрескивается со временем и не требует сложной, дорогостоящей внутренней отделки — фактура натурального дерева великолепна сама по себе.</p>
             </div>
-            <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="tech-img" style="background-image: url('timber.jpg');"></div>
         </div>
 
         <!-- ТАБ 4: КАРКАС -->
@@ -415,7 +412,7 @@
                 <p>Современные каркасные дома — лидеры по скорости возведения и энергоэффективности. В основе лежит прочный силовой каркас из сухой строганой доски, обработанный огнебиозащитой, внутри которого монтируется многослойное эффективное перекрестное утепление.</p>
                 <p>Такой дом удерживает тепло по принципу термоса, прогревается за считанные часы и позволяет реализовать самые смелые архитектурные формы, включая огромные панорамные окна в пол без теплопотерь.</p>
             </div>
-            <div class="tech-img" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="tech-img" style="background-image: url('frame.jpg');"></div>
         </div>
     </section>
 
@@ -548,17 +545,20 @@
 
     <!-- СКРИПТЫ УПРАВЛЕНИЯ -->
     <script>
-        // Фильтрация каталога проектов
+        // Фильтрация каталога проектов (По умолчанию открывает Панорамные при загрузке)
         function filterProjects(category) {
             const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            if (event && event.target) {
-                event.target.classList.add('active');
-            }
+            buttons.forEach(btn => {
+                if(btn.getAttribute('onclick').includes(`'${category}'`)) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
 
             const cards = document.querySelectorAll('.project-card');
             cards.forEach(card => {
-                if (category === 'all' || card.classList.contains(category)) {
+                if (card.classList.contains(category)) {
                     card.style.display = 'inline-block';
                 } else {
                     card.style.display = 'none';
@@ -581,6 +581,11 @@
         // Управление модальным окном
         function openModal() { document.getElementById('callbackModal').classList.add('active'); }
         function closeModal() { document.getElementById('callbackModal').classList.remove('active'); }
+
+        // ЗАПУСК ПО УМОЛЧАНИЮ: Показываем панорамные сразу при загрузке страницы
+        window.addEventListener('DOMContentLoaded', () => {
+            filterProjects('panoramic');
+        });
     </script>
 </body>
 </html>
