@@ -105,23 +105,24 @@
         .btn-global-central { display: inline-block; margin-top: 20px; padding: 15px 35px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; border-radius: 4px; transition: 0.3s; }
         .btn-global-central:hover { background: #dfb77d; }
 
-        /* КОМПАКТНЫЙ КАТАЛОГ ПРОЕКТОВ (СЖАТ В 2 РАЗА) */
+        /* ВЫРАВНИВАНИЕ ПРОЕКТОВ В ОДНУ СТРОКУ В ШИРИНУ */
         .filter-buttons { display: flex; gap: 15px; margin-bottom: 35px; flex-wrap: wrap; }
         .filter-btn { padding: 11px 24px; background: #f5f5f5; border: none; font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.3s; border-radius: 30px; color: #4a4a4a; }
         .filter-btn.active, .filter-btn:hover { background: #dfb77d; color: white; }
         
-        .projects-masonry { columns: 4 250px; column-gap: 20px; width: 100%; }
+        .projects-masonry { 
+            display: flex; gap: 20px; width: 100%; justify-content: space-between; align-items: center; 
+        }
         .project-card { 
-            background: #f5f5f5; overflow: hidden; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); border-radius: 6px;
-            display: inline-block; width: 100%; margin-bottom: 20px; break-inside: avoid;
+            flex: 1; min-width: 0; background: #f5f5f5; overflow: hidden; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); border-radius: 6px;
         }
         .project-card:hover { transform: scale(1.03); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
         .project-img { width: 100%; display: block; object-fit: cover; }
         
-        /* Компактные высоты карточек */
-        .h-low { height: 180px; }
-        .h-med { height: 260px; }
-        .h-high { height: 340px; }
+        /* Шахматные высоты для горизонтального ряда */
+        .h-low { height: 210px; }
+        .h-med { height: 270px; }
+        .h-high { height: 330px; }
 
         /* ТЕХНОЛОГИИ */
         .tech-tabs { display: flex; border-bottom: 2px solid #eee; margin-bottom: 40px; flex-wrap: wrap; }
@@ -187,10 +188,11 @@
         @media (max-width: 992px) {
             header nav { display: none; } .hero h1 { font-size: 36px; }
             .global-central-box, .tech-content, .decor-block, .feedback-box, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-            .projects-masonry { columns: 2; }
+            .projects-masonry { flex-wrap: wrap; }
+            .project-card { flex: 1 1 calc(50% - 20px); min-width: 200px; }
         }
         @media (max-width: 576px) {
-            .projects-masonry { columns: 1; }
+            .project-card { flex: 1 1 100%; }
         }
     </style>
 </head>
@@ -294,7 +296,7 @@
         </div>
     </section>
 
-    <!-- КОМПАКТНЫЙ КАТАЛОГ ПРОЕКТОВ (БЕЗ КНОПКИ "ВСЕ") -->
+    <!-- КАТАЛОГ ПРОЕКТОВ СТРОГО В ОДИН РЯД -->
     <section class="section" id="projects">
         <h2 class="section-title">Наши <strong>Проекты</strong></h2>
         
@@ -320,7 +322,7 @@
                 <img src="panoramic-4.jpg" alt="Панорамный проект" class="project-img h-med">
             </div>
 
-            <!-- АМЕРИКАНСКИЕ ПРОЕКТЫ (Остались 1, 4, 5, 6) -->
+            <!-- АМЕРИКАНСКИЕ ПРОЕКТЫ (4 фото) -->
             <div class="project-card usa">
                 <img src="usa-1.jpg" alt="Американский проект" class="project-img h-high">
             </div>
@@ -364,7 +366,7 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ ТЕХНОЛОГИИ СТРОИТЕЛЬСТВА (ЛОКАЛЬНЫЕ КАРТИНКИ) -->
+    <!-- СЕКЦИЯ ТЕХНОЛОГИИ СТРОИТЕЛЬСТВА (ИСПРАВЛЕННЫЕ НАЗВАНИЯ КАРТИНОК) -->
     <section class="section section-bg" id="services">
         <h2 class="section-title">Технологии <strong>Строительства</strong></h2>
         
@@ -382,7 +384,7 @@
                 <p>Современный газобетон — один из лучших материалов для круглогодичного загородного жилья. Он сочетает в себе прочность камня и отличные теплоизоляционные свойства. Стены из газоблоков «дышат», формируя комфортный внутренний микроклимат, не подвержены гниению и абсолютно пожаробезопасны.</p>
                 <p>Благодаря идеальной геометрии блоков, кладка выполняется на специальный клей с минимальной толщиной швов, что полностью исключает появление «мостиков холода» и заметно снижает ваши будущие затраты на отопление дома.</p>
             </div>
-            <div class="tech-img" style="background-image: url('stone.jpg');"></div>
+            <div class="tech-img" style="background-image: url('gasblock.jpg');"></div>
         </div>
 
         <!-- ТАБ 2: КИРПИЧ -->
@@ -402,7 +404,7 @@
                 <p>Премиальное деревянное домостроение для ценителей безупречной экологии, природной эстетики и уюта. Клееный брус проходит глубокую камерную сушку и высокоточную фабричную профилировку. Такой дом собирается на участке как конструктор в кратчайшие сроки.</p>
                 <p>Он дает минимальную усадку (до 1-2%), не растрескивается со временем и не требует сложной, дорогостоящей внутренней отделки — фактура натурального дерева великолепна сама по себе.</p>
             </div>
-            <div class="tech-img" style="background-image: url('timber.jpg');"></div>
+            <div class="tech-img" style="background-image: url('glued-timber.jpg');"></div>
         </div>
 
         <!-- ТАБ 4: КАРКАС -->
@@ -412,7 +414,7 @@
                 <p>Современные каркасные дома — лидеры по скорости возведения и энергоэффективности. В основе лежит прочный силовой каркас из сухой строганой доски, обработанный огнебиозащитой, внутри которого монтируется многослойное эффективное перекрестное утепление.</p>
                 <p>Такой дом удерживает тепло по принципу термоса, прогревается за считанные часы и позволяет реализовать самые смелые архитектурные формы, включая огромные панорамные окна в пол без теплопотерь.</p>
             </div>
-            <div class="tech-img" style="background-image: url('frame.jpg');"></div>
+            <div class="tech-img" style="background-image: url('frame-house.jpg');"></div>
         </div>
     </section>
 
@@ -559,7 +561,7 @@
             const cards = document.querySelectorAll('.project-card');
             cards.forEach(card => {
                 if (card.classList.contains(category)) {
-                    card.style.display = 'inline-block';
+                    card.style.display = 'block';
                 } else {
                     card.style.display = 'none';
                 }
