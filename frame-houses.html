@@ -6,7 +6,7 @@
     <title>Современные каркасные дома под ключ — 1 HOUSE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght=300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Manrope', sans-serif; }
@@ -17,7 +17,7 @@
             -webkit-user-drag: none;
         }
 
-        /* НАВИГАЦИЯ (Полная копия стиля главной страницы) */
+        /* ОРИГИНАЛЬНАЯ ШАПКА И МЕНЮ С ГЛАВНОЙ СТРАНИЦЫ INDEX.HTML */
         header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 0 4%; height: 80px; background: #ffffff;
@@ -26,15 +26,90 @@
         .logo { font-weight: 700; font-size: 24px; letter-spacing: 2px; color: #1a1a1a; text-decoration: none; }
         .logo span { color: #dfb77d; font-weight: 300; } 
         
-        nav { display: flex; height: 100%; }
-        .nav-item { display: flex; align-items: center; height: 100%; margin: 0 15px; }
-        .nav-link { text-decoration: none; color: #2a2a2a; font-weight: 500; font-size: 14px; transition: 0.3s; }
+        .nav-container { display: flex; height: 100%; }
+        
+        .nav-item { 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            height: 100%; 
+            margin: 0 15px; 
+        }
+        .nav-link { 
+            text-decoration: none; 
+            color: #2a2a2a; 
+            font-weight: 500; 
+            font-size: 14px; 
+            transition: 0.3s; 
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+        }
         .nav-link:hover { color: #dfb77d; }
+
+        /* Фирменная стрелочка у выпадающих пунктов */
+        .nav-link::after {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-right: 1px solid currentColor;
+            border-bottom: 1px solid currentColor;
+            transform: rotate(45deg);
+            margin-bottom: 3px;
+            transition: 0.3s;
+        }
+        .nav-item-single .nav-link::after { display: none; }
+
+        /* Родные стили выплывающего подменю из index.html */
+        .dropdown {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(15px);
+            background: #ffffff;
+            min-width: 220px;
+            border: 1px solid #f0f0f0;
+            border-radius: 0 0 6px 6px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+            z-index: 1100;
+        }
+        
+        .dropdown a {
+            display: block;
+            padding: 12px 20px;
+            color: #4a4a4a;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 400;
+            transition: 0.2s;
+        }
+        .dropdown a:hover {
+            background-color: #fbf9f6;
+            color: #dfb77d;
+            padding-left: 25px;
+        }
+
+        /* Родная логика плавного выплывания при ховере */
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+        .nav-item:hover .nav-link::after {
+            transform: rotate(-135deg);
+            margin-bottom: -1px;
+        }
 
         .btn-callback-header { background: none; border: 1px solid #dfb77d; color: #1a1a1a; padding: 11px 22px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; font-weight: 500; border-radius: 4px; transition: 0.3s; }
         .btn-callback-header:hover { background-color: #dfb77d; color: white; }
 
-        /* ГЛАВНЫЙ БАННЕР СТРАНИЦЫ (Увеличена высота, сдвинут фокус наверх) */
+        /* ГЛАВНЫЙ БАННЕР СТРАНИЦЫ (Смещен фокус наверх +3 см) */
         .page-hero { 
             height: 80vh; display: flex; align-items: center; padding: 0 4%; 
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./frame-hero.jpg') no-repeat center top/cover; 
@@ -74,15 +149,13 @@
         .article-media { height: 480px; border-radius: 8px; overflow: hidden; background: #f5f5f5; }
         .article-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-        /* РАСШИРЕННАЯ СТАТИЧНАЯ ГАЛЕРЕЯ (Меньше отступы по бокам для ширины квадратов) */
+        /* РАСШИРЕННАЯ ГАЛЕРЕЯ (Более широкие квадраты + мощный зум 1.12) */
         .section-gallery { padding: 90px 2%; }
         .gallery-chess { display: flex; gap: 20px; width: 100%; justify-content: space-between; align-items: center; }
         
-        /* Мощный зум картинок без деформации рамок */
         .gallery-item { flex: 1; min-width: 0; background: #f5f5f5; overflow: hidden; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.01); transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
         .gallery-item img { width: 100%; display: block; object-fit: cover; transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
         
-        /* Эффект при наведении — значительное увеличение картинки */
         .gallery-item:hover { box-shadow: 0 25px 50px rgba(0,0,0,0.08); transform: translateY(-4px); }
         .gallery-item:hover img { transform: scale(1.12); }
         
@@ -97,7 +170,7 @@
         .step-node h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
         .step-node p { font-size: 14px; color: #666; line-height: 1.6; font-weight: 300; }
 
-        /* ПРИЗЫВ К ДЕЙСТВИЮ (CTA) */
+        /* ПРИЗЫВ К ДЕЙСТВИЮ */
         .cta-box { background: #26221c; color: white; padding: 60px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
         .cta-text h3 { font-size: 30px; font-weight: 300; margin-bottom: 10px; }
         .cta-text p { color: #ccc5ba; font-size: 16px; max-width: 600px; line-height: 1.6; font-weight: 300; }
@@ -124,7 +197,7 @@
         .modal-close { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #aaa; }
 
         @media (max-width: 992px) {
-            header nav { display: none; }
+            header .nav-container { display: none; }
             .page-hero { height: 60vh; } .page-hero h1 { font-size: 32px; }
             .standards-container, .article-layout { grid-template-columns: 1fr; gap: 40px; }
             .standards-media, .article-media { height: 350px; min-height: auto; }
@@ -141,18 +214,60 @@
 </head>
 <body>
 
+    <!-- ШАПКА (Синхронизированное меню на родных классах .nav-container и .dropdown) -->
     <header>
         <a href="index.html" class="logo">1<span>HOUSE</span></a>
-        <nav>
-            <div class="nav-item"><a href="index.html" class="nav-link">На главную</a></div>
-            <div class="nav-item"><a href="index.html#about" class="nav-link">О компании</a></div>
-            <div class="nav-item"><a href="index.html#projects" class="nav-link">Проекты</a></div>
-            <div class="nav-item"><a href="index.html#services" class="nav-link">Технологии</a></div>
-            <div class="nav-item"><a href="index.html#decor" class="nav-link">Мебель и декор</a></div>
-        </nav>
+        <div class="nav-container">
+            <!-- Одиночная кнопка перехода на Главную -->
+            <div class="nav-item nav-item-single">
+                <a href="index.html" class="nav-link">На главную</a>
+            </div>
+            
+            <!-- О компании -->
+            <div class="nav-item">
+                <span class="nav-link">О компании</span>
+                <div class="dropdown">
+                    <a href="index.html#about">О бренде 1 HOUSE</a>
+                    <a href="index.html#team">Наша команда</a>
+                    <a href="index.html#contacts">Контакты и офис</a>
+                </div>
+            </div>
+
+            <!-- Проекты -->
+            <div class="nav-item">
+                <span class="nav-link">Проекты</span>
+                <div class="dropdown">
+                    <a href="index.html#projects">Все архитектурные проекты</a>
+                    <a href="./frame-houses.html" style="color: #dfb77d; font-weight: bold;">Каркасные дома</a>
+                    <a href="index.html#gasblock">Дома из газоблока</a>
+                    <a href="index.html#brick">Кирпичные дома</a>
+                    <a href="index.html#timber">Дома из клееного бруса</a>
+                </div>
+            </div>
+
+            <!-- Технологии -->
+            <div class="nav-item">
+                <span class="nav-link">Технологии</span>
+                <div class="dropdown">
+                    <a href="index.html#services">Стандарты качества</a>
+                    <a href="index.html#engineering">Инженерные системы</a>
+                    <a href="index.html#materials">Материалы и закупки</a>
+                </div>
+            </div>
+
+            <!-- Мебель и декор -->
+            <div class="nav-item">
+                <span class="nav-link">Мебель и декор</span>
+                <div class="dropdown">
+                    <a href="index.html#decor">Дизайн интерьера</a>
+                    <a href="index.html#furnishing">Комплектация под ключ</a>
+                </div>
+            </div>
+        </div>
         <button class="btn-callback-header" onclick="openModal()">Заказать звонок</button>
     </header>
 
+    <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="page-hero">
         <div class="hero-content">
             <span>Скандинавский метод</span>
@@ -161,6 +276,7 @@
         </div>
     </section>
 
+    <!-- СТАНДАРТЫ -->
     <section class="section">
         <h2 class="section-title">Технологические <strong>стандарты</strong></h2>
         <div class="standards-container">
@@ -185,6 +301,7 @@
         </div>
     </section>
 
+    <!-- ЭКСПЕРТНАЯ СТАТЬЯ -->
     <section class="section section-bg" style="border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
         <div class="article-layout">
             <div class="article-text">
@@ -199,6 +316,7 @@
         </div>
     </section>
 
+    <!-- РАСШИРЕННАЯ ГАЛЕРЕЯ (Рокировка 2-1 и 4-3, увеличенный зум) -->
     <section class="section-gallery">
         <h2 class="section-title" style="padding-left: 2%;">Архитектурные <strong>решения</strong></h2>
         <div class="gallery-chess">
@@ -217,6 +335,7 @@
         </div>
     </section>
 
+    <!-- ЭТАПЫ РЕАЛИЗАЦИИ -->
     <section class="section section-bg">
         <h2 class="section-title">Как мы <strong>строим</strong></h2>
         <div class="steps-flow">
@@ -243,6 +362,7 @@
         </div>
     </section>
 
+    <!-- ПРИЗЫВ К ДЕЙСТВИЮ (Расчет за 2 дня) -->
     <section class="section">
         <div class="cta-box">
             <div class="cta-text">
@@ -255,6 +375,7 @@
         </div>
     </section>
 
+    <!-- ФОРМА ОБРАТНОЙ СВЯЗИ -->
     <section class="section section-bg">
         <div class="form-container">
             <h3>Оставить заявку на расчет</h3>
@@ -266,10 +387,12 @@
         </div>
     </section>
 
+    <!-- ПОДВАЛ -->
     <footer>
         <p>&copy; 2026 1 HOUSE. Проектирование и строительство загородных домов. Все права защищены.</p>
     </footer>
 
+    <!-- МОДАЛЬНОЕ ОКНО -->
     <div class="modal-overlay" id="callbackModal" onclick="if(event.target == this) closeModal()">
         <div class="modal-window">
             <span class="modal-close" onclick="closeModal()">&times;</span>
