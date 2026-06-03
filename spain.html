@@ -17,7 +17,7 @@
             -webkit-user-drag: none;
         }
 
-        /* МЕНЮ ШАПКИ (СТРОГО ДЛЯ СТРАНИЦЫ ИСПАНИИ) */
+        /* МЕНЮ ШАПКИ */
         header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 0 4%; height: 80px; background: #ffffff;
@@ -99,10 +99,7 @@
         }
         .hero-content { max-width: 850px; }
         .hero-content span { color: #dfb77d; text-transform: uppercase; font-size: 13px; letter-spacing: 2px; font-weight: 700; display: block; margin-bottom: 15px; }
-        
-        /* Крупный, солидный белый заголовок без вульгарных выделений */
         .hero-content h1 { font-size: 48px; font-weight: 300; line-height: 1.2; letter-spacing: -1px; color: #ffffff; }
-        
         .hero-content p { font-size: 18px; margin-top: 20px; color: #e0e0e0; font-weight: 300; line-height: 1.6; }
 
         /* БЛОК КОММЕРЧЕСКОГО ПРЕДЛОЖЕНИЯ */
@@ -113,9 +110,9 @@
         .promo-text h2 strong { font-weight: 700; color: #cb9f62; }
         .promo-text p { font-size: 16px; color: #4a4a4a; line-height: 1.7; font-weight: 300; }
         
-        /* Правая колонка с логотипом компании */
-        .promo-logo-box { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-        .promo-logo-box img { max-width: 220px; height: auto; display: block; }
+        /* Правая колонка строго с логотипом global-seal */
+        .promo-logo-box { text-align: center; display: flex; justify-content: center; align-items: center; }
+        .promo-logo-box img { max-width: 100%; height: auto; display: block; object-fit: contain; }
 
         .section { padding: 90px 4%; }
         .section-bg { background-color: #fbf9f6; }
@@ -234,8 +231,7 @@
                     <p>Программа идеально подходит для любого соискателя, желающего легально жить и развиваться в Европе. Вам не нужно быть крупным инвестором — достаточно вашего желания! Мы берем на себя всю рутину: сами подготовим полный пакет документов, сделаем сертифицированные переводы и поможем с официальным трудоустройством у наших европейских партнеров. Станьте свободным цифровым кочевником прямо сейчас.</p>
                 </div>
                 <div class="promo-logo-box">
-                    <img src="./logo.png" alt="1 HOUSE Residence">
-                    <button class="btn-gold" style="width: 100%;" onclick="openModal()">Оформить ВНЖ</button>
+                    <img src="./global-seal.jpg" alt="Global Seal">
                 </div>
             </div>
         </section>
