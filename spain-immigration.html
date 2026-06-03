@@ -1,212 +1,8 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ВНЖ в Испании под ключ: инвестиции, номады — 1 HOUSE Residence</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Manrope', sans-serif; }
-        body { background-color: #ffffff; color: #1a1a1a; scroll-behavior: smooth; }
-        
-        img {
-            -webkit-user-select: none; user-select: none;
-            -webkit-user-drag: none;
-        }
+<!-- НАЧАЛО БЛОКА ВНЖ В ИСПАНИИ -->
+<div id="spain" style="padding-top: 80px;">
 
-        /* ОРИГИНАЛЬНАЯ ШАПКА И МЕНЮ С ГЛАВНОЙ СТРАНИЦЫ INDEX.HTML */
-        header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 0 4%; height: 80px; background: #ffffff;
-            border-bottom: 1px solid #f0f0f0; position: fixed; width: 100%; top: 0; z-index: 1000;
-        }
-        .logo { font-weight: 700; font-size: 24px; letter-spacing: 2px; color: #1a1a1a; text-decoration: none; }
-        .logo span { color: #dfb77d; font-weight: 300; } 
-        
-        .nav-container { display: flex; height: 100%; }
-        
-        .nav-item { 
-            position: relative; 
-            display: flex; 
-            align-items: center; 
-            height: 100%; 
-            margin: 0 15px; 
-        }
-        .nav-link { 
-            text-decoration: none; 
-            color: #2a2a2a; 
-            font-weight: 500; 
-            font-size: 14px; 
-            transition: 0.3s; 
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            cursor: pointer;
-        }
-        .nav-link:hover { color: #dfb77d; }
-
-        .nav-link::after {
-            content: '';
-            display: inline-block;
-            width: 5px;
-            height: 5px;
-            border-right: 1px solid currentColor;
-            border-bottom: 1px solid currentColor;
-            transform: rotate(45deg);
-            margin-bottom: 3px;
-            transition: 0.3s;
-        }
-        .nav-item-single .nav-link::after { display: none; }
-
-        .dropdown {
-            position: absolute;
-            top: 80px;
-            left: 50%;
-            transform: translateX(-50%) translateY(15px);
-            background: #ffffff;
-            min-width: 220px;
-            border: 1px solid #f0f0f0;
-            border-radius: 0 0 6px 6px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
-            padding: 10px 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
-            z-index: 1100;
-        }
-        
-        .dropdown a {
-            display: block;
-            padding: 12px 20px;
-            color: #4a4a4a;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 400;
-            transition: 0.2s;
-        }
-        .dropdown a:hover {
-            background-color: #fbf9f6;
-            color: #dfb77d;
-            padding-left: 25px;
-        }
-
-        .nav-item:hover .dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(0);
-        }
-        .nav-item:hover .nav-link::after {
-            transform: rotate(-135deg);
-            margin-bottom: -1px;
-        }
-
-        .btn-callback-header { background: none; border: 1px solid #dfb77d; color: #1a1a1a; padding: 11px 22px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; font-weight: 500; border-radius: 4px; transition: 0.3s; }
-        .btn-callback-header:hover { background-color: #dfb77d; color: white; }
-
-        /* ГЛАВНЫЙ БАННЕР СТРАНИЦЫ ВНЖ (Идеальное кадрирование по верхнему краю) */
-        .page-hero { 
-            height: 80vh; display: flex; align-items: center; padding: 0 4%; 
-            background: linear-gradient(rgba(26,24,21,0.65), rgba(26,24,21,0.65)), url('./spain-hero.jpg') no-repeat center top/cover; 
-            color: #ffffff; margin-top: 80px;
-        }
-        .hero-content { max-width: 850px; }
-        .hero-content span { color: #dfb77d; text-transform: uppercase; font-size: 13px; letter-spacing: 2px; font-weight: 700; display: block; margin-bottom: 15px; }
-        .hero-content h1 { font-size: 48px; font-weight: 300; line-height: 1.2; letter-spacing: -1px; }
-        .hero-content h1 strong { font-weight: 700; }
-        .hero-content p { font-size: 18px; margin-top: 20px; color: #e0e0e0; font-weight: 300; line-height: 1.6; }
-
-        /* СЕКЦИИ */
-        .section { padding: 90px 4%; }
-        .section-bg { background-color: #fbf9f6; }
-        .section-title { font-size: 34px; font-weight: 300; margin-bottom: 45px; letter-spacing: -0.5px; }
-        .section-title strong { font-weight: 700; }
-
-        /* ПРОГРАММЫ ВНЖ (Расширенная шахматная сетка с мощным зумом 1.12) */
-        .section-gallery { padding: 90px 2%; }
-        .gallery-chess { display: flex; gap: 20px; width: 100%; justify-content: space-between; align-items: stretch; }
-        
-        .gallery-item { 
-            flex: 1; min-width: 0; background: #ffffff; overflow: hidden; border-radius: 6px; 
-            border: 1px solid #eee; box-shadow: 0 4px 15px rgba(0,0,0,0.01); 
-            transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column;
-        }
-        .gallery-item-media { width: 100%; overflow: hidden; position: relative; }
-        .gallery-item img { width: 100%; display: block; object-fit: cover; transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-        
-        .gallery-item-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .gallery-item h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #1a1a1a; }
-        .gallery-item p { font-size: 14px; color: #555; line-height: 1.6; font-weight: 300; margin-bottom: 20px; }
-        .gallery-item .badge { display: inline-block; padding: 6px 12px; background: #fbf9f6; border: 1px solid #dfb77d; color: #cb9f62; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 4px; align-self: flex-start; }
-
-        .gallery-item:hover { box-shadow: 0 25px 50px rgba(0,0,0,0.08); transform: translateY(-4px); border-color: #dfb77d; }
-        .gallery-item:hover img { transform: scale(1.12); }
-        
-        /* Разные высоты контейнеров картинок для сохранения шахматного ритма */
-        .h-low { height: 200px; }
-        .h-med { height: 240px; }
-        .h-high { height: 280px; }
-
-        /* ЭКСПЕРТНЫЙ БЛОК */
-        .article-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
-        .article-text h3 { font-size: 28px; font-weight: 700; color: #26221c; margin-bottom: 25px; }
-        .article-text p { font-size: 16px; color: #4a4a4a; line-height: 1.8; margin-bottom: 20px; text-align: justify; font-weight: 300; }
-        .article-text p strong { font-weight: 700; color: #1a1a1a; }
-        .article-media { height: 480px; border-radius: 8px; overflow: hidden; background: #f5f5f5; }
-        .article-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-        /* ЭТАПЫ ОФОРМЛЕНИЯ */
-        .steps-flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-top: 20px; }
-        .step-node { position: relative; padding-top: 30px; border-top: 2px solid #dfb77d; }
-        .step-number { font-size: 14px; font-weight: 700; color: #dfb77d; margin-bottom: 10px; text-transform: uppercase; }
-        .step-node h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
-        .step-node p { font-size: 14px; color: #666; line-height: 1.6; font-weight: 300; }
-
-        /* ПРИЗЫВ К ДЕЙСТВИЮ (Сроки: 2 рабочих дня) */
-        .cta-box { background: #26221c; color: white; padding: 60px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
-        .cta-text h3 { font-size: 30px; font-weight: 300; margin-bottom: 10px; }
-        .cta-text p { color: #ccc5ba; font-size: 16px; max-width: 600px; line-height: 1.6; font-weight: 300; }
-        
-        .btn-gold { display: inline-block; padding: 18px 35px; background: #dfb77d; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; }
-        .btn-gold:hover { background: #cb9f62; }
-        .btn-dark { display: inline-block; padding: 18px 35px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; width: 100%; text-align: center; }
-        .btn-dark:hover { background: #dfb77d; }
-
-        /* ФОРМА НА СТРАНИЦЕ */
-        .form-container { max-width: 500px; background: #ffffff; border: 1px solid #eee; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.01); margin: 0 auto; }
-        .form-container h3 { font-size: 24px; font-weight: 300; margin-bottom: 25px; text-align: center; }
-        .form-container input, .form-container select { width: 100%; padding: 16px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; outline: none; background: #fff; }
-        .form-container input:focus, .form-container select:focus { border-color: #dfb77d; }
-
-        /* ПОДВАЛ */
-        footer { background: #1a1815; color: #ffffff; padding: 40px 4%; text-align: center; font-size: 14px; border-top: 1px solid #2e2a24; }
-        footer p { color: #8c8273; }
-
-        /* МОДАЛЬНОЕ ОКНО */
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s; }
-        .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-window { background: #ffffff; padding: 40px; max-width: 450px; width: 90%; position: relative; border-radius: 8px; }
-        .modal-close { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #aaa; }
-
-        @media (max-width: 992px) {
-            header .nav-container { display: none; }
-            .page-hero { height: 60vh; } .page-hero h1 { font-size: 32px; }
-            .standards-container, .article-layout { grid-template-columns: 1fr; gap: 40px; }
-            .article-media { height: 350px; }
-            .gallery-chess { flex-wrap: wrap; }
-            .gallery-item { flex: 1 1 calc(50% - 20px); }
-            .cta-box { flex-direction: column; text-align: center; padding: 40px 20px; }
-        }
-        @media (max-width: 576px) {
-            .gallery-item { flex: 1 1 100%; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
+    <!-- СИНХРОНИЗИРОВАННОЕ МЕНЮ С ПРАВИЛЬНЫМИ ССЫЛКАМИ -->
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 4%; height: 80px; background: #ffffff; border-bottom: 1px solid #f0f0f0; position: fixed; width: 100%; top: 0; z-index: 1000;">
         <a href="index.html" class="logo">1<span>HOUSE</span></a>
         <div class="nav-container">
             <div class="nav-item nav-item-single">
@@ -227,6 +23,7 @@
                 <div class="dropdown">
                     <a href="index.html#projects">Все архитектурные проекты</a>
                     <a href="./frame-houses.html">Каркасные дома</a>
+                    <a href="https://1worldonemission-bit.github.io/global.html#spain">ВНЖ в Испании</a>
                     <a href="index.html#gasblock">Дома из газоблока</a>
                     <a href="index.html#brick">Кирпичные дома</a>
                     <a href="index.html#timber">Дома из клееного бруса</a>
@@ -253,14 +50,16 @@
         <button class="btn-callback-header" onclick="openModal()">Заказать звонок</button>
     </header>
 
-    <section class="page-hero">
-        <div class="hero-content">
-            <span>Европейская релокация премиум-класса</span>
-            <h1>ВНЖ и резиденция в <strong>Испании</strong> под ключ</h1>
-            <p>Полное юридическое сопровождение для инвесторов, предпринимателей и финансово независимых лиц. Гарантия легальности и абсолютная конфиденциальность.</p>
+    <!-- ГЛАВНЫЙ БАННЕР -->
+    <section class="page-hero" style="height: 80vh; display: flex; align-items: center; padding: 0 4%; background: linear-gradient(rgba(26,24,21,0.65), rgba(26,24,21,0.65)), url('./spain-hero.jpg') no-repeat center top/cover; color: #ffffff;">
+        <div class="hero-content" style="max-width: 850px;">
+            <span style="color: #dfb77d; text-transform: uppercase; font-size: 13px; letter-spacing: 2px; font-weight: 700; display: block; margin-bottom: 15px;">Европейская релокация премиум-класса</span>
+            <h1 style="font-size: 48px; font-weight: 300; line-height: 1.2; letter-spacing: -1px;">ВНЖ и резиденция в <strong>Испании</strong> под ключ</h1>
+            <p style="font-size: 18px; margin-top: 20px; color: #e0e0e0; font-weight: 300; line-height: 1.6;">Полное юридическое сопровождение для инвесторов, предпринимателей и финансово независимых лиц. Гарантия легальности и абсолютная конфиденциальность.</p>
         </div>
     </section>
 
+    <!-- КАРТОЧКИ ПРОГРАММ -->
     <section class="section-gallery">
         <h2 class="section-title" style="padding-left: 2%;">Программы <strong>резиденции</strong></h2>
         <div class="gallery-chess">
@@ -320,13 +119,13 @@
         </div>
     </section>
 
+    <!-- ЭКСПЕРТНЫЙ БЛОК -->
     <section class="section section-bg" style="border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
         <div class="article-layout">
             <div class="article-text">
                 <h3>Безопасная интеграция в европейское правовое поле: защита капитала и комплаенс</h3>
-                <p>Получение европейского статуса — это не просто сбор справок, а глубокий аудит финансовой истории заявителя. Миграционное законодательство Испании выдвигает жесткие требования к легальности происхождения средств (Preveción de Blanqueo de Capitales). Именно поэтому аналитики <strong>1 HOUSE Residence</strong> проводят предварительный аудит по международным стандартам комплаенса.</p>
-                <p>Мы полностью исключаем риск отказов за счет детального разбора налоговой документации, выписок по счетам и договоров купли-продажи активов еще до подачи дела в миграционные органы (UGE или Консульство). Каждое досье сопровождается официальным мотивировочным письмом от испанских адвокатов коллегии Ilustre Colegio de Abogados.</p>
-                <p>Наши клиенты получают комплексное обслуживание: от открытия счетов в банках высшего эшелона (CaixaBank, BBVA, Santander) и оформления полисов медицинского страхования уровня Premium до подбора инвестиционных объектов и финальной сдачи биометрических данных в Испании.</p>
+                <p>Получение европейского статуса — это не просто сбор справок, а глубокий аудит финансовой истории заявителя. Миграционное законодательство Испании выдвигает жесткие требования к легальности происхождения средств. Именно поэтому аналитики <strong>1 HOUSE Residence</strong> проводят предварительный аудит по международным стандартам комплаенса.</p>
+                <p>Мы полностью исключаем риск отказов за счет детального разбора налоговой документации, выписок по счетам и договоров купли-продажи активов еще до подачи дела в миграционные органы. Каждое досье сопровождается официальным мотивировочным письмом от испанских адвокатов.</p>
             </div>
             <div class="article-media">
                 <img src="./spain-expert.jpg" alt="Юридический аудит" loading="lazy">
@@ -334,6 +133,7 @@
         </div>
     </section>
 
+    <!-- ЭТАПЫ РАБОТЫ -->
     <section class="section">
         <h2 class="section-title">Этапы <strong>легализации</strong></h2>
         <div class="steps-flow">
@@ -360,6 +160,7 @@
         </div>
     </section>
 
+    <!-- ПРИЗЫВ К ДЕЙСТВИЮ -->
     <section class="section section-bg">
         <div class="cta-box">
             <div class="cta-text">
@@ -372,6 +173,7 @@
         </div>
     </section>
 
+    <!-- ФОРМА ОБРАТНОЙ СВЯЗИ -->
     <section class="section">
         <div class="form-container">
             <h3>Оценить шансы на ВНЖ</h3>
@@ -390,25 +192,5 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 1 HOUSE Residence. Международный консалтинг и миграционное право. Все права защищены.</p>
-    </footer>
-
-    <div class="modal-overlay" id="callbackModal" onclick="if(event.target == this) closeModal()">
-        <div class="modal-window">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h3 style="font-size:24px; font-weight:300; margin-bottom:20px; text-align:center;">Консультация юриста</h3>
-            <form onsubmit="alert('Спасибо. Заявка передана в адвокатский отдел. Мы свяжемся с вами в течение двух рабочих дней.'); closeModal(); return false;">
-                <input type="text" placeholder="Имя" required>
-                <input type="tel" placeholder="Телефон" required>
-                <button class="btn-dark" type="submit">Заказать звонок</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        function openModal() { document.getElementById('callbackModal').classList.add('active'); }
-        function closeModal() { document.getElementById('callbackModal').classList.remove('active'); }
-    </script>
-</body>
-</html>
+</div>
+<!-- КОНЕЦ БЛОКА ВНЖ В ИСПАНИИ -->
