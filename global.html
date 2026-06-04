@@ -6,11 +6,11 @@
     <title>Группа компаний 1 WORLD — Официальный сайт</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght=300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Manrope', sans-serif; }
-        body { background-color: #ffffff; color: #1a1a1a; scroll-behavior: smooth; }
+        body { background-color: #ffffff; color: #1a1a1a; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
         
         img {
             -webkit-user-select: none; user-select: none;
@@ -125,16 +125,15 @@
             display: inline;
         }
         
-        /* ИСПРАВЛЕНО: Текст ровно в 2 строчки, без рваных полей */
+        /* Фиксация: Ровно 2 строчки, оригинальный премиальный шрифт Manrope */
         .hero-content p { 
             font-size: 18px; 
             margin-top: 25px; 
             color: #4a4a4a; 
             font-weight: 300; 
             line-height: 1.6; 
-            max-width: 760px;
-            text-align: justify;
-            text-justify: inter-word;
+            max-width: 790px;
+            text-align: left;
         }
 
         /* БЛОК: НАША ЦЕЛЬ */
@@ -145,14 +144,13 @@
         .target-text-box h2 { font-size: 32px; font-weight: 300; color: #1a1a1a; letter-spacing: -0.5px; margin-bottom: 25px; }
         .target-text-box h2 strong { font-weight: 700; color: #dfb77d; }
         
-        /* ИСПРАВЛЕНО: Четкие границы абзаца */
+        /* Фиксация: Идеально ровный аккуратный абзац, шрифт сохранен */
         .target-text-box p { 
             font-size: 20px; 
             color: #333; 
             line-height: 1.7; 
             font-weight: 300; 
-            text-align: justify;
-            text-justify: inter-word;
+            text-align: left;
         }
         
         .target-logo-box { display: flex; justify-content: center; align-items: center; }
@@ -176,7 +174,7 @@
         .about-section h3 { font-size: 32px; font-weight: 300; color: #1a1a1a; margin-bottom: 30px; letter-spacing: -0.5px; }
         .about-section h3 strong { font-weight: 700; color: #dfb77d; }
         
-        /* ИСПРАВЛЕНО: Строки больше не гуляют, края идеально ровные с двух сторон */
+        /* Фиксация: Строки монолитны, выровнены по ширине с красивыми автоматическими переносами */
         .about-text { 
             font-size: 16px; 
             color: #4a4a4a; 
@@ -232,7 +230,7 @@
 
     <!-- НАВИГАЦИОННАЯ ШАПКА -->
     <header>
-        <a href="./global.html" class="logo">1<span>WORLD</span></a>
+        <a href="#" class="logo">1<span>WORLD</span></a>
         <div class="nav-container">
             <div class="nav-item nav-item-single">
                 <a href="#about" class="nav-link">О нас</a>
@@ -315,7 +313,7 @@
                 <div class="direction-content">
                     <div>
                         <h3>Строительство <span>1 HOUSE</span></h3>
-                        <p>Проектирование и возведение энергоэффективных загородных домов под ключ. Работаем по передовым технологиям: каркасное домостроение, европейский газоблок, премиальный клееный брус и классический кирпич. Полный цикл созидания вашего родового гнезда.</p>
+                        <p>Проекпирование и возведение энергоэффективных загородных домов под ключ. Работаем по передовым технологиям: каркасное домостроение, европейский газоблок, премиальный клееный брус и классический кирпич. Полный цикл созидания вашего родового гнезда.</p>
                     </div>
                     <a href="./index.html" class="btn-direction">Смотреть проекты</a>
                 </div>
@@ -329,7 +327,7 @@
                 <div class="direction-content">
                     <div>
                         <h3>Недвижимость <span>INVEST</span></h3>
-                        <p>Подбор и экспертное сопровождение сделок купли-продажи in лучших инвестиционных хабах планеты. Премиальные доходные виллы на Бали, а также ликвидная жилая и коммерческая недвижимость в развитых европейских странах для диверсификации капитала.</p>
+                        <p>Подбор и экспертное сопровождение сделок купли-продажи в лучших инвестиционных хабах планеты. Премиальные доходные виллы на Бали, а также ликвидная жилая и коммерческая недвижимость в развитых европейских странах для диверсификации капитала.</p>
                     </div>
                     <a href="#" class="btn-direction">Перейти в каталог</a>
                 </div>
