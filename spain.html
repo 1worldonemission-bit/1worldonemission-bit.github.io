@@ -6,11 +6,11 @@
     <title>ВНЖ в Испании — Global Group</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght=300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Manrope', sans-serif; }
-        body { background-color: #ffffff; color: #1a1a1a; scroll-behavior: smooth; }
+        body { background-color: #ffffff; color: #1a1a1a; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
         
         img {
             -webkit-user-select: none; user-select: none;
@@ -115,7 +115,7 @@
         
         .hero-spain h1 { font-size: 48px; font-weight: 300; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 20px; }
         .hero-spain h1 strong { font-weight: 700; color: #dfb77d; }
-        .hero-spain p { font-size: 18px; color: #e0e0e0; font-weight: 300; line-height: 1.6; max-width: 750px; }
+        .hero-spain p { font-size: 18px; color: #e0e0e0; font-weight: 300; line-height: 1.6; max-width: 750px; text-align: center; }
 
         /* ОСНОВНОЙ КОНТЕНТ */
         .content-section { padding: 90px 4%; background: #ffffff; }
@@ -130,7 +130,7 @@
         .program-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); border-color: #dfb77d; }
         
         .program-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 15px; color: #26221c; }
-        .program-card p { font-size: 15px; color: #555; line-height: 1.7; font-weight: 300; }
+        .program-card p { font-size: 15px; color: #555; line-height: 1.7; font-weight: 300; text-align: left; }
 
         /* ЦЕНТРАЛЬНАЯ КНОПКА ВЫЗОВА ОКНА */
         .cta-box { text-align: center; margin-top: 50px; }
@@ -147,46 +147,45 @@
         
         .modal-window { 
             background: #ffffff; 
-            padding: 30px 40px; 
-            max-width: 540px; 
+            padding: 25px 30px; 
+            max-width: 500px; 
             width: 92%; 
             position: relative; 
-            border-radius: 12px; 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-            max-height: 90vh;
+            border-radius: 10px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            max-height: 94vh;
             overflow-y: auto;
         }
-        .modal-close { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #aaa; transition: 0.2s; line-height: 1; }
+        .modal-close { position: absolute; top: 12px; right: 20px; font-size: 26px; cursor: pointer; color: #aaa; transition: 0.2s; }
         .modal-close:hover { color: #1a1a1a; }
         
-        .modal-window h3 { font-size: 24px; font-weight: 400; margin-bottom: 8px; text-align: center; letter-spacing: -0.5px; color: #1a1a1a; }
-        .modal-window p.modal-subtitle { font-size: 14px; color: #666; text-align: center; margin-bottom: 25px; font-weight: 300; line-height: 1.5; }
+        .modal-window h3 { font-size: 22px; font-weight: 300; margin-bottom: 5px; text-align: center; letter-spacing: -0.5px; }
+        .modal-window p.modal-subtitle { font-size: 13px; color: #666; text-align: center; margin-bottom: 20px; font-weight: 300; line-height: 1.4; }
 
-        /* Сетка 2х2 для полей ввода */
+        /* Компактная сетка 2х2 для полей ввода */
         .modal-grid-inputs {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 15px;
         }
         .modal-group { position: relative; }
-        .modal-group label { display: block; font-size: 11px; font-weight: 700; color: #555; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .modal-group label { display: block; font-size: 11px; font-weight: 700; color: #444; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
         .modal-input { 
             width: 100%; 
-            padding: 12px 16px; 
+            padding: 11px 14px; 
             border: 1px solid #dcdcdc; 
-            border-radius: 6px; 
+            border-radius: 5px; 
             font-size: 14px; 
             outline: none; 
             background: #fcfcfc;
             transition: 0.3s;
-            color: #1a1a1a;
         }
-        .modal-input:focus { border-color: #dfb77d; background: #fff; box-shadow: 0 0 0 3px rgba(223,183,125,0.15); }
+        .modal-input:focus { border-color: #dfb77d; background: #fff; box-shadow: 0 0 0 3px rgba(223,183,125,0.12); }
         
         /* Сетка каналов связи */
-        .channels-title { font-size: 12px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; text-align: center; }
-        .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 25px; }
+        .channels-title { font-size: 12px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: center; }
+        .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
         
         .channel-option { position: relative; }
         .channel-option input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
@@ -194,9 +193,9 @@
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            padding: 12px; 
+            padding: 10px; 
             border: 1px solid #e0e0e0; 
-            border-radius: 6px; 
+            border-radius: 5px; 
             cursor: pointer; 
             font-size: 13px; 
             font-weight: 500;
@@ -215,9 +214,9 @@
         }
 
         .btn-modal-submit {
-            display: block; padding: 16px 25px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 6px; width: 100%; text-align: center;
+            display: inline-block; padding: 14px 25px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 5px; width: 100%; text-align: center;
         }
-        .btn-modal-submit:hover { background: #dfb77d; box-shadow: 0 10px 20px rgba(223,183,125,0.2); }
+        .btn-modal-submit:hover { background: #dfb77d; }
 
         /* АДАПТИВНОСТЬ */
         @media (max-width: 992px) {
@@ -226,15 +225,14 @@
             .hero-spain h1 { font-size: 34px; }
         }
         @media (max-width: 576px) { 
-            .modal-grid-inputs { grid-template-columns: 1fr; gap: 12px; }
-            .channels-grid { grid-template-columns: 1fr; gap: 8px; }
-            .modal-window { padding: 30px 20px; }
+            .modal-grid-inputs { grid-template-columns: 1fr; gap: 10px; }
+            .channels-grid { grid-template-columns: 1fr; gap: 6px; }
+            .modal-window { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- НАВИГАЦИОННАЯ ШАПКА -->
     <header>
         <a href="./global.html" class="logo">GLOBAL<span>GROUP</span></a>
         <div class="nav-container">
@@ -272,32 +270,27 @@
         <button class="btn-callback-header" onclick="openModal()">План переезда</button>
     </header>
 
-    <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero-spain">
         <span>Международная легализация</span>
-        <h1>ВНЖ в Испании: <strong>Новые горизонны свободы</strong></h1>
+        <h1>ВНЖ в Испании: <strong>Новые горизонты свободы</strong></h1>
         <p>Полное юридическое сопровождение вашей резиденции. От сбора документов и открытия счетов до получения карт резидентов для всей семьи без бюрократии и стресса.</p>
     </section>
 
-    <!-- ОСНОВНОЙ КОНТЕНТ С ПРОГРАММАМИ -->
     <section class="content-section">
         <div class="content-container">
             <h2 class="section-title">Доступные программы <strong>легализации</strong></h2>
             
             <div class="programs-grid">
-                <!-- Карточка 1 -->
                 <div class="program-card">
                     <h3>Цифровой кочевник</h3>
                     <p>Для удаленных сотрудников, фрилансеров и владельцев онлайн-бизнеса с доходом за пределами Испании. Оформляется сразу на 3 года с правом свободного перемещения по Шенгену.</p>
                 </div>
 
-                <!-- Карточка 2 -->
                 <div class="program-card">
                     <h3>Финансово независимые лица</h3>
                     <p>Для лиц с пассивным доходом или достаточными накоплениями на банковских счетах. Идеальный вариант для тех, кто планирует жить в Испании без права работы по найму внутри страны.</p>
                 </div>
 
-                <!-- Карточка 3 -->
                 <div class="program-card">
                     <h3>Инвестор (Золотая виза)</h3>
                     <p>Предоставляется при покупке жилой или коммерческой недвижимости на сумму от 500 000 €. Не требует обязательного постоянного проживания в стране для сохранения статуса.</p>
@@ -310,12 +303,10 @@
         </div>
     </section>
 
-    <!-- ФУТЕР -->
     <footer>
         <p>&copy; 2026 Global Group. Миграционный консалтинг и юридическое сопровождение. Все права защищены.</p>
     </footer>
 
-    <!-- ИСПРАВЛЕННОЕ КОМПАКТНОЕ МОДАЛЬНОЕ ОКНО -->
     <div class="modal-overlay" id="callbackModal" onclick="if(event.target == this) closeModal()">
         <div class="modal-window">
             <span class="modal-close" onclick="closeModal()">&times;</span>
@@ -324,7 +315,6 @@
             
             <form onsubmit="alert('Спасибо! Персональный план переезда уже генерируется и будет отправлен вам в ближайшее время.'); closeModal(); return false;">
                 
-                <!-- Поля компактно стоят по два элемента в ряд -->
                 <div class="modal-grid-inputs">
                     <div class="modal-group">
                         <label>Ваше имя</label>
