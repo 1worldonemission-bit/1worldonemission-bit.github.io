@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ВНЖ в Испании — Полное руководство — Группа компаний 1 WORLD</title>
+    <title>ВНЖ в Испании — Global Group</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght=300;400;500;700&display=swap" rel="stylesheet">
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Manrope', sans-serif; }
         body { background-color: #ffffff; color: #1a1a1a; scroll-behavior: smooth; }
         
-        img { -webkit-user-select: none; user-select: none; -webkit-user-drag: none; }
+        img {
+            -webkit-user-select: none; user-select: none;
+            -webkit-user-drag: none;
+        }
 
         /* МЕНЮ ШАПКИ */
         header {
@@ -23,145 +26,209 @@
         .logo { font-weight: 700; font-size: 24px; letter-spacing: 2px; color: #1a1a1a; text-decoration: none; }
         .logo span { color: #dfb77d; font-weight: 300; } 
         
-        .nav-container { display: flex; height: 100%; align-items: center; }
+        .nav-container { display: flex; height: 100%; }
         
-        .nav-item { position: relative; display: flex; align-items: center; height: 100%; margin: 0 14px; }
-        .nav-link { text-decoration: none; color: #2a2a2a; font-weight: 500; font-size: 14px; transition: 0.3s; display: flex; align-items: center; gap: 4px; cursor: pointer; }
+        .nav-item { 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            height: 100%; 
+            margin: 0 12px; 
+        }
+        .nav-link { 
+            text-decoration: none; 
+            color: #2a2a2a; 
+            font-weight: 500; 
+            font-size: 14px; 
+            transition: 0.3s; 
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+        }
         .nav-link:hover { color: #dfb77d; }
 
         .dropdown {
-            position: absolute; top: 80px; left: 50%; transform: translateX(-50%) translateY(15px);
-            background: #ffffff; min-width: 240px; border: 1px solid #f0f0f0; border-radius: 0 0 6px 6px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.07); padding: 10px 0; opacity: 0; visibility: hidden;
-            transition: opacity 0.3s, transform 0.3s, visibility 0.3s; z-index: 1100;
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(15px);
+            background: #ffffff;
+            min-width: 240px;
+            border: 1px solid #f0f0f0;
+            border-radius: 0 0 6px 6px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+            z-index: 1100;
         }
-        .dropdown a { display: block; padding: 12px 20px; color: #4a4a4a; text-decoration: none; font-size: 13px; font-weight: 400; transition: 0.2s; }
-        .dropdown a:hover { background-color: #fbf9f6; color: #dfb77d; padding-left: 25px; }
+        
+        .dropdown a {
+            display: block;
+            padding: 12px 20px;
+            color: #4a4a4a;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 400;
+            transition: 0.2s;
+        }
+        .dropdown a:hover {
+            background-color: #fbf9f6;
+            color: #dfb77d;
+            padding-left: 25px;
+        }
 
-        .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
 
         .btn-callback-header { background: none; border: 1px solid #dfb77d; color: #1a1a1a; padding: 11px 22px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; font-weight: 500; border-radius: 4px; transition: 0.3s; }
         .btn-callback-header:hover { background-color: #dfb77d; color: white; }
 
-        /* ГЛАВНЫЙ БАННЕР */
+        /* ГЛАВНЫЙ БАННЕР ИСПАНИИ */
         .hero-spain { 
-            height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 0 4%; 
-            background: linear-gradient(rgba(26, 24, 21, 0.55), rgba(26, 24, 21, 0.55)), url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-            text-align: center; margin-top: 80px; color: #ffffff;
+            height: 70vh; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 4%; 
+            background: linear-gradient(rgba(26, 24, 21, 0.45), rgba(26, 24, 21, 0.45)), url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            text-align: center;
+            margin-top: 80px;
+            color: #ffffff;
         }
-        .hero-spain span { color: #dfb77d; text-transform: uppercase; font-size: 14px; letter-spacing: 3px; font-weight: 700; display: block; margin-bottom: 15px; }
-        .hero-spain h1 { font-size: 52px; font-weight: 300; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 20px; }
+        
+        .hero-spain span { 
+            color: #dfb77d; 
+            text-transform: uppercase; 
+            font-size: 14px; 
+            letter-spacing: 3px; 
+            font-weight: 700; 
+            display: block; 
+            margin-bottom: 15px;
+        }
+        
+        .hero-spain h1 { font-size: 48px; font-weight: 300; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 20px; }
         .hero-spain h1 strong { font-weight: 700; color: #dfb77d; }
-        .hero-spain p { font-size: 19px; color: #e0e0e0; font-weight: 300; line-height: 1.6; max-width: 800px; }
+        .hero-spain p { font-size: 18px; color: #e0e0e0; font-weight: 300; line-height: 1.6; max-width: 750px; }
 
-        /* СЕКЦИИ И ТИПОГРАФИКА */
-        .content-section { padding: 110px 6%; background: #ffffff; }
-        .content-section-alt { padding: 110px 6%; background: #fbf9f6; }
-        .content-container { max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 38px; font-weight: 300; margin-bottom: 60px; text-align: center; letter-spacing: -0.5px; color: #1a1a1a; }
-        .section-title strong { font-weight: 700; color: #dfb77d; }
+        /* ОСНОВНОЙ КОНТЕНТ */
+        .content-section { padding: 90px 4%; background: #ffffff; }
+        .content-container { max-width: 1100px; margin: 0 auto; }
+        
+        .section-title { font-size: 32px; font-weight: 300; margin-bottom: 45px; text-align: center; }
+        .section-title strong { font-weight: 700; color: #cb9f62; }
 
-        /* ПРОГРАММЫ */
-        .programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px; }
-        .program-card { border: 1px solid #eee; padding: 45px 35px; border-radius: 8px; background: #ffffff; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
-        .program-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-color: #dfb77d; }
-        .program-card h3 { font-size: 23px; font-weight: 700; margin-bottom: 15px; color: #1a1a1a; }
-        .program-card p { font-size: 14.5px; color: #555; line-height: 1.8; font-weight: 300; margin-bottom: 30px; text-align: justify; }
-        .program-features { list-style: none; margin-bottom: 30px; border-top: 1px dashed #e5e5e5; padding-top: 20px; }
-        .program-features li { font-size: 13.5px; color: #666; margin-bottom: 12px; padding-left: 20px; position: relative; font-weight: 300; }
-        .program-features li::before { content: '•'; position: absolute; left: 0; color: #dfb77d; font-size: 18px; line-height: 1; }
-        .program-meta { font-size: 13px; color: #1a1a1a; font-weight: 700; border-top: 1px solid #f0f0f0; padding-top: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .program-meta span { color: #dfb77d; font-weight: 400; }
+        /* СЕТКА ПРОГРАММ */
+        .programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 60px; }
+        .program-card { border: 1px solid #eee; padding: 35px; border-radius: 8px; background: #fbf9f6; transition: 0.3s; }
+        .program-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); border-color: #dfb77d; }
+        
+        .program-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 15px; color: #26221c; }
+        .program-card p { font-size: 15px; color: #555; line-height: 1.7; font-weight: 300; }
 
-        /* ТАБЛИЦА СРАВНЕНИЯ */
-        .table-wrapper { overflow-x: auto; margin-top: 20px; border: 1px solid #eee; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
-        .compare-table { width: 100%; border-collapse: collapse; background: #ffffff; text-align: left; font-size: 14px; min-width: 800px; }
-        .compare-table th { background: #1a1815; color: #ffffff; font-weight: 500; padding: 18px 20px; text-transform: uppercase; font-size: 12px; letter-spacing: 0.5px; }
-        .compare-table td { padding: 18px 20px; border-bottom: 1px solid #eee; color: #4a4a4a; font-weight: 300; line-height: 1.5; }
-        .compare-table tr:last-child td { border-bottom: none; }
-        .compare-table tr:nth-child(even) { background: #fdfcfb; }
-        .compare-table td strong { color: #1a1a1a; font-weight: 700; }
-
-        /* ТРЕБОВАНИЯ И ДОКУМЕНТЫ */
-        .info-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-        .info-box h3 { font-size: 24px; font-weight: 300; margin-bottom: 30px; color: #1a1a1a; position: relative; padding-bottom: 12px; }
-        .info-box h3 strong { font-weight: 700; color: #dfb77d; }
-        .info-box h3::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 2px; background: #dfb77d; }
-        .info-list { list-style: none; }
-        .info-list li { font-size: 15px; color: #4a4a4a; line-height: 1.7; font-weight: 300; margin-bottom: 20px; padding-left: 30px; position: relative; text-align: justify; }
-        .info-list li::before { content: '✓'; position: absolute; left: 0; color: #dfb77d; font-weight: 700; font-size: 16px; }
-
-        /* ЭТАПЫ РАБОТЫ */
-        .steps-timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
-        .step-card { background: #ffffff; padding: 40px 30px; border-radius: 8px; border: 1px solid #eee; position: relative; transition: 0.3s; }
-        .step-card:hover { border-color: #dfb77d; box-shadow: 0 15px 35px rgba(0,0,0,0.04); }
-        .step-num { font-size: 46px; font-weight: 700; color: rgba(223, 183, 125, 0.18); position: absolute; top: 20px; right: 25px; line-height: 1; }
-        .step-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 15px; color: #1a1a1a; margin-top: 10px; }
-        .step-card p { font-size: 14px; color: #666; line-height: 1.7; font-weight: 300; text-align: justify; }
-
-        /* ДЕТАЛЬНЫЙ БЛОК FAQ (АККОРДЕОН) */
-        .faq-wrapper { max-width: 900px; margin: 0 auto; }
-        .faq-item { border-bottom: 1px solid #eee; padding: 24px 0; }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-trigger { display: flex; justify-content: space-between; align-items: center; width: 100%; background: none; border: none; text-align: left; font-size: 18px; font-weight: 700; color: #1a1a1a; cursor: pointer; padding-right: 10px; }
-        .faq-icon { font-size: 22px; color: #dfb77d; transition: transform 0.3s ease; font-weight: 300; }
-        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, margin-top 0.3s ease; margin-top: 0; }
-        .faq-content p { font-size: 15px; color: #555; line-height: 1.7; font-weight: 300; text-align: justify; }
-        .faq-item.active .faq-icon { transform: rotate(45px); } /* Будет управляться через JS плавным вращением крестика */
-
-        /* ПРЕИМУЩЕСТВА С НАМИ */
-        .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .benefit-item { display: flex; gap: 20px; align-items: flex-start; }
-        .benefit-icon { background: #fbf9f6; color: #dfb77d; font-size: 20px; font-weight: 700; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; border: 1px solid #f3ece1; }
-        .benefit-content h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #1a1a1a; }
-        .benefit-content p { font-size: 14.5px; color: #555; line-height: 1.6; font-weight: 300; text-align: justify; }
-
-        /* ЦЕНТРАЛЬНАЯ СЕКЦИЯ ДЕЙСТВИЯ */
-        .cta-box { text-align: center; padding: 90px 4%; background: #1a1815; color: white; }
-        .cta-box h3 { font-size: 32px; font-weight: 300; margin-bottom: 15px; letter-spacing: -0.5px; }
-        .cta-box h3 strong { font-weight: 700; color: #dfb77d; }
-        .cta-box p { font-size: 17px; color: #a69e92; font-weight: 300; margin-bottom: 35px; }
-        .btn-cta { display: inline-block; padding: 18px 45px; background: #dfb77d; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1.5px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; }
-        .btn-cta:hover { background: #ffffff; color: #1a1a1a; box-shadow: 0 10px 30px rgba(255,255,255,0.1); }
+        /* ЦЕНТРАЛЬНАЯ КНОПКА ВЫЗОВА ОКНА */
+        .cta-box { text-align: center; margin-top: 50px; }
+        .btn-cta { display: inline-block; padding: 18px 40px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1.5px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; }
+        .btn-cta:hover { background: #dfb77d; box-shadow: 0 10px 25px rgba(223,183,125,0.3); }
 
         /* ФУТЕР */
-        footer { background: #11100e; color: #ffffff; padding: 40px 4%; text-align: center; font-size: 14px; border-top: 1px solid #23201b; }
-        footer p { color: #6e665a; }
+        footer { background: #1a1815; color: #ffffff; padding: 40px 4%; text-align: center; font-size: 14px; border-top: 1px solid #2e2a24; }
+        footer p { color: #8c8273; }
 
-        /* ИСПРАВЛЕННОЕ МОДАЛЬНОЕ ОКНО ДЛЯ ПЛАНА ПЕРЕЕЗДА */
+        /* КОМПАКТНОЕ И ПРЕМИАЛЬНОЕ МОДАЛЬНОЕ ОКНО */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-window { background: #ffffff; padding: 25px 30px; max-width: 500px; width: 92%; position: relative; border-radius: 10px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); max-height: 94vh; overflow-y: auto; }
-        .modal-close { position: absolute; top: 12px; right: 20px; font-size: 26px; cursor: pointer; color: #aaa; transition: 0.2s; }
+        
+        .modal-window { 
+            background: #ffffff; 
+            padding: 30px 40px; 
+            max-width: 540px; 
+            width: 92%; 
+            position: relative; 
+            border-radius: 12px; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-close { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #aaa; transition: 0.2s; line-height: 1; }
         .modal-close:hover { color: #1a1a1a; }
-        .modal-window h3 { font-size: 22px; font-weight: 300; margin-bottom: 5px; text-align: center; letter-spacing: -0.5px; }
-        .modal-window p.modal-subtitle { font-size: 13px; color: #666; text-align: center; margin-bottom: 20px; font-weight: 300; line-height: 1.4; }
         
-        .modal-grid-inputs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 15px; }
+        .modal-window h3 { font-size: 24px; font-weight: 400; margin-bottom: 8px; text-align: center; letter-spacing: -0.5px; color: #1a1a1a; }
+        .modal-window p.modal-subtitle { font-size: 14px; color: #666; text-align: center; margin-bottom: 25px; font-weight: 300; line-height: 1.5; }
+
+        /* Сетка 2х2 для полей ввода */
+        .modal-grid-inputs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
         .modal-group { position: relative; }
-        .modal-group label { display: block; font-size: 11px; font-weight: 700; color: #444; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .modal-input { width: 100%; padding: 11px 14px; border: 1px solid #dcdcdc; border-radius: 5px; font-size: 14px; outline: none; background: #fcfcfc; transition: 0.3s; }
-        .modal-input:focus { border-color: #dfb77d; background: #fff; box-shadow: 0 0 0 3px rgba(223,183,125,0.12); }
+        .modal-group label { display: block; font-size: 11px; font-weight: 700; color: #555; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .modal-input { 
+            width: 100%; 
+            padding: 12px 16px; 
+            border: 1px solid #dcdcdc; 
+            border-radius: 6px; 
+            font-size: 14px; 
+            outline: none; 
+            background: #fcfcfc;
+            transition: 0.3s;
+            color: #1a1a1a;
+        }
+        .modal-input:focus { border-color: #dfb77d; background: #fff; box-shadow: 0 0 0 3px rgba(223,183,125,0.15); }
         
-        .channels-title { font-size: 12px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: center; }
-        .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
+        /* Сетка каналов связи */
+        .channels-title { font-size: 12px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; text-align: center; }
+        .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 25px; }
+        
         .channel-option { position: relative; }
         .channel-option input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
-        .channel-box { display: flex; align-items: center; justify-content: center; padding: 10px; border: 1px solid #e0e0e0; border-radius: 5px; cursor: pointer; font-size: 13px; font-weight: 500; color: #555; background: #fff; transition: 0.2s; user-select: none; }
-        .channel-option input:checked + .channel-box { border-color: #dfb77d; background: #fbf9f6; color: #cb9f62; font-weight: 700; box-shadow: inset 0 0 0 1px #dfb77d; }
-        .btn-modal-submit { display: inline-block; padding: 14px 25px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 5px; width: 100%; text-align: center; }
-        .btn-modal-submit:hover { background: #dfb77d; }
+        .channel-box { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 12px; 
+            border: 1px solid #e0e0e0; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            font-size: 13px; 
+            font-weight: 500;
+            color: #555;
+            background: #fff;
+            transition: 0.2s;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        .channel-option input:checked + .channel-box { 
+            border-color: #dfb77d; 
+            background: #fbf9f6; 
+            color: #cb9f62;
+            font-weight: 700;
+            box-shadow: inset 0 0 0 1px #dfb77d;
+        }
+
+        .btn-modal-submit {
+            display: block; padding: 16px 25px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 6px; width: 100%; text-align: center;
+        }
+        .btn-modal-submit:hover { background: #dfb77d; box-shadow: 0 10px 20px rgba(223,183,125,0.2); }
 
         /* АДАПТИВНОСТЬ */
         @media (max-width: 992px) {
             header .nav-container { display: none; }
-            .programs-grid, .info-split, .steps-timeline, .benefits-grid { grid-template-columns: 1fr; gap: 35px; }
-            .hero-spain h1 { font-size: 36px; }
+            .programs-grid { grid-template-columns: 1fr; }
+            .hero-spain h1 { font-size: 34px; }
         }
         @media (max-width: 576px) { 
-            .modal-grid-inputs { grid-template-columns: 1fr; gap: 10px; }
-            .channels-grid { grid-template-columns: 1fr; gap: 6px; }
-            .modal-window { padding: 20px; }
+            .modal-grid-inputs { grid-template-columns: 1fr; gap: 12px; }
+            .channels-grid { grid-template-columns: 1fr; gap: 8px; }
+            .modal-window { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -169,20 +236,24 @@
 
     <!-- НАВИГАЦИОННАЯ ШАПКА -->
     <header>
-        <a href="./global.html" class="logo">1<span>WORLD</span></a>
+        <a href="./global.html" class="logo">GLOBAL<span>GROUP</span></a>
         <div class="nav-container">
             <div class="nav-item nav-item-single">
                 <a href="./global.html#about" class="nav-link">О нас</a>
             </div>
+            
             <div class="nav-item nav-item-single">
                 <a href="./mission.html" class="nav-link">Наша Миссия</a>
             </div>
+            
             <div class="nav-item nav-item-single">
                 <a href="#" class="nav-link">Недвижимость в Европе</a>
             </div>
+
             <div class="nav-item nav-item-single">
                 <a href="#" class="nav-link">Недвижимость на Бали</a>
             </div>
+
             <div class="nav-item">
                 <span class="nav-link">Строительство</span>
                 <div class="dropdown">
@@ -193,6 +264,7 @@
                     <a href="./index.html#timber">Дома из клееного бруса</a>
                 </div>
             </div>
+
             <div class="nav-item nav-item-single">
                 <a href="./spain.html" class="nav-link" style="color: #dfb77d; font-weight: 700;">ВНЖ в Испании</a>
             </div>
@@ -203,11 +275,11 @@
     <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero-spain">
         <span>Международная легализация</span>
-        <h1>ВНЖ в Испании: <strong>Новые горизонты свободы</strong></h1>
+        <h1>ВНЖ в Испании: <strong>Новые горизонны свободы</strong></h1>
         <p>Полное юридическое сопровождение вашей резиденции. От сбора документов и открытия счетов до получения карт резидентов для всей семьи без бюрократии и стресса.</p>
     </section>
 
-    <!-- 1. ПРОГРАММЫ ЛЕГАЛИЗАЦИИ -->
+    <!-- ОСНОВНОЙ КОНТЕНТ С ПРОГРАММАМИ -->
     <section class="content-section">
         <div class="content-container">
             <h2 class="section-title">Доступные программы <strong>легализации</strong></h2>
@@ -215,265 +287,60 @@
             <div class="programs-grid">
                 <!-- Карточка 1 -->
                 <div class="program-card">
-                    <div>
-                        <h3>Цифровой кочевник</h3>
-                        <p>Для удаленных сотрудников, фрилансеров и владельцев онлайн-бизнеса с доходом за пределами Испании. Оформляется сразу на 3 года с правом свободного перемещения по Шенгену.</p>
-                        <ul class="program-features">
-                            <li>Минимальный доход: от €2,640 в месяц</li>
-                            <li>Возможность включить семью в заявку</li>
-                            <li>Удаленная подача внутри Испании</li>
-                        </ul>
-                    </div>
-                    <div class="program-meta">Срок оформления: <span>от 1.5 месяцев</span></div>
+                    <h3>Цифровой кочевник</h3>
+                    <p>Для удаленных сотрудников, фрилансеров и владельцев онлайн-бизнеса с доходом за пределами Испании. Оформляется сразу на 3 года с правом свободного перемещения по Шенгену.</p>
                 </div>
 
                 <!-- Карточка 2 -->
                 <div class="program-card">
-                    <div>
-                        <h3>Финансово независимые лица</h3>
-                        <p>Для лиц с пассивным доходом или достаточными накоплениями на банковских счетах. Идеальный вариант для тех, кто планирует жить в Испании без права работы по найму внутри страны.</p>
-                        <ul class="program-features">
-                            <li>Остаток на счете: от €29,000 на заявителя</li>
-                            <li>Подтверждение пассивного дохода</li>
-                            <li>Необходима аренда или покупка жилья</li>
-                        </ul>
-                    </div>
-                    <div class="program-meta">Срок оформления: <span>от 3 месяцев</span></div>
+                    <h3>Финансово независимые лица</h3>
+                    <p>Для лиц с пассивным доходом или достаточными накоплениями на банковских счетах. Идеальный вариант для тех, кто планирует жить в Испании без права работы по найму внутри страны.</p>
                 </div>
 
                 <!-- Карточка 3 -->
                 <div class="program-card">
-                    <div>
-                        <h3>Инвестор (Золотая виза)</h3>
-                        <p>Предоставляется при покупке жилой или коммерческой недвижимости на сумму от 500 000 €. Не требует обязательного постоянного проживания в стране для сохранения статуса.</p>
-                        <ul class="program-features">
-                            <li>Инвестиции от €500,000 в недвижимость</li>
-                            <li>Отсутствие требований по проживанию</li>
-                            <li>Ускоренное рассмотрение за 20 дней</li>
-                        </ul>
-                    </div>
-                    <div class="program-meta">Срок оформления: <span>от 3 недель</span></div>
+                    <h3>Инвестор (Золотая виза)</h3>
+                    <p>Предоставляется при покупке жилой или коммерческой недвижимости на сумму от 500 000 €. Не требует обязательного постоянного проживания в стране для сохранения статуса.</p>
                 </div>
             </div>
 
-            <!-- ИНФОРМАЦИОННАЯ СРАВНИТЕЛЬНАЯ ТАБЛИЦА -->
-            <div class="table-wrapper">
-                <table class="compare-table">
-                    <thead>
-                        <tr>
-                            <th>Критерий сравнения</th>
-                            <th>Цифровой кочевник (Nomad)</th>
-                            <th>Финансовая независимость (No Lucrativa)</th>
-                            <th>Золотая Виза (Investor)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Право на работу в Испании</strong></td>
-                            <td>Да (удаленно + до 20% на локальном рынке)</td>
-                            <td>Нет (строгий запрет на местный доход)</td>
-                            <td>Да (абсолютное право работы и бизнеса)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Где подается кейс</strong></td>
-                            <td>Внутри Испании (сразу на 3 года)</td>
-                            <td>В стране гражданства/ВНЖ (на 1 год)</td>
-                            <td>Внутри Испании (на 3 года) / В консульстве</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Срок обязательного проживания</strong></td>
-                            <td>От 183 дней в году (для продления статуса)</td>
-                            <td>От 183 дней в году (становитесь налоговым резидентом)</td>
-                            <td>Нет требований (достаточно приехать 1 раз в год)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Налоговый режим</strong></td>
-                            <td>Возможность применения «Закона Бекхэма» (24%)</td>
-                            <td>Стандартный прогрессивный налог на мировой доход</td>
-                            <td>Стандартный (только при проживании >183 дней)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 2. ТРЕБОВАНИЯ И ДОКУМЕНТЫ -->
-    <section class="content-section-alt">
-        <div class="content-container">
-            <div class="info-split">
-                <div class="info-box">
-                    <h3>Критерии и <strong>требования</strong></h3>
-                    <ul class="info-list">
-                        <li>Отсутствие судимостей в стране исхода и в Испании за последние 5 лет.</li>
-                        <li>Наличие легального, стабильного источника дохода или достаточного объема личных сбережений для обеспечения жизни.</li>
-                        <li>Наличие действующей полной медицинской страховки от испанской страховой компании без доплат (sin copagos).</li>
-                        <li>Официальное нахождение на территории Испании в легальном статусе (для подачи кейсов внутри страны).</li>
-                    </ul>
-                </div>
-                <div class="info-box">
-                    <h3>Базовый <strong>пакет документов</strong></h3>
-                    <ul class="info-list">
-                        <li>Действующий заграничный паспорт со сроком действия не менее одного года (все страницы).</li>
-                        <li>Справка об отсутствии судимости с сертифицированным апостилем и официальным присяжным переводом.</li>
-                        <li>Выписки с банковских счетов, налоговые декларации и контракты, подтверждающие доход.</li>
-                        <li>Договор долгосрочной аренды жилья или официальное свидетельство о праве собственности (Nota Simple).</li>
-                    </ul>
-                </div>
+            <div class="cta-box">
+                <button class="btn-cta" onclick="openModal()">Рассчитать индивидуальный план</button>
             </div>
         </div>
-    </section>
-
-    <!-- 3. ЭТАПЫ РАБОТЫ -->
-    <section class="content-section">
-        <div class="content-container">
-            <h2 class="section-title">4 шага к вашей <strong>резиденции</strong></h2>
-            <div class="steps-timeline">
-                <div class="step-card">
-                    <div class="step-num">01</div>
-                    <h4>Анализ и кейс</h4>
-                    <p>Проводим подробный аудит ваших документов, подбираем оптимальную программу и составляем пошаговую индивидуальную стратегию легализации.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-num">02</div>
-                    <h4>Сбор документов</h4>
-                    <p>Помогаем открыть локальные счета, подготовить правильные присяжные переводы, медицинские страховки и финансовые справки.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-num">03</div>
-                    <h4>Подача заявления</h4>
-                    <p>Формируем и отправляем готовый кейс в миграционные органы Испании через аккредитованные адвокатские каналы нашей группы.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-num">04</div>
-                    <h4>Получение карт</h4>
-                    <p>После официального одобрения сопровождаем вас на сдачу отпечатков пальцев и получение готовой пластиковой карты резидента (TIE).</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. РАЗВЕРНУТЫЙ FAQ (ОТВЕТЫ НА ВОПРОСЫ) -->
-    <section class="content-section-alt">
-        <div class="content-container">
-            <h2 class="section-title">Часто задаваемые <strong>вопросы</strong></h2>
-            <div class="faq-wrapper">
-                
-                <div class="faq-item">
-                    <button class="faq-trigger" onclick="toggleFaq(this)">
-                        <span>Можно ли приехать по туристической визе и остаться?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-content">
-                        <p style="padding-top: 15px;">Да, программы «Цифровой кочевник» и «Золотая виза» позволяют легально подавать документы напрямую изнутри Испании, находясь там по любой действующей шенгенской визе. Главное условие — подача должна осуществляться минимум за 30 дней до окончания легального срока пребывания.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-trigger" onclick="toggleFaq(this)">
-                        <span>Стану ли я автоматически налоговым резидентом Испании?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-content">
-                        <p style="padding-top: 15px;">Налоговое резидентство возникает, если вы проводите в Испании более 183 дней в течение календарного года. Исключением является «Золотая Виза», которая не обязывает жить в стране постоянно. Также для Номадов действует специальный льготный режим Бекхэма (фиксированные 24% налога вместо прогрессивной шкалы).</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-trigger" onclick="toggleFaq(this)">
-                        <span>Можно ли включить в заявление родителей или гражданских супругов?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-content">
-                        <p style="padding-top: 15px;">Да. Вместе с основным заявителем на ВНЖ могут претендовать официальные или зарегистрированные гражданские супруги (Pareja de Hecho), дети до 18 лет (или старше, если они финансово зависимы), а также родители, находящиеся на вашем полном иждивении.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-trigger" onclick="toggleFaq(this)">
-                        <span>Через какое время можно получить постоянный ПМЖ и гражданство?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-content">
-                        <p style="padding-top: 15px;">Постоянное место жительства (Permanent Residency) предоставляется через 5 лет непрерывного легального проживания в стране. Подать прошение на оформление полноценного испанского паспорта и гражданства можно через 10 лет общего резидентства.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. ПОЧЕМУ МЫ -->
-    <section class="content-section">
-        <div class="content-container">
-            <h2 class="section-title">Преимущества работы с <strong>1 WORLD</strong></h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">01</div>
-                    <div class="benefit-content">
-                        <h4>Испанские адвокаты в штате</h4>
-                        <p>Вашим делом занимаются лицензированные испанские адвокаты, отлично знающие внутренние регламенты миграционных органов (UGE) и актуальную юридическую практику.</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">02</div>
-                    <div class="benefit-content">
-                        <h4>Комплексное обслуживание</h4>
-                        <p>Мы берем на себя не только отправку анкет, но и открытие банковских счетов, подбор и аренду недвижимости, а также получение номеров NIE и регистрацию по месту жительства.</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">03</div>
-                    <div class="benefit-content">
-                        <h4>Высокий процент одобрений</h4>
-                        <p>Тщательная предварительная проверка документов позволяет нам минимизировать риски и добиваться положительного результата даже в сложных, нестандартных ситуациях.</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">04</div>
-                    <div class="benefit-content">
-                        <h4>Конфиденциальность капитала</h4>
-                        <p>Строго соблюдаем стандарты европейского законодательства о защите персональных данных, гарантируя полную безопасность вашей финансовой и личной информации.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ЦЕНТРАЛЬНАЯ КНОПКА ВЫЗОВА ОКНА -->
-    <section class="cta-box">
-        <h3>Готовы сделать первый шаг к европейскому резидентству?</h3>
-        <p>Получите индивидуальный разбор вашей ситуации и персональный план легализации.</p>
-        <button class="btn-cta" onclick="openModal()">Получить план переезда</button>
     </section>
 
     <!-- ФУТЕР -->
     <footer>
-        <p>&copy; 2026 Группа компаний 1 WORLD. Миграционный консалтинг и юридическое сопровождение. Все права защищены.</p>
+        <p>&copy; 2026 Global Group. Миграционный консалтинг и юридическое сопровождение. Все права защищены.</p>
     </footer>
 
-    <!-- МОДАЛЬНОЕ ОКНО ПЛАНА ПЕРЕЕЗДА -->
+    <!-- ИСПРАВЛЕННОЕ КОМПАКТНОЕ МОДАЛЬНОЕ ОКНО -->
     <div class="modal-overlay" id="callbackModal" onclick="if(event.target == this) closeModal()">
         <div class="modal-window">
             <span class="modal-close" onclick="closeModal()">&times;</span>
             <h3>Получить план переезда</h3>
-            <p class="modal-subtitle">Заполните удобные поля, и мы вышлем пошаговую инструкцию по легализации.</p>
+            <p class="modal-subtitle">Заполни удобные поля, и мы вышлем пошаговую инструкцию по легализации.</p>
             
             <form onsubmit="alert('Спасибо! Персональный план переезда уже генерируется и будет отправлен вам в ближайшее время.'); closeModal(); return false;">
+                
+                <!-- Поля компактно стоят по два элемента в ряд -->
                 <div class="modal-grid-inputs">
                     <div class="modal-group">
                         <label>Ваше имя</label>
                         <input type="text" class="modal-input" placeholder="Имя" required>
                     </div>
+
                     <div class="modal-group">
                         <label>Telegram</label>
                         <input type="text" class="modal-input" placeholder="@username">
                     </div>
+
                     <div class="modal-group">
                         <label>WhatsApp</label>
                         <input type="tel" class="modal-input" placeholder="+7...">
                     </div>
+
                     <div class="modal-group">
                         <label>Email адрес</label>
                         <input type="email" class="modal-input" placeholder="mail@example.com">
@@ -495,6 +362,7 @@
                         <div class="channel-box">Email</div>
                     </label>
                 </div>
+
                 <button class="btn-modal-submit" type="submit">Получить план переезда</button>
             </form>
         </div>
@@ -503,26 +371,6 @@
     <script>
         function openModal() { document.getElementById('callbackModal').classList.add('active'); }
         function closeModal() { document.getElementById('callbackModal').classList.remove('active'); }
-
-        // Скрипт аккордеона FAQ
-        function toggleFaq(button) {
-            const item = button.parentElement;
-            const content = button.nextElementSibling;
-            const isExpanding = !item.classList.contains('active');
-            
-            // Закрываем другие открытые элементы, если нужно
-            document.querySelectorAll('.faq-item').forEach(el => {
-                el.classList.remove('active');
-                el.querySelector('.faq-content').style.maxHeight = null;
-                el.querySelector('.faq-icon').innerText = '+';
-            });
-
-            if (isExpanding) {
-                item.classList.add('active');
-                content.style.maxHeight = content.scrollHeight + "px";
-                button.querySelector('.faq-icon').innerText = '×';
-            }
-        }
     </script>
 </body>
 </html>
