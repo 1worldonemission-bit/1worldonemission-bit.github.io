@@ -125,13 +125,14 @@
             display: inline;
         }
         
+        /* ИСПРАВЛЕНИЕ: Выравнивание по левому краю и ширина ровно под 2 строчки */
         .hero-content p { 
             font-size: 18px; 
             margin-top: 25px; 
             color: #4a4a4a; 
             font-weight: 300; 
             line-height: 1.6; 
-            max-width: 680px;
+            max-width: 800px;
             text-align: left;
         }
 
@@ -152,7 +153,7 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.08);
         }
 
-        /* ПАНОРАМНЫЙ БЛОК С КОРАБЛЕМ (Высота увеличена для полного раскрытия кадра) */
+        /* ПАНОРАМНЫЙ БЛОК С КОРАБЛЕМ */
         .ship-divider {
             height: 70vh;
             width: 100%;
@@ -164,7 +165,9 @@
         .about-container { max-width: 1200px; margin: 0 auto; }
         .about-section h3 { font-size: 32px; font-weight: 300; color: #1a1a1a; margin-bottom: 30px; letter-spacing: -0.5px; }
         .about-section h3 strong { font-weight: 700; color: #dfb77d; }
-        .about-text { font-size: 16px; color: #4a4a4a; line-height: 1.8; font-weight: 300; text-align: justify; }
+        
+        /* ИСПРАВЛЕНИЕ: Четкое левое выравнивание абзаца, строки больше не гуляют */
+        .about-text { font-size: 16px; color: #4a4a4a; line-height: 1.8; font-weight: 300; text-align: left; }
 
         /* НАПРАВЛЕНИЯ ЭКОСИСТЕМЫ */
         .section-directions { padding: 110px 6%; background: #fbf9f6; }
@@ -180,7 +183,7 @@
         
         .direction-content h3 { font-size: 19px; font-weight: 700; margin-bottom: 15px; color: #1a1a1a; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
         .direction-content h3 span { color: #dfb77d; font-weight: 300; font-size: 13px; border: 1px solid #dfb77d; padding: 2px 8px; border-radius: 4px; }
-        .direction-content p { font-size: 14px; color: #555; line-height: 1.7; font-weight: 300; margin-bottom: 30px; text-align: justify; }
+        .direction-content p { font-size: 14px; color: #555; line-height: 1.7; font-weight: 300; margin-bottom: 30px; text-align: left; }
         
         .btn-direction { display: block; width: 100%; padding: 14px; border: 1px solid #1a1a1a; background: #1a1a1a; color: white; text-align: center; text-decoration: none; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; transition: 0.3s; }
         .btn-direction:hover { background: #dfb77d; border-color: #dfb77d; }
@@ -200,7 +203,7 @@
             .target-grid { grid-template-columns: 1fr; gap: 40px; }
             .target-logo-box { order: -1; }
             .directions-grid { grid-template-columns: 1fr; gap: 30px; }
-            .ship-divider { height: 45vh; } /* На мобилках оставляем чуть компактнее, чтобы не мотать бесконечно */
+            .ship-divider { height: 45vh; }
         }
     </style>
 </head>
