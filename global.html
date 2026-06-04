@@ -6,7 +6,7 @@
     <title>Группа компаний 1 WORLD — Официальный сайт</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght=300;400;500;700&display=swap" rel="stylesheet">
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Manrope', sans-serif; }
@@ -125,15 +125,16 @@
             display: inline;
         }
         
-        /* ИСПРАВЛЕНИЕ: Выравнивание по левому краю и ширина ровно под 2 строчки */
+        /* ИСПРАВЛЕНО: Текст ровно в 2 строчки, без рваных полей */
         .hero-content p { 
             font-size: 18px; 
             margin-top: 25px; 
             color: #4a4a4a; 
             font-weight: 300; 
             line-height: 1.6; 
-            max-width: 800px;
-            text-align: left;
+            max-width: 760px;
+            text-align: justify;
+            text-justify: inter-word;
         }
 
         /* БЛОК: НАША ЦЕЛЬ */
@@ -143,7 +144,16 @@
         .target-text-box { text-align: left; }
         .target-text-box h2 { font-size: 32px; font-weight: 300; color: #1a1a1a; letter-spacing: -0.5px; margin-bottom: 25px; }
         .target-text-box h2 strong { font-weight: 700; color: #dfb77d; }
-        .target-text-box p { font-size: 20px; color: #333; line-height: 1.7; font-weight: 300; text-align: left; }
+        
+        /* ИСПРАВЛЕНО: Четкие границы абзаца */
+        .target-text-box p { 
+            font-size: 20px; 
+            color: #333; 
+            line-height: 1.7; 
+            font-weight: 300; 
+            text-align: justify;
+            text-justify: inter-word;
+        }
         
         .target-logo-box { display: flex; justify-content: center; align-items: center; }
         .target-logo-box img {
@@ -166,8 +176,18 @@
         .about-section h3 { font-size: 32px; font-weight: 300; color: #1a1a1a; margin-bottom: 30px; letter-spacing: -0.5px; }
         .about-section h3 strong { font-weight: 700; color: #dfb77d; }
         
-        /* ИСПРАВЛЕНИЕ: Четкое левое выравнивание абзаца, строки больше не гуляют */
-        .about-text { font-size: 16px; color: #4a4a4a; line-height: 1.8; font-weight: 300; text-align: left; }
+        /* ИСПРАВЛЕНО: Строки больше не гуляют, края идеально ровные с двух сторон */
+        .about-text { 
+            font-size: 16px; 
+            color: #4a4a4a; 
+            line-height: 1.8; 
+            font-weight: 300; 
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+        }
 
         /* НАПРАВЛЕНИЯ ЭКОСИСТЕМЫ */
         .section-directions { padding: 110px 6%; background: #fbf9f6; }
@@ -204,11 +224,13 @@
             .target-logo-box { order: -1; }
             .directions-grid { grid-template-columns: 1fr; gap: 30px; }
             .ship-divider { height: 45vh; }
+            .hero-content p, .target-text-box p, .about-text { text-align: left; }
         }
     </style>
 </head>
 <body>
 
+    <!-- НАВИГАЦИОННАЯ ШАПКА -->
     <header>
         <a href="./global.html" class="logo">1<span>WORLD</span></a>
         <div class="nav-container">
@@ -246,6 +268,7 @@
         <div style="width: 10px;"></div>
     </header>
 
+    <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="page-hero">
         <div class="hero-content">
             <span class="ecosystem-badge">Единая международная экосистема</span>
@@ -254,6 +277,7 @@
         </div>
     </section>
 
+    <!-- БЛОК: НАША ЦЕЛЬ -->
     <section class="target-section" id="about">
         <div class="target-grid">
             <div class="target-text-box">
@@ -266,8 +290,10 @@
         </div>
     </section>
 
+    <!-- ПАНОРАМНЫЙ БЛОК С КОРАБЛЕМ (ship.jpg) -->
     <div class="ship-divider"></div>
 
+    <!-- БЛОК КОРПОРАТИВНОГО ОПИСАНИЯ -->
     <section class="about-section">
         <div class="about-container">
             <h3>Группа компаний <strong>1 WORLD</strong></h3>
@@ -275,11 +301,13 @@
         </div>
     </section>
 
+    <!-- НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ -->
     <section class="section-directions">
         <h2 class="directions-title">Основные направления <strong>экосистемы</strong></h2>
         
         <div class="directions-grid">
             
+            <!-- Карточка 1: Строительство -->
             <div class="direction-card">
                 <div class="direction-media">
                     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Строительство домов" loading="lazy">
@@ -293,6 +321,7 @@
                 </div>
             </div>
 
+            <!-- Карточка 2: Международная недвижимость -->
             <div class="direction-card">
                 <div class="direction-media">
                     <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Зарубежная недвижимость" loading="lazy">
@@ -300,12 +329,13 @@
                 <div class="direction-content">
                     <div>
                         <h3>Недвижимость <span>INVEST</span></h3>
-                        <p>Подбор и экспертное сопровождение сделок купли-продажи в лучших инвестиционных хабах планеты. Премиальные доходные виллы на Бали, а также ликвидная жилая и коммерческая недвижимость в развитых европейских странах для диверсификации капитала.</p>
+                        <p>Подбор и экспертное сопровождение сделок купли-продажи in лучших инвестиционных хабах планеты. Премиальные доходные виллы на Бали, а также ликвидная жилая и коммерческая недвижимость в развитых европейских странах для диверсификации капитала.</p>
                     </div>
                     <a href="#" class="btn-direction">Перейти в каталог</a>
                 </div>
             </div>
 
+            <!-- Карточка 3: Legalization -->
             <div class="direction-card">
                 <div class="direction-media">
                     <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=600&q=80" alt="ВНЖ в Испании" loading="lazy">
@@ -322,6 +352,7 @@
         </div>
     </section>
 
+    <!-- ФУТЕР -->
     <footer>
         <p>&copy; 2026 Группа компаний 1 WORLD. Экосистема международного строительства и консалтинга. Все права защищены.</p>
     </footer>
