@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Group — О компании</title>
+    <title>Global Group — 1 WORLD. 1 MISSION. 1 HOUSE.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Перехватчик старой ссылки для перенаправления на физический испанский файл -->
-    <script>
-        if (window.location.hash === '#spain') {
-            window.location.replace('./spain.html');
-        }
-    </script>
-
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Manrope', sans-serif; }
-        body { background-color: #ffffff; color: #1a1a1a; }
+        body { background-color: #ffffff; color: #1a1a1a; scroll-behavior: smooth; }
         
+        img {
+            -webkit-user-select: none; user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        /* МЕНЮ ШАПКИ */
         header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 0 4%; height: 80px; background: #ffffff;
@@ -29,49 +28,171 @@
         
         .nav-container { display: flex; height: 100%; }
         
-        .nav-item { display: flex; align-items: center; height: 100%; margin: 0 15px; }
-        .nav-link { text-decoration: none; color: #2a2a2a; font-weight: 500; font-size: 14px; transition: 0.3s; }
+        .nav-item { 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            height: 100%; 
+            margin: 0 12px; 
+        }
+        .nav-link { 
+            text-decoration: none; 
+            color: #2a2a2a; 
+            font-weight: 500; 
+            font-size: 14px; 
+            transition: 0.3s; 
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+        }
         .nav-link:hover { color: #dfb77d; }
 
-        .dropdown {
-            position: absolute; top: 80px; left: 50%; transform: translateX(-50%) translateY(15px);
-            background: #ffffff; min-width: 240px; border: 1px solid #f0f0f0; border-radius: 0 0 6px 6px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.07); padding: 10px 0; opacity: 0; visibility: hidden; transition: 0.3s;
-        }
-        .dropdown a { display: block; padding: 12px 20px; color: #4a4a4a; text-decoration: none; font-size: 13px; }
-        .dropdown a:hover { background-color: #fbf9f6; color: #dfb77d; }
-        .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .nav-item-single .nav-link::after { display: none; }
 
-        .btn-callback-header { background: none; border: 1px solid #dfb77d; color: #1a1a1a; padding: 11px 22px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; font-weight: 500; border-radius: 4px; }
+        .dropdown {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(15px);
+            background: #ffffff;
+            min-width: 240px;
+            border: 1px solid #f0f0f0;
+            border-radius: 0 0 6px 6px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+            z-index: 1100;
+        }
         
-        .global-hero { height: 80vh; display: flex; align-items: center; padding: 0 4%; background: #26221c; color: white; margin-top: 80px; }
-        footer { background: #1a1815; color: #ffffff; padding: 40px 4%; text-align: center; font-size: 14px; }
+        .dropdown a {
+            display: block;
+            padding: 12px 20px;
+            color: #4a4a4a;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 400;
+            transition: 0.2s;
+        }
+        .dropdown a:hover {
+            background-color: #fbf9f6;
+            color: #dfb77d;
+            padding-left: 25px;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .btn-callback-header { background: none; border: 1px solid #dfb77d; color: #1a1a1a; padding: 11px 22px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; font-weight: 500; border-radius: 4px; transition: 0.3s; }
+        .btn-callback-header:hover { background-color: #dfb77d; color: white; }
+
+        /* ГЛАВНЫЙ БАННЕР С ЛОГОТИПОМ ПО ЦЕНТРУ */
+        .page-hero { 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 4%; 
+            background: radial-gradient(circle, rgba(251,249,246,0.2) 0%, rgba(255,255,255,1) 70%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+        }
+        .hero-seal-box {
+            margin-bottom: 30px;
+        }
+        .hero-seal-box img {
+            max-width: 220px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        .hero-content { max-width: 900px; }
+        .hero-content span { color: #cb9f62; text-transform: uppercase; font-size: 14px; letter-spacing: 3px; font-weight: 700; display: block; margin-bottom: 15px; }
+        .hero-content h1 { font-size: 52px; font-weight: 300; line-height: 1.2; letter-spacing: -1px; color: #1a1a1a; }
+        .hero-content h1 strong { font-weight: 700; color: #cb9f62; }
+        .hero-content p { font-size: 19px; margin-top: 25px; color: #4a4a4a; font-weight: 300; line-height: 1.6; }
+
+        /* БЛОК О НАС */
+        .about-section { padding: 100px 4%; background: #fbf9f6; border-bottom: 1px solid #eee; }
+        .about-container { max-width: 1100px; margin: 0 auto; text-align: center; }
+        .about-badge { display: inline-block; background: #dfb77d; color: #fff; padding: 6px 14px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; margin-bottom: 25px; }
+        .about-container h2 { font-size: 36px; font-weight: 300; margin-bottom: 25px; line-height: 1.3; }
+        .about-container p { font-size: 18px; color: #4a4a4a; line-height: 1.8; font-weight: 300; max-width: 850px; margin: 0 auto; text-align: justify; }
+
+        /* НАПРАВЛЕНИЯ ГРУППЫ КОМПАНИЙ */
+        .section-directions { padding: 100px 4%; }
+        .directions-title { text-align: center; font-size: 38px; font-weight: 300; margin-bottom: 60px; letter-spacing: -0.5px; }
+        .directions-title strong { font-weight: 700; color: #cb9f62; }
+        
+        .directions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        
+        .direction-card { background: #ffffff; border: 1px solid #eee; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column; }
+        .direction-media { width: 100%; height: 240px; overflow: hidden; }
+        .direction-media img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+        .direction-content { padding: 35px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        
+        .direction-content h3 { font-size: 22px; font-weight: 700; margin-bottom: 15px; color: #1a1a1a; display: flex; align-items: center; gap: 10px; }
+        .direction-content h3 span { color: #dfb77d; font-weight: 300; font-size: 16px; border: 1px solid #dfb77d; padding: 2px 8px; border-radius: 4px; }
+        .direction-content p { font-size: 15px; color: #555; line-height: 1.7; font-weight: 300; margin-bottom: 30px; }
+        
+        .btn-direction { display: block; width: 100%; padding: 14px; border: 1px solid #26221c; background: #26221c; color: white; text-align: center; text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; transition: 0.3s; }
+        .btn-direction:hover { background: #dfb77d; border-color: #dfb77d; }
+
+        .direction-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); border-color: #dfb77d; }
+        .direction-card:hover .direction-media img { transform: scale(1.08); }
+
+        /* ФУТЕР */
+        footer { background: #1a1815; color: #ffffff; padding: 40px 4%; text-align: center; font-size: 14px; border-top: 1px solid #2e2a24; }
+        footer p { color: #8c8273; }
+
+        /* МОДАЛЬНОЕ ОКНО */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s; }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal-window { background: #ffffff; padding: 40px; max-width: 450px; width: 90%; position: relative; border-radius: 8px; }
+        .modal-close { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #aaa; }
+        .modal-window input { width: 100%; padding: 16px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; outline: none; }
+        .modal-window input:focus { border-color: #dfb77d; }
+        .btn-dark { display: inline-block; padding: 18px 35px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; width: 100%; text-align: center; }
+        .btn-dark:hover { background: #dfb77d; }
+
+        @media (max-width: 992px) {
+            header .nav-container { display: none; }
+            .page-hero h1 { font-size: 36px; }
+            .directions-grid { grid-template-columns: 1fr; gap: 30px; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- ОБНОВЛЕННАЯ ШАПКА ГРУППЫ КОМПАНИЙ -->
     <header>
-        <a href="./index.html" class="logo">GLOBAL<span>GROUP</span></a>
+        <a href="./index.html" class="logo">1<span>HOUSE</span></a>
         <div class="nav-container">
-            <div class="nav-item">
+            <div class="nav-item nav-item-single">
                 <a href="./global.html" class="nav-link" style="color: #dfb77d;">О нас</a>
             </div>
             
-            <!-- ОТДЕЛЬНАЯ НЕЗАВИСИМАЯ КНОПКА ВНЖ -->
-            <div class="nav-item">
-                <a href="./spain.html" class="nav-link">ВНЖ в Испании</a>
+            <div class="nav-item nav-item-single">
+                <a href="./mission.html" class="nav-link">Наша Миссия</a>
             </div>
-
-            <div class="nav-item">
+            
+            <div class="nav-item nav-item-single">
                 <a href="#" class="nav-link">Недвижимость в Европе</a>
             </div>
 
-            <div class="nav-item">
+            <div class="nav-item nav-item-single">
                 <a href="#" class="nav-link">Недвижимость на Бали</a>
             </div>
 
             <div class="nav-item">
-                <span class="nav-link" style="cursor:pointer;">Строительство</span>
+                <span class="nav-link">Строительство</span>
                 <div class="dropdown">
                     <a href="./index.html#projects">Все архитектурные проекты</a>
                     <a href="./frame-houses.html">Каркасные дома</a>
@@ -80,22 +201,107 @@
                     <a href="./index.html#timber">Дома из клееного бруса</a>
                 </div>
             </div>
+
+            <div class="nav-item nav-item-single">
+                <a href="./spain.html" class="nav-link">ВНЖ в Испании</a>
+            </div>
         </div>
-        <button class="btn-callback-header">Заказать звонок</button>
+        <button class="btn-callback-header" onclick="openModal()">Заказать звонок</button>
     </header>
 
-    <div id="global-content">
-        <section class="global-hero">
-            <div style="max-width: 800px;">
-                <h1 style="font-size: 44px; font-weight: 300; margin-bottom: 20px;">Группа компаний <strong>Global Group</strong></h1>
-                <p style="font-size: 18px; color: #ccc5ba; font-weight: 300; line-height: 1.6;">Здесь размещается общая информация о международной экосистеме бренда, объединяющей строительство, зарубежную недвижимость и консалтинг.</p>
-            </div>
-        </section>
-    </div>
+    <!-- ГЛАВНЫЙ ЭКРАН С ЛОГОТИПОМ -->
+    <section class="page-hero">
+        <div class="hero-seal-box">
+            <img src="./global-seal.jpg" alt="Global Seal">
+        </div>
+        <div class="hero-content">
+            <span>Единая международная экосистема</span>
+            <h1>Одна планета. Одна миссия. <strong>Один дом.</strong></h1>
+            <p>Объединяем передовые строительные технологии, инвестиции в зарубежную премиальную недвижимость и комплексную миграционно-правовую поддержку для вашей абсолютной свободы перемещения и комфорта.</p>
+        </div>
+    </section>
 
+    <!-- БЛОК "О НАС" (БЫВШАЯ МИССИЯ) -->
+    <section class="about-section">
+        <div class="about-container">
+            <span class="about-badge">О группе компаний</span>
+            <h2>Глобальный подход к качеству жизни</h2>
+            <p>Группа компаний Global родилась из идеи комплексного обеспечения потребностей современного человека в любой точке мира. Мы ушли от разрозненных услуг и создали синергию: наши архитекторы проектируют и строят надежные технологичные дома, инвестиционные аналитики подбирают высокодоходные объекты в ключевых точках планеты от Европы до Бали, а международные юристы обеспечивают законную и простую легализацию для всей семьи. Покупая, строя или переезжая с нами, вы получаете стандарты премиального консалтинга и полную безопасность на каждом этапе.</p>
+        </div>
+    </section>
+
+    <!-- НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ -->
+    <section class="section-directions">
+        <h2 class="directions-title">Основные направления <strong>экосистемы</strong></h2>
+        
+        <div class="directions-grid">
+            
+            <!-- Карточка 1: Строительство -->
+            <div class="direction-card">
+                <div class="direction-media">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Строительство домов" loading="lazy">
+                </div>
+                <div class="direction-content">
+                    <div>
+                        <h3>Строительство <span>1 HOUSE</span></h3>
+                        <p>Проектирование и возведение энергоэффективных загородных домов под ключ. Работаем по передовым технологиям: каркасное домостроение, европейский газоблок, премиальный клееный брус и классический кирпич. Контроль качества на каждом этапе.</p>
+                    </div>
+                    <a href="./index.html" class="btn-direction">Смотреть проекты</a>
+                </div>
+            </div>
+
+            <!-- Карточка 2: Международная недвижимость -->
+            <div class="direction-card">
+                <div class="direction-media">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Зарубежная недвижимость" loading="lazy">
+                </div>
+                <div class="direction-content">
+                    <div>
+                        <h3>Недвижимость <span>INVEST</span></h3>
+                        <p>Подбор и полное юридическое сопровождение сделок по покупке недвижимости в лучших локациях мира. Премиальные виллы и апартаменты на Бали для пассивного дохода, а также инвестиционные жилые объекты в развитых странах Европы.</p>
+                    </div>
+                    <a href="#" class="btn-direction">Перейти в каталог</a>
+                </div>
+            </div>
+
+            <!-- Карточка 3: Легализация и ВНЖ -->
+            <div class="direction-card">
+                <div class="direction-media">
+                    <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=600&q=80" alt="ВНЖ в Испании" loading="lazy">
+                </div>
+                <div class="direction-content">
+                    <div>
+                        <h3>Миграционное право <span>WORLD</span></h3>
+                        <p>Комплексные программы резиденции и легализации в Европе. Официальное оформление ВНЖ в Испании под ключ (Digital Nomad, инвесторы, финансовая независимость). Полная подготовка досье, присяжные переводы и адвокатское сопровождение.</p>
+                    </div>
+                    <a href="./spain.html" class="btn-direction">Подробнее о ВНЖ</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ФУТЕР -->
     <footer>
-        <p>&copy; 2026 Global Group. Все права защищены.</p>
+        <p>&copy; 2026 Global Group. Экосистема международного строительства и консалтинга. Все права защищены.</p>
     </footer>
 
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="modal-overlay" id="callbackModal" onclick="if(event.target == this) closeModal()">
+        <div class="modal-window">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 style="font-size:24px; font-weight:300; margin-bottom:20px; text-align:center;">Обратная связь</h3>
+            <form onsubmit="alert('Спасибо. Заявка принята. Наш эксперт свяжется с вами в ближайшее время.'); closeModal(); return false;">
+                <input type="text" placeholder="Имя" required>
+                <input type="tel" placeholder="Телефон" required>
+                <button class="btn-dark" type="submit">Связаться с нами</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('callbackModal').classList.add('active'); }
+        function closeModal() { document.getElementById('callbackModal').classList.remove('active'); }
+    </script>
 </body>
 </html>
