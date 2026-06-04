@@ -48,8 +48,6 @@
         }
         .nav-link:hover { color: #dfb77d; }
 
-        .nav-item-single .nav-link::after { display: none; }
-
         .dropdown {
             position: absolute;
             top: 80px;
@@ -91,7 +89,7 @@
         .btn-callback-header { background: none; border: 1px solid #dfb77d; color: #1a1a1a; padding: 11px 22px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; font-weight: 500; border-radius: 4px; transition: 0.3s; }
         .btn-callback-header:hover { background-color: #dfb77d; color: white; }
 
-        /* ГЛАВНЫЙ БАННЕР С ЛОГОТИПОМ ПО ЦЕНТРУ */
+        /* ГЛАВНЫЙ БАННЕР */
         .page-hero { 
             height: 100vh; 
             display: flex; 
@@ -99,35 +97,53 @@
             justify-content: center;
             align-items: center;
             padding: 0 4%; 
-            background: radial-gradient(circle, rgba(251,249,246,0.2) 0%, rgba(255,255,255,1) 70%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            background: radial-gradient(circle, rgba(251,249,246,0.3) 0%, rgba(255,255,255,1) 75%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
             text-align: center;
             margin-top: 80px;
             position: relative;
         }
-        .hero-seal-box {
-            margin-bottom: 30px;
-        }
+        .hero-seal-box { margin-bottom: 25px; }
         .hero-seal-box img {
-            max-width: 220px;
+            max-width: 200px;
             height: auto;
             border-radius: 50%;
             box-shadow: 0 15px 40px rgba(0,0,0,0.12);
         }
-        .hero-content { max-width: 900px; }
-        .hero-content span { color: #cb9f62; text-transform: uppercase; font-size: 14px; letter-spacing: 3px; font-weight: 700; display: block; margin-bottom: 15px; }
-        .hero-content h1 { font-size: 52px; font-weight: 300; line-height: 1.2; letter-spacing: -1px; color: #1a1a1a; }
+        .hero-content { max-width: 950px; }
+        
+        /* ИСПРАВЛЕНО: Яркая, жирная и отлично видимая надпись */
+        .hero-content span { 
+            color: #cb9f62; 
+            text-transform: uppercase; 
+            font-size: 15px; 
+            letter-spacing: 3px; 
+            font-weight: 700; 
+            display: block; 
+            margin-bottom: 15px;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+        }
+        
+        /* ИСПРАВЛЕНО: Уменьшен размер, чтобы гарантированно влезало в строчку, изменен текст */
+        .hero-content h1 { font-size: 42px; font-weight: 300; line-height: 1.2; letter-spacing: -0.5px; color: #1a1a1a; white-space: nowrap; }
         .hero-content h1 strong { font-weight: 700; color: #cb9f62; }
-        .hero-content p { font-size: 19px; margin-top: 25px; color: #4a4a4a; font-weight: 300; line-height: 1.6; }
+        
+        /* ИСПРАВЛЕНО: Уместный, сильный слоган вместо каши */
+        .hero-content p { font-size: 19px; margin-top: 25px; color: #4a4a4a; font-weight: 300; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; }
 
-        /* БЛОК О НАС */
-        .about-section { padding: 100px 4%; background: #fbf9f6; border-bottom: 1px solid #eee; }
+        /* ИСПРАВЛЕНО: ВОЗВРАЩЕННЫЙ БЛОК НАША ЦЕЛЬ + О НАС */
+        .about-section { padding: 110px 4%; background: #fbf9f6; border-bottom: 1px solid #eee; }
         .about-container { max-width: 1100px; margin: 0 auto; text-align: center; }
-        .about-badge { display: inline-block; background: #dfb77d; color: #fff; padding: 6px 14px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; margin-bottom: 25px; }
-        .about-container h2 { font-size: 36px; font-weight: 300; margin-bottom: 25px; line-height: 1.3; }
-        .about-container p { font-size: 18px; color: #4a4a4a; line-height: 1.8; font-weight: 300; max-width: 850px; margin: 0 auto; text-align: justify; }
+        
+        .target-box { max-width: 850px; margin: 0 auto 50px auto; padding-bottom: 45px; border-bottom: 1px solid #e8e3dc; }
+        .target-box h2 { font-size: 28px; font-weight: 700; color: #cb9f62; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; }
+        .target-box p { font-size: 22px; color: #26221c; line-height: 1.6; font-weight: 300; font-style: italic; text-align: center; }
+        
+        .about-badge { display: inline-block; background: #26221c; color: #fff; padding: 6px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; margin-bottom: 20px; }
+        .about-container h3 { font-size: 32px; font-weight: 300; margin-bottom: 25px; line-height: 1.3; }
+        .about-container p.about-text { font-size: 17px; color: #4a4a4a; line-height: 1.8; font-weight: 300; max-width: 900px; margin: 0 auto; text-align: justify; }
 
         /* НАПРАВЛЕНИЯ ГРУППЫ КОМПАНИЙ */
-        .section-directions { padding: 100px 4%; }
+        .section-directions { padding: 110px 4%; }
         .directions-title { text-align: center; font-size: 38px; font-weight: 300; margin-bottom: 60px; letter-spacing: -0.5px; }
         .directions-title strong { font-weight: 700; color: #cb9f62; }
         
@@ -138,9 +154,9 @@
         .direction-media img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
         .direction-content { padding: 35px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
         
-        .direction-content h3 { font-size: 22px; font-weight: 700; margin-bottom: 15px; color: #1a1a1a; display: flex; align-items: center; gap: 10px; }
-        .direction-content h3 span { color: #dfb77d; font-weight: 300; font-size: 16px; border: 1px solid #dfb77d; padding: 2px 8px; border-radius: 4px; }
-        .direction-content p { font-size: 15px; color: #555; line-height: 1.7; font-weight: 300; margin-bottom: 30px; }
+        .direction-content h3 { font-size: 20px; font-weight: 700; margin-bottom: 15px; color: #1a1a1a; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        .direction-content h3 span { color: #dfb77d; font-weight: 300; font-size: 14px; border: 1px solid #dfb77d; padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+        .direction-content p { font-size: 15px; color: #555; line-height: 1.7; font-weight: 300; margin-bottom: 30px; text-align: justify; }
         
         .btn-direction { display: block; width: 100%; padding: 14px; border: 1px solid #26221c; background: #26221c; color: white; text-align: center; text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; transition: 0.3s; }
         .btn-direction:hover { background: #dfb77d; border-color: #dfb77d; }
@@ -164,19 +180,20 @@
 
         @media (max-width: 992px) {
             header .nav-container { display: none; }
-            .page-hero h1 { font-size: 36px; }
+            .page-hero h1 { font-size: 32px; white-space: normal; }
             .directions-grid { grid-template-columns: 1fr; gap: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ОБНОВЛЕННАЯ ШАПКА ГРУППЫ КОМПАНИЙ -->
+    <!-- НАВИГАЦИОННАЯ ШАПКА -->
     <header>
         <a href="./index.html" class="logo">1<span>HOUSE</span></a>
         <div class="nav-container">
+            <!-- Ссылка ведет к якорю #about на этой же странице -->
             <div class="nav-item nav-item-single">
-                <a href="./global.html" class="nav-link" style="color: #dfb77d;">О нас</a>
+                <a href="#about" class="nav-link">О нас</a>
             </div>
             
             <div class="nav-item nav-item-single">
@@ -209,24 +226,31 @@
         <button class="btn-callback-header" onclick="openModal()">Заказать звонок</button>
     </header>
 
-    <!-- ГЛАВНЫЙ ЭКРАН С ЛОГОТИПОМ -->
+    <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="page-hero">
         <div class="hero-seal-box">
             <img src="./global-seal.jpg" alt="Global Seal">
         </div>
         <div class="hero-content">
             <span>Единая международная экосистема</span>
-            <h1>Одна планета. Одна миссия. <strong>Один дом.</strong></h1>
-            <p>Объединяем передовые строительные технологии, инвестиции в зарубежную премиальную недвижимость и комплексную миграционно-правовую поддержку для вашей абсолютной свободы перемещения и комфорта.</p>
+            <h1>Один мир. Одна миссия. <strong>Один дом.</strong></h1>
+            <p>Создаем безупречные условия для вашей жизни, инвестиций и свободы перемещения по всей планете. От технологичного проектирования до полной легализации в новых странах.</p>
         </div>
     </section>
 
-    <!-- БЛОК "О НАС" (БЫВШАЯ МИССИЯ) -->
-    <section class="about-section">
+    <!-- ИСПРАВЛЕННЫЙ БЛОК "О НАС" С ЦЕЛЬЮ (ЯКОРЬ #about) -->
+    <section class="about-section" id="about">
         <div class="about-container">
-            <span class="about-badge">О группе компаний</span>
-            <h2>Глобальный подход к качеству жизни</h2>
-            <p>Группа компаний Global родилась из идеи комплексного обеспечения потребностей современного человека в любой точке мира. Мы ушли от разрозненных услуг и создали синергию: наши архитекторы проектируют и строят надежные технологичные дома, инвестиционные аналитики подбирают высокодоходные объекты в ключевых точках планеты от Европы до Бали, а международные юристы обеспечивают законную и простую легализацию для всей семьи. Покупая, строя или переезжая с нами, вы получаете стандарты премиального консалтинга и полную безопасность на каждом этапе.</p>
+            
+            <!-- Вернули потерянный блок с философией -->
+            <div class="target-box">
+                <h2>Наша цель</h2>
+                <p>Стирать границы для человека. Мы строим безопасные дома, помогаем инвестировать в стабильное будущее и открываем двери в новые страны, создавая глобальное сообщество свободных людей.</p>
+            </div>
+
+            <span class="about-badge">Global Group</span>
+            <h3>Масштабный подход к вашему комфорту</h3>
+            <p class="about-text">Группа компаний Global зародилась как ответ на вызовы современного мира, где успешный человек не хочет ограничивать себя рамками одного государства. Мы объединили три ключевых столпа личной независимости: капитальное загородное строительство, высокодоходные международные инвестиции и экспертное миграционное сопровождение. Вместо десятков подрядчиков и юридических рисков, наши клиенты получают комплексное обслуживание по высшим мировым стандартам. Мы берем на себя всю техническую, финансовую и бюрократическую рутину, защищая ваши интересы в любой точке земного шара.</p>
         </div>
     </section>
 
@@ -244,7 +268,7 @@
                 <div class="direction-content">
                     <div>
                         <h3>Строительство <span>1 HOUSE</span></h3>
-                        <p>Проектирование и возведение энергоэффективных загородных домов под ключ. Работаем по передовым технологиям: каркасное домостроение, европейский газоблок, премиальный клееный брус и классический кирпич. Контроль качества на каждом этапе.</p>
+                        <p>Проектирование и возведение энергоэффективных загородных домов под ключ. Работаем по передовым технологиям: каркасное домостроение, европейский газоблок, премиальный клееный брус и классический кирпич. Полный цикл созидания вашего родового гнезда.</p>
                     </div>
                     <a href="./index.html" class="btn-direction">Смотреть проекты</a>
                 </div>
@@ -258,21 +282,21 @@
                 <div class="direction-content">
                     <div>
                         <h3>Недвижимость <span>INVEST</span></h3>
-                        <p>Подбор и полное юридическое сопровождение сделок по покупке недвижимости в лучших локациях мира. Премиальные виллы и апартаменты на Бали для пассивного дохода, а также инвестиционные жилые объекты в развитых странах Европы.</p>
+                        <p>Подбор и экспертное сопровождение сделок купли-продажи в лучших инвестиционных хабах планеты. Премиальные доходные виллы на Бали, а также ликвидная жилая и коммерческая недвижимость в развитых европейских странах для диверсификации капитала.</p>
                     </div>
                     <a href="#" class="btn-direction">Перейти в каталог</a>
                 </div>
             </div>
 
-            <!-- Карточка 3: Легализация и ВНЖ -->
+            <!-- Карточка 3: ИСПРАВЛЕНО НАЗВАНИЕ НА БОЛЕЕ СТАТУСНОЕ -->
             <div class="direction-card">
                 <div class="direction-media">
                     <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=600&q=80" alt="ВНЖ в Испании" loading="lazy">
                 </div>
                 <div class="direction-content">
                     <div>
-                        <h3>Миграционное право <span>WORLD</span></h3>
-                        <p>Комплексные программы резиденции и легализации в Европе. Официальное оформление ВНЖ в Испании под ключ (Digital Nomad, инвесторы, финансовая независимость). Полная подготовка досье, присяжные переводы и адвокатское сопровождение.</p>
+                        <h3>Легализация и ВНЖ <span>WORLD</span></h3>
+                        <p>Профессиональный миграционный консалтинг и полное юридическое сопровождение при резиденции в Европе. Официальное оформление ВНЖ в Испании (программы для цифровых кочевников, финансово независимых лиц и инвесторов) без стресса и отказов.</p>
                     </div>
                     <a href="./spain.html" class="btn-direction">Подробнее о ВНЖ</a>
                 </div>
