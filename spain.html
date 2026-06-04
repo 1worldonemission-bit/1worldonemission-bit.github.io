@@ -48,8 +48,6 @@
         }
         .nav-link:hover { color: #dfb77d; }
 
-        .nav-item-single .nav-link::after { display: none; }
-
         .dropdown {
             position: absolute;
             top: 80px;
@@ -91,10 +89,10 @@
         .btn-callback-header { background: none; border: 1px solid #dfb77d; color: #1a1a1a; padding: 11px 22px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; font-weight: 500; border-radius: 4px; transition: 0.3s; }
         .btn-callback-header:hover { background-color: #dfb77d; color: white; }
 
-        /* ГЛАВНЫЙ БАННЕР */
+        /* ГЛАВНЫЙ БАННЕР С ЛОКАЛЬНЫМ ФОНОМ spain-hero */
         .page-hero { 
             height: 92vh; display: flex; align-items: center; padding: 0 4%; 
-            background: linear-gradient(rgba(26,24,21,0.55), rgba(26,24,21,0.55)), url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1600&q=80') no-repeat center 35%/cover; 
+            background: linear-gradient(rgba(26,24,21,0.55), rgba(26,24,21,0.55)), url('./spain-hero.jpg') no-repeat center center/cover; 
             color: #ffffff; margin-top: 80px;
         }
         .hero-content { max-width: 850px; }
@@ -110,7 +108,6 @@
         .promo-text h2 strong { font-weight: 700; color: #cb9f62; }
         .promo-text p { font-size: 16px; color: #4a4a4a; line-height: 1.7; font-weight: 300; }
         
-        /* Правая колонка с логотипом global-seal */
         .promo-logo-box { text-align: center; display: flex; justify-content: center; align-items: center; }
         .promo-logo-box img { 
             max-width: 280px; 
@@ -149,6 +146,13 @@
         .article-media { height: 480px; border-radius: 8px; overflow: hidden; background: #f5f5f5; }
         .article-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+        /* ИНТЕГРИРОВАННЫЙ ИНТЕРНЕТ-БАННЕР ИСПАНИИ НАД ЭТАПАМИ */
+        .mid-page-banner {
+            height: 380px;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            width: 100%;
+        }
+
         .steps-flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-top: 20px; }
         .step-node { position: relative; padding-top: 30px; border-top: 2px solid #dfb77d; }
         .step-number { font-size: 14px; font-weight: 700; color: #dfb77d; margin-bottom: 10px; text-transform: uppercase; }
@@ -161,7 +165,7 @@
         
         .btn-gold { display: inline-block; padding: 18px 35px; background: #dfb77d; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; }
         .btn-gold:hover { background: #cb9f62; }
-        .btn-dark { display: inline-block; padding: 18px 35px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; width: 100%; text-align: center; }
+        .btn-dark { display: inline-block; padding: 18px 35px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 6px; width: 100%; text-align: center; }
         .btn-dark:hover { background: #dfb77d; }
 
         .form-container { max-width: 500px; background: #ffffff; border: 1px solid #eee; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.01); margin: 0 auto; }
@@ -172,10 +176,70 @@
         footer { background: #1a1815; color: #ffffff; padding: 40px 4%; text-align: center; font-size: 14px; border-top: 1px solid #2e2a24; }
         footer p { color: #8c8273; }
 
+        /* ПОЛНОСТЬЮ ПЕРЕРАБОТАННОЕ ПРЕМИАЛЬНОЕ МОДАЛЬНОЕ ОКНО */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-window { background: #ffffff; padding: 40px; max-width: 450px; width: 90%; position: relative; border-radius: 8px; }
-        .modal-close { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #aaa; }
+        
+        .modal-window { 
+            background: #ffffff; 
+            padding: 45px; 
+            max-width: 520px; 
+            width: 92%; 
+            position: relative; 
+            border-radius: 12px; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        .modal-close { position: absolute; top: 20px; right: 25px; font-size: 28px; cursor: pointer; color: #aaa; transition: 0.2s; }
+        .modal-close:hover { color: #1a1a1a; }
+        
+        .modal-window h3 { font-size: 26px; font-weight: 300; margin-bottom: 10px; text-align: center; letter-spacing: -0.5px; }
+        .modal-window p.modal-subtitle { font-size: 14px; color: #666; text-align: center; margin-bottom: 30px; font-weight: 300; line-height: 1.4; }
+
+        /* Полноразмерные стильные инпуты */
+        .modal-group { margin-bottom: 22px; position: relative; }
+        .modal-group label { display: block; font-size: 13px; font-weight: 500; color: #333; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .modal-input { 
+            width: 100%; 
+            padding: 16px 18px; 
+            border: 1px solid #dcdcdc; 
+            border-radius: 6px; 
+            font-size: 15px; 
+            outline: none; 
+            background: #fcfcfc;
+            transition: 0.3s;
+        }
+        .modal-input:focus { border-color: #dfb77d; background: #fff; box-shadow: 0 0 0 3px rgba(223,183,125,0.15); }
+        
+        /* Сетка каналов связи */
+        .channels-title { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 30px; }
+        
+        .channel-option { position: relative; }
+        .channel-option input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
+        .channel-box { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 8px;
+            padding: 14px; 
+            border: 1px solid #e0e0e0; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            font-size: 13px; 
+            font-weight: 500;
+            color: #555;
+            background: #fff;
+            transition: 0.2s;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        .channel-option input:checked + .channel-box { 
+            border-color: #dfb77d; 
+            background: #fbf9f6; 
+            color: #cb9f62;
+            font-weight: 700;
+            box-shadow: inset 0 0 0 1px #dfb77d;
+        }
 
         @media (max-width: 992px) {
             header .nav-container { display: none; }
@@ -186,8 +250,13 @@
             .gallery-chess { flex-wrap: wrap; }
             .gallery-item { flex: 1 1 calc(50% - 20px); }
             .cta-box { flex-direction: column; text-align: center; padding: 40px 20px; }
+            .mid-page-banner { height: 260px; }
         }
-        @media (max-width: 576px) { .gallery-item { flex: 1 1 100%; } }
+        @media (max-width: 576px) { 
+            .gallery-item { flex: 1 1 100%; } 
+            .channels-grid { grid-template-columns: 1fr; gap: 8px; }
+            .modal-window { padding: 30px 20px; }
+        }
     </style>
 </head>
 <body>
@@ -222,6 +291,7 @@
     </header>
 
     <div id="spain">
+        <!-- Вернули локальную картинку на главный баннер -->
         <section class="page-hero">
             <div class="hero-content">
                 <span>Простой переезд в Европу всей семьей</span>
@@ -230,7 +300,6 @@
             </div>
         </section>
 
-        <!-- БЛОК С КОММЕРЧЕСКИМ ПРЕДЛОЖЕНИЕМ -->
         <section class="promo-block">
             <div class="promo-container">
                 <div class="promo-text">
@@ -244,12 +313,10 @@
             </div>
         </section>
 
-        <!-- КАРТОЧКИ ПРОГРАММ -->
         <section class="section-gallery">
             <h2 class="section-title" style="padding-left: 2%;">Доступные программы <strong>резиденции</strong></h2>
             <div class="gallery-chess">
                 <div class="gallery-item">
-                    <!-- Фото: Ноутбук на фоне океана/террасы -->
                     <div class="gallery-item-media h-med"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Цифровые кочевники" loading="lazy"></div>
                     <div class="gallery-item-content">
                         <div>
@@ -260,7 +327,6 @@
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <!-- Фото: Роскошная вилла в Испании -->
                     <div class="gallery-item-media h-high"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Золотая виза" loading="lazy"></div>
                     <div class="gallery-item-content">
                         <div>
@@ -271,7 +337,6 @@
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <!-- ИСПРАВЛЕНО Фото: Живописная испанская архитектура и улочка с цветами -->
                     <div class="gallery-item-media h-low"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=600&q=80" alt="Без права работы" loading="lazy"></div>
                     <div class="gallery-item-content">
                         <div>
@@ -282,7 +347,6 @@
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <!-- Фото: Современный бизнес-центр / офис в Мадриде -->
                     <div class="gallery-item-media h-med"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Бизнес резиденция" loading="lazy"></div>
                     <div class="gallery-item-content">
                         <div>
@@ -295,7 +359,6 @@
             </div>
         </section>
 
-        <!-- ЭКСПЕРТНЫЙ БЛОК -->
         <section class="section section-bg" style="border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
             <div class="article-layout">
                 <div class="article-text">
@@ -303,12 +366,13 @@
                     <p>Получение резидентского статуса в Европе требует внимательного и грамотного подхода к оформлению документов. Чтобы исключить любые риски отказов и задержек, аналитики <strong>1 HOUSE</strong> проводят предварительную проверку вашей документации по международным юридическим стандартам.</p>
                     <p>Мы берем на себя взаимодействие с миграционными органами, формирование досье и составление мотивировочных писем. Каждый шаг координируется опытными испанскими адвокатами.</p>
                 </div>
-                <!-- Фото: Деловая встреча, подписание контракта -->
                 <div class="article-media"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Юридический аудит" loading="lazy"></div>
             </div>
         </section>
 
-        <!-- ЭТАПЫ РАБОТЫ -->
+        <!-- ИНТЕГРИРОВАННАЯ КАРТИНКА ИЗ ИНТЕРНЕТА НАД БЛОКОМ ЭТАПОВ -->
+        <div class="mid-page-banner"></div>
+
         <section class="section">
             <h2 class="section-title">Этапы <strong>оформления</strong></h2>
             <div class="steps-flow">
@@ -347,7 +411,7 @@
 
         <section class="section">
             <div class="form-container">
-                <h3>Записать на бесплатную консультацию</h3>
+                <h3>Записаться на бесплатную консультацию</h3>
                 <form onsubmit="alert('Заявка принята. Наш специалист свяжется с вами в течение рабочего дня.'); return false;">
                     <input type="text" placeholder="Ваше имя" required>
                     <input type="tel" placeholder="Телефон" required>
@@ -366,14 +430,52 @@
         <p>&copy; 2026 1 HOUSE. Международный консалтинг и миграционное право. Все права защищены.</p>
     </footer>
 
+    <!-- НОВОЕ ПРЕМИАЛЬНОЕ МОДАЛЬНОЕ ОКНО С ВЫБОРОМ КАНАЛА СВЯЗИ -->
     <div class="modal-overlay" id="callbackModal" onclick="if(event.target == this) closeModal()">
         <div class="modal-window">
             <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h3 style="font-size:24px; font-weight:300; margin-bottom:20px; text-align:center;">Бесплатная консультация</h3>
-            <form onsubmit="alert('Спасибо. Заявка принята. Специалист свяжется с вами в ближайшее время.'); closeModal(); return false;">
-                <input type="text" placeholder="Имя" required>
-                <input type="tel" placeholder="Телефон" required>
-                <button class="btn-dark" type="submit">Жду звонка</button>
+            <h3>Получить план переезда</h3>
+            <p class="modal-subtitle">Заполните удобные вам поля. Мы вышлем подробную инструкцию по легализации в выбранный мессенджер или на почту.</p>
+            
+            <form onsubmit="alert('Спасибо! Персональный план переезда уже генерируется и будет отправлен вам в ближайшее время через выбранные каналы.'); closeModal(); return false;">
+                
+                <div class="modal-group">
+                    <label>Ваше имя</label>
+                    <input type="text" class="modal-input" placeholder="Как к вам обращаться" required>
+                </div>
+
+                <div class="modal-group">
+                    <label>Telegram username</label>
+                    <input type="text" class="modal-input" placeholder="@username">
+                </div>
+
+                <div class="modal-group">
+                    <label>WhatsApp / Телефон</label>
+                    <input type="tel" class="modal-input" placeholder="+7 (900) 000-00-00">
+                </div>
+
+                <div class="modal-group">
+                    <label>Email адрес</label>
+                    <input type="email" class="modal-input" placeholder="example@mail.com">
+                </div>
+
+                <p class="channels-title">Куда отправить план?</p>
+                <div class="channels-grid">
+                    <label class="channel-option">
+                        <input type="checkbox" name="channel" value="tg" checked>
+                        <div class="channel-box">Telegram</div>
+                    </label>
+                    <label class="channel-option">
+                        <input type="checkbox" name="channel" value="wa">
+                        <div class="channel-box">WhatsApp</div>
+                    </label>
+                    <label class="channel-option">
+                        <input type="checkbox" name="channel" value="email">
+                        <div class="channel-box">Email</div>
+                    </label>
+                </div>
+
+                <button class="btn-dark" type="submit">Получить план в мессенджер</button>
             </form>
         </div>
     </div>
