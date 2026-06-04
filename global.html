@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Group — 1 WORLD. 1 MISSION. 1 HOUSE.</title>
+    <title>Группа компаний 1 WORLD — Официальный сайт</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -23,6 +23,7 @@
             padding: 0 4%; height: 80px; background: #ffffff;
             border-bottom: 1px solid #f0f0f0; position: fixed; width: 100%; top: 0; z-index: 1000;
         }
+        /* Заменили на 1WORLD */
         .logo { font-weight: 700; font-size: 24px; letter-spacing: 2px; color: #1a1a1a; text-decoration: none; }
         .logo span { color: #dfb77d; font-weight: 300; } 
         
@@ -89,83 +90,84 @@
         .btn-callback-header { background: none; border: 1px solid #dfb77d; color: #1a1a1a; padding: 11px 22px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; font-weight: 500; border-radius: 4px; transition: 0.3s; }
         .btn-callback-header:hover { background-color: #dfb77d; color: white; }
 
-        /* ГЛАВНЫЙ БАННЕР */
+        /* ГЛАВНЫЙ БАННЕР (Сдвинут левее, сжат, без логотипа) */
         .page-hero { 
-            height: 100vh; 
+            height: 85vh; 
             display: flex; 
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            padding: 0 4%; 
-            background: radial-gradient(circle, rgba(251,249,246,0.3) 0%, rgba(255,255,255,1) 75%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-            text-align: center;
+            align-items: flex-start;
+            padding: 0 6%; 
+            background: linear-gradient(90deg, rgba(255,255,255,1) 35%, rgba(255,255,255,0.85) 55%, rgba(255,255,255,0.2) 100%), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80') no-repeat 25% center/cover;
             margin-top: 80px;
-            position: relative;
         }
-        .hero-seal-box { margin-bottom: 25px; }
-        .hero-seal-box img {
-            max-width: 200px;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        }
-        .hero-content { max-width: 950px; }
+        .hero-content { max-width: 650px; text-align: left; }
         
-        /* ИСПРАВЛЕНО: Яркая, жирная и отлично видимая надпись */
+        /* Исправлен контраст: четкий черный цвет */
         .hero-content span { 
-            color: #cb9f62; 
+            color: #1a1a1a; 
             text-transform: uppercase; 
-            font-size: 15px; 
+            font-size: 13px; 
             letter-spacing: 3px; 
             font-weight: 700; 
             display: block; 
-            margin-bottom: 15px;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+            margin-bottom: 20px;
         }
         
-        /* ИСПРАВЛЕНО: Уменьшен размер, чтобы гарантированно влезало в строчку, изменен текст */
-        .hero-content h1 { font-size: 42px; font-weight: 300; line-height: 1.2; letter-spacing: -0.5px; color: #1a1a1a; white-space: nowrap; }
-        .hero-content h1 strong { font-weight: 700; color: #cb9f62; }
+        /* Логика стилей: черный текст, золотом выделен только Дом */
+        .hero-content h1 { font-size: 46px; font-weight: 400; line-height: 1.2; letter-spacing: -1px; color: #1a1a1a; }
+        .hero-content h1 span.gold-text { color: #dfb77d; font-weight: 700; }
         
-        /* ИСПРАВЛЕНО: Уместный, сильный слоган вместо каши */
-        .hero-content p { font-size: 19px; margin-top: 25px; color: #4a4a4a; font-weight: 300; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .hero-content p { font-size: 17px; margin-top: 20px; color: #4a4a4a; font-weight: 300; line-height: 1.6; }
 
-        /* ИСПРАВЛЕНО: ВОЗВРАЩЕННЫЙ БЛОК НАША ЦЕЛЬ + О НАС */
-        .about-section { padding: 110px 4%; background: #fbf9f6; border-bottom: 1px solid #eee; }
-        .about-container { max-width: 1100px; margin: 0 auto; text-align: center; }
+        /* ФИРМЕННЫЙ БЛОК: НАША ЦЕЛЬ (Двухколоночный, с логотипом справа) */
+        .target-section { padding: 100px 6%; background: #fbf9f6; }
+        .target-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
         
-        .target-box { max-width: 850px; margin: 0 auto 50px auto; padding-bottom: 45px; border-bottom: 1px solid #e8e3dc; }
-        .target-box h2 { font-size: 28px; font-weight: 700; color: #cb9f62; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; }
-        .target-box p { font-size: 22px; color: #26221c; line-height: 1.6; font-weight: 300; font-style: italic; text-align: center; }
+        .target-text-box { text-align: left; }
+        .target-text-box h2 { font-size: 13px; font-weight: 700; color: #dfb77d; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+        .target-text-box p { font-size: 24px; color: #1a1a1a; line-height: 1.6; font-weight: 300; letter-spacing: -0.5px; }
         
-        .about-badge { display: inline-block; background: #26221c; color: #fff; padding: 6px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; margin-bottom: 20px; }
-        .about-container h3 { font-size: 32px; font-weight: 300; margin-bottom: 25px; line-height: 1.3; }
-        .about-container p.about-text { font-size: 17px; color: #4a4a4a; line-height: 1.8; font-weight: 300; max-width: 900px; margin: 0 auto; text-align: justify; }
+        .target-logo-box { display: flex; justify-content: center; align-items: center; }
+        .target-logo-box img {
+            max-width: 240px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
 
-        /* НАПРАВЛЕНИЯ ГРУППЫ КОМПАНИЙ */
-        .section-directions { padding: 110px 4%; }
-        .directions-title { text-align: center; font-size: 38px; font-weight: 300; margin-bottom: 60px; letter-spacing: -0.5px; }
-        .directions-title strong { font-weight: 700; color: #cb9f62; }
+        /* БЛОК КОРПОРАТИВНОГО ОПИСАНИЯ */
+        .about-section { padding: 100px 6%; background: #ffffff; }
+        .about-container { max-width: 1200px; margin: 0 auto; }
+        .about-badge { display: inline-block; background: #1a1a1a; color: #fff; padding: 6px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; margin-bottom: 20px; }
+        .about-section h3 { font-size: 32px; font-weight: 300; margin-bottom: 25px; letter-spacing: -0.5px; }
+        .about-text { font-size: 16px; color: #4a4a4a; line-height: 1.8; font-weight: 300; text-align: justify; }
+
+        /* НАПРАВЛЕНИЯ ЭКОСИСТЕМЫ */
+        .section-directions { padding: 100px 6%; background: #fbf9f6; }
+        .directions-title { text-align: center; font-size: 36px; font-weight: 300; margin-bottom: 60px; letter-spacing: -0.5px; }
+        .directions-title strong { font-weight: 700; color: #dfb77d; }
         
         .directions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto; }
         
-        .direction-card { background: #ffffff; border: 1px solid #eee; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column; }
-        .direction-media { width: 100%; height: 240px; overflow: hidden; }
+        .direction-card { background: #ffffff; border: 1px solid #eee; border-radius: 8px; overflow: hidden; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column; }
+        .direction-media { width: 100%; height: 230px; overflow: hidden; }
         .direction-media img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
         .direction-content { padding: 35px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
         
-        .direction-content h3 { font-size: 20px; font-weight: 700; margin-bottom: 15px; color: #1a1a1a; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-        .direction-content h3 span { color: #dfb77d; font-weight: 300; font-size: 14px; border: 1px solid #dfb77d; padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
-        .direction-content p { font-size: 15px; color: #555; line-height: 1.7; font-weight: 300; margin-bottom: 30px; text-align: justify; }
+        .direction-content h3 { font-size: 19px; font-weight: 700; margin-bottom: 15px; color: #1a1a1a; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        .direction-content h3 span { color: #dfb77d; font-weight: 300; font-size: 13px; border: 1px solid #dfb77d; padding: 2px 8px; border-radius: 4px; }
+        .direction-content p { font-size: 14px; color: #555; line-height: 1.7; font-weight: 300; margin-bottom: 30px; text-align: justify; }
         
-        .btn-direction { display: block; width: 100%; padding: 14px; border: 1px solid #26221c; background: #26221c; color: white; text-align: center; text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; transition: 0.3s; }
+        .btn-direction { display: block; width: 100%; padding: 14px; border: 1px solid #1a1a1a; background: #1a1a1a; color: white; text-align: center; text-decoration: none; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; transition: 0.3s; }
         .btn-direction:hover { background: #dfb77d; border-color: #dfb77d; }
 
-        .direction-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); border-color: #dfb77d; }
-        .direction-card:hover .direction-media img { transform: scale(1.08); }
+        .direction-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-color: #dfb77d; }
+        .direction-card:hover .direction-media img { transform: scale(1.06); }
 
         /* ФУТЕР */
-        footer { background: #1a1815; color: #ffffff; padding: 40px 4%; text-align: center; font-size: 14px; border-top: 1px solid #2e2a24; }
+        footer { background: #1a1815; color: #ffffff; padding: 40px 4%; text-align: center; font-size: 14px; }
         footer p { color: #8c8273; }
 
         /* МОДАЛЬНОЕ ОКНО */
@@ -175,12 +177,14 @@
         .modal-close { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #aaa; }
         .modal-window input { width: 100%; padding: 16px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; outline: none; }
         .modal-window input:focus { border-color: #dfb77d; }
-        .btn-dark { display: inline-block; padding: 18px 35px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; width: 100%; text-align: center; }
+        .btn-dark { display: inline-block; padding: 18px 35px; background: #1a1a1a; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; width: 100%; text-align: center; }
         .btn-dark:hover { background: #dfb77d; }
 
         @media (max-width: 992px) {
             header .nav-container { display: none; }
-            .page-hero h1 { font-size: 32px; white-space: normal; }
+            .page-hero { padding: 0 4%; background-position: center center; }
+            .target-grid { grid-template-columns: 1fr; gap: 40px; }
+            .target-logo-box { order: -1; }
             .directions-grid { grid-template-columns: 1fr; gap: 30px; }
         }
     </style>
@@ -189,9 +193,9 @@
 
     <!-- НАВИГАЦИОННАЯ ШАПКА -->
     <header>
-        <a href="./index.html" class="logo">1<span>HOUSE</span></a>
+        <!-- Изменено на 1WORLD -->
+        <a href="./global.html" class="logo">1<span>WORLD</span></a>
         <div class="nav-container">
-            <!-- Ссылка ведет к якорю #about на этой же странице -->
             <div class="nav-item nav-item-single">
                 <a href="#about" class="nav-link">О нас</a>
             </div>
@@ -226,35 +230,38 @@
         <button class="btn-callback-header" onclick="openModal()">Заказать звонок</button>
     </header>
 
-    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <!-- ГЛАВНЫЙ ЭКРАН (Контрастный текст, сжатый фон, логотип убран) -->
     <section class="page-hero">
-        <div class="hero-seal-box">
-            <img src="./global-seal.jpg" alt="Global Seal">
-        </div>
         <div class="hero-content">
             <span>Единая международная экосистема</span>
-            <h1>Один мир. Одна миссия. <strong>Один дом.</strong></h1>
-            <p>Создаем безупречные условия для вашей жизни, инвестиций и свободы перемещения по всей планете. От технологичного проектирования до полной легализации в новых странах.</p>
+            <h1>Один мир. Одна миссия. <span class="gold-text">Один дом.</span></h1>
+            <p>Создаем безупречные условия для вашей жизни, инвестиций и свободы перемещения. От технологичного проектирования до полной легализации в новых странах.</p>
         </div>
     </section>
 
-    <!-- ИСПРАВЛЕННЫЙ БЛОК "О НАС" С ЦЕЛЬЮ (ЯКОРЬ #about) -->
-    <section class="about-section" id="about">
-        <div class="about-container">
-            
-            <!-- Вернули потерянный блок с философией -->
-            <div class="target-box">
+    <!-- ФИРМЕННЫЙ БЛОК: НАША ЦЕЛЬ (Логотип справа от текста, чистый шрифт) -->
+    <section class="target-section" id="about">
+        <div class="target-grid">
+            <div class="target-text-box">
                 <h2>Наша цель</h2>
                 <p>Стирать границы для человека. Мы строим безопасные дома, помогаем инвестировать в стабильное будущее и открываем двери в новые страны, создавая глобальное сообщество свободных людей.</p>
             </div>
-
-            <span class="about-badge">Global Group</span>
-            <h3>Масштабный подход к вашему комфорту</h3>
-            <p class="about-text">Группа компаний Global зародилась как ответ на вызовы современного мира, где успешный человек не хочет ограничивать себя рамками одного государства. Мы объединили три ключевых столпа личной независимости: капитальное загородное строительство, высокодоходные международные инвестиции и экспертное миграционное сопровождение. Вместо десятков подрядчиков и юридических рисков, наши клиенты получают комплексное обслуживание по высшим мировым стандартам. Мы берем на себя всю техническую, финансовую и бюрократическую рутину, защищая ваши интересы в любой точке земного шара.</p>
+            <div class="target-logo-box">
+                <img src="./global-seal.jpg" alt="1 WORLD Seal">
+            </div>
         </div>
     </section>
 
-    <!-- НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ -->
+    <!-- МОНОЛИТНЫЙ БЛОК ОПИСАНИЯ (Чистая смена фона на белый) -->
+    <section class="about-section">
+        <div class="about-container">
+            <span class="about-badge">Группа компаний 1 WORLD</span>
+            <h3>Масштабный подход к вашей личной независимости</h3>
+            <p class="about-text">Группа компаний 1 WORLD зародилась как ответ на вызовы современного мира, где успешный человек не хочет ограничивать себя рамками одного государства. Мы объединили три ключевых столпа личной независимости: капитальное загородное строительство, высокодоходные международные инвестиции и экспертное миграционное сопровождение. Вместо десятков подрядчиков и юридических рисков, наши клиенты получают комплексное обслуживание по высшим мировым стандартам. Мы берем на себя всю техническую, финансовую и бюрократическую рутину, защищая ваши интересы в любой точке земного шара.</p>
+        </div>
+    </section>
+
+    <!-- НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ (Смена фона на крем) -->
     <section class="section-directions">
         <h2 class="directions-title">Основные направления <strong>экосистемы</strong></h2>
         
@@ -288,7 +295,7 @@
                 </div>
             </div>
 
-            <!-- Карточка 3: ИСПРАВЛЕНО НАЗВАНИЕ НА БОЛЕЕ СТАТУСНОЕ -->
+            <!-- Карточка 3: Легализация -->
             <div class="direction-card">
                 <div class="direction-media">
                     <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=600&q=80" alt="ВНЖ в Испании" loading="lazy">
@@ -307,14 +314,14 @@
 
     <!-- ФУТЕР -->
     <footer>
-        <p>&copy; 2026 Global Group. Экосистема международного строительства и консалтинга. Все права защищены.</p>
+        <p>&copy; 2026 Группа компаний 1 WORLD. Экосистема международного строительства и консалтинга. Все права защищены.</p>
     </footer>
 
     <!-- МОДАЛЬНОЕ ОКНО -->
     <div class="modal-overlay" id="callbackModal" onclick="if(event.target == this) closeModal()">
         <div class="modal-window">
             <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h3 style="font-size:24px; font-weight:300; margin-bottom:20px; text-align:center;">Обратная связь</h3>
+            <h3 style="font-size:22px; font-weight:300; margin-bottom:20px; text-align:center;">Обратная связь</h3>
             <form onsubmit="alert('Спасибо. Заявка принята. Наш эксперт свяжется с вами в ближайшее время.'); closeModal(); return false;">
                 <input type="text" placeholder="Имя" required>
                 <input type="tel" placeholder="Телефон" required>
