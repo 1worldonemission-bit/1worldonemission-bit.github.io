@@ -199,7 +199,7 @@
         }
     </style>
 </head>
-<body oncontextmenu="return false;">
+<body oncontextmenu="return false;" onload="filterProjects('panoramic')">
 
     <header>
         <a href="./index.html" class="logo">1<span>HOUSE</span></a>
@@ -533,8 +533,10 @@
             const cards = document.querySelectorAll('.project-card');
             const buttons = document.querySelectorAll('.filter-btn');
             
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (window.event && window.event.target && window.event.target.classList.contains('filter-btn')) {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                window.event.target.classList.add('active');
+            }
 
             cards.forEach(card => {
                 if (card.classList.contains(category)) {
@@ -557,7 +559,6 @@
         }
     </script>
 
-    <!-- ВСПЛЫВАЮЩЕЕ ОКНО -->
     <div class="modal-overlay">
         <div class="modal-window">
             <span class="modal-close" onclick="closeModal()">&times;</span>
