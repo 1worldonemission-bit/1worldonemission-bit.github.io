@@ -185,9 +185,26 @@
         /* ВСПЛЫВАЮЩЕЕ ОКНО */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-window { background: #ffffff; padding: 40px; max-width: 450px; width: 90%; position: relative; border-radius: 8px; }
+        .modal-window { background: #ffffff; padding: 40px; max-width: 550px; width: 90%; position: relative; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
         .modal-close { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #aaa; }
         
+        /* СТИЛИ ДЛЯ КВИЗ-ФОРМЫ ВНУТРИ МОДАЛКИ */
+        .quiz-step { display: none; }
+        .quiz-step.active { display: block; }
+        .quiz-progress { height: 6px; background: #f0f0f0; border-radius: 3px; margin-bottom: 25px; overflow: hidden; }
+        .quiz-progress-bar { height: 100%; background: #dfb77d; width: 25%; transition: 0.3s; }
+        .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 25px; }
+        .quiz-option-label { display: flex; align-items: center; justify-content: center; padding: 16px; border: 1px solid #ddd; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 500; text-align: center; transition: 0.2s; }
+        .quiz-option-label:hover { border-color: #dfb77d; background: #fcf9f5; }
+        .quiz-option-label input { display: none; }
+        .quiz-option-label.selected { border-color: #dfb77d; background: #fcf9f5; color: #dfb77d; font-weight: 700; }
+        .quiz-navigation { display: flex; justify-content: space-between; gap: 15px; margin-top: 20px; }
+        .btn-quiz-nav { flex: 1; padding: 14px; border: none; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; cursor: pointer; border-radius: 6px; transition: 0.2s; }
+        .btn-quiz-prev { background: #f5f5f5; color: #4a4a4a; }
+        .btn-quiz-prev:hover { background: #e8e8e8; }
+        .btn-quiz-next { background: #26221c; color: white; }
+        .btn-quiz-next:hover { background: #dfb77d; }
+
         @media (max-width: 992px) {
             header nav { display: none; } .hero h1 { font-size: 36px; }
             .global-central-box, .tech-content, .decor-block, .feedback-box, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -196,6 +213,7 @@
         }
         @media (max-width: 576px) {
             .project-card { flex: 1 1 100%; }
+            .quiz-options { grid-template-columns: 1fr; gap: 10px; }
         }
     </style>
 </head>
@@ -237,9 +255,9 @@
                 </div>
             </div>
             
-            <div class="nav-item"><a href="global.html#spain" class="nav-link global-menu-link">ВНЖ в Испании</a></div>
-            <div class="nav-item"><a href="global.html#bali" class="nav-link global-menu-link">Недвижимость на Бали</a></div>
-            <div class="nav-item"><a href="global.html#europe" class="nav-link global-menu-link">Недвижимость в Европе</a></div>
+            <div class="nav-item"><a href="spain.html" class="nav-link global-menu-link">ВНЖ в Испании</a></div>
+            <div class="nav-item"><a href="bali.html" class="nav-link global-menu-link">Недвижимость на Бали</a></div>
+            <div class="nav-item"><a href="europe.html" class="nav-link global-menu-link">Недвижимость в Европе</a></div>
         </nav>
         <button class="btn-callback-header" onclick="openModal()">Заказать звонок</button>
     </header>
@@ -481,74 +499,63 @@
                 <p>Проектирование, строительство и дизайн современных энергоэффективных загородных домов под ключ.</p>
             </div>
             <div class="footer-col">
-                <h5>Технологии</h5>
+                <h5>Навигация</h5>
                 <ul>
-                    <li><a href="#services">Газобетонные блоки</a></li>
-                    <li><a href="#services">Кирпичные дома</a></li>
-                    <li><a href="#services">Клееный брус</a></li>
-                    <li><a href="#services">Каркасные дома</a></li>
+                    <li><a href="global.html">О нас</a></li>
+                    <li><a href="#projects">Архитектурные проекты</a></li>
+                    <li><a href="#services">Технологии строительства</a></li>
+                    <li><a href="#portfolio">Наше портфолио</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>Услуги</h5>
                 <ul>
                     <li><a href="#services">Проектирование</a></li>
-                    <li><a href="#services">Строительство</a></li>
-                    <li><a href="#services">Ипотека брокеридж</a></li>
-                    <li><a href="#decor">Подбор мебели</a></li>
+                    <li><a href="#services">Строительство под ключ</a></li>
+                    <li><a href="#services">Инженерные системы</a></li>
+                    <li><a href="#decor">Мебель и декор</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>Контакты</h5>
                 <ul>
-                    <li><a href="tel:+74950000000">+7 (495) 000-00-00</a></li>
-                    <li><a href="mailto:info@1house.ru">info@1house.ru</a></li>
-                    <li><p style="color:#cbd5cb; font-size:14px;">Москва, ул. Строителей, д. 1</p></li>
+                    <li><a href="#callback" onclick="openModal(); return false;">Заказать звонок</a></li>
+                    <li><a href="spain.html">Офис в Испании</a></li>
+                    <li><a href="bali.html">Представительство Бали</a></li>
                 </ul>
             </div>
         </div>
-        
+
         <div class="footer-partners">
-            <div class="partners-title">Наши стратегические партнеры</div>
+            <p class="partners-title">Наши надежные партнеры</p>
             <div class="partners-logos">
-                <span class="partner-logo">СБЕРБАНК</span>
-                <span class="partner-logo">ВТБ</span>
-                <span class="partner-logo">АЛЬФА-БАНК</span>
-                <span class="partner-logo">ДОМ.РФ</span>
-                <span class="partner-logo">РОССЕЛЬХОЗБАНК</span>
+                <div class="partner-logo">YTONG</div>
+                <div class="partner-logo">BRAAS</div>
+                <div class="partner-logo">GRAND LINE</div>
+                <div class="partner-logo">REHAU</div>
+                <div class="partner-logo">ТЕХНОНИКОЛЬ</div>
             </div>
         </div>
+        <p style="text-align: center; margin-top: 40px; font-size: 13px; color: #666;">&copy; 2026 1 HOUSE. Все права защищены. Разработка и инжиниринг премиальной загородной недвижимости.</p>
     </footer>
 
-    <div class="modal-overlay" id="callbackModal" onclick="if(event.target == this) closeModal()">
-        <div class="modal-window">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h3 style="font-size:24px; font-weight:300; margin-bottom:20px;">Заказать обратный звонок</h3>
-            <form onsubmit="alert('Спасибо! Мы скоро свяжемся с вами.'); closeModal(); return false;">
-                <div class="form-group">
-                    <input type="text" placeholder="Имя" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Телефон" required>
-                </div>
-                <button class="btn-dark" type="submit">Жду звонка</button>
-            </form>
-        </div>
-    </div>
-
     <script>
-        // Фильтрация каталога проектов
-        function filterProjects(category) {
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => {
-                if(btn.getAttribute('onclick').includes(`'${category}'`)) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
+        function openModal() { document.querySelector('.modal-overlay').classList.add('active'); }
+        function closeModal() { document.querySelector('.modal-overlay').classList.remove('active'); resetQuiz(); }
+        
+        document.querySelector('.modal-overlay').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
 
+        function filterProjects(category) {
             const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if(event && event.target && event.target.classList.contains('filter-btn')) {
+                event.target.classList.add('active');
+            }
+
             cards.forEach(card => {
                 if (card.classList.contains(category)) {
                     card.style.display = 'block';
@@ -558,26 +565,148 @@
             });
         }
 
-        // Переключение табов в технологиях
         function switchTech(index) {
             const tabs = document.querySelectorAll('.tech-tab');
             const contents = document.querySelectorAll('.tech-content');
-            
+
             tabs.forEach(tab => tab.classList.remove('active'));
             contents.forEach(content => content.classList.remove('active'));
-            
+
             tabs[index].classList.add('active');
             contents[index].classList.add('active');
         }
-        
-        // Управление модальным окном
-        function openModal() { document.getElementById('callbackModal').classList.add('active'); }
-        function closeModal() { document.getElementById('callbackModal').classList.remove('active'); }
 
-        // ЗАПУСК ПО УМОЛЧАНИЮ
-        window.addEventListener('DOMContentLoaded', () => {
-            filterProjects('panoramic');
-        });
+        /* СКРИПТ УПРАВЛЕНИЯ КВИЗОМ */
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function selectQuizOption(element, inputName) {
+            const options = element.parentElement.querySelectorAll('.quiz-option-label');
+            options.forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+            element.querySelector('input').checked = true;
+        }
+
+        function changeStep(direction) {
+            if (direction === 1) {
+                const currentStepElement = document.querySelector(`.quiz-step[data-step="${currentStep}"]`);
+                const hasSelected = currentStepElement.querySelector('input:checked');
+                if (currentStep < 4 && !hasSelected) {
+                    alert('Пожалуйста, выберите один из вариантов решения.');
+                    return;
+                }
+            }
+
+            document.querySelector(`.quiz-step[data-step="${currentStep}"]`).classList.remove('active');
+            currentStep += direction;
+            document.querySelector(`.quiz-step[data-step="${currentStep}"]`).classList.add('active');
+
+            const progressPercent = (currentStep / totalSteps) * 100;
+            document.querySelector('.quiz-progress-bar').style.width = `${progressPercent}%`;
+        }
+
+        function resetQuiz() {
+            document.querySelectorAll('.quiz-step').forEach(step => step.classList.remove('active'));
+            currentStep = 1;
+            document.querySelector('.quiz-step[data-step="1"]').classList.add('active');
+            document.querySelector('.quiz-progress-bar').style.width = '25%';
+            document.querySelectorAll('.quiz-option-label').forEach(opt => opt.classList.remove('selected'));
+            document.getElementById('quizForm').reset();
+        }
     </script>
+
+    <div class="modal-overlay">
+        <div class="modal-window">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            
+            <div class="quiz-progress">
+                <div class="quiz-progress-bar"></div>
+            </div>
+
+            <form id="quizForm" class="form-large" style="margin: 0;" onsubmit="alert('Параметры приняты! Расчет отправлен на ваш номер.'); closeModal(); return false;">
+                
+                <div class="quiz-step active" data-step="1">
+                    <h3 style="font-size: 22px; margin-bottom: 20px; font-weight: 300;">Шаг 1: Из чего планируете строить?</h3>
+                    <div class="quiz-options">
+                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'tech')">
+                            <input type="radio" name="tech" value="gasblock"> Газобетонные блоки
+                        </label>
+                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'tech')">
+                            <input type="radio" name="tech" value="brick"> Кирпич / Керамика
+                        </label>
+                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'tech')">
+                            <input type="radio" name="tech" value="timber"> Клееный брус
+                        </label>
+                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'tech')">
+                            <input type="radio" name="tech" value="frame"> Каркасный метод
+                        </label>
+                    </div>
+                    <div class="quiz-navigation">
+                        <span style="flex:1;"></span>
+                        <button type="button" class="btn-quiz-nav btn-quiz-next" onclick="changeStep(1)">Далее &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="quiz-step" data-step="2">
+                    <h3 style="font-size: 22px; margin-bottom: 20px; font-weight: 300;">Шаг 2: Желаемая площадь дома?</h3>
+                    <div class="quiz-options">
+                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'size')">
+                            <input type="radio" name="size" value="small"> До 100 кв.м
+                        </label>
+                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'size')">
+                            <input type="radio" name="size" value="medium"> 100 - 200 кв.м
+                        </label>
+                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'size')">
+                            <input type="radio" name="size" value="large"> 200 - 350 кв.m
+                        </label>
+                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'size')">
+                            <input type="radio" name="size" value="huge"> Более 350 кв.м
+                        </label>
+                    </div>
+                    <div class="quiz-navigation">
+                        <button type="button" class="btn-quiz-nav btn-quiz-prev" onclick="changeStep(-1)">&larr; Назад</button>
+                        <button type="button" class="btn-quiz-nav btn-quiz-next" onclick="changeStep(1)">Далее &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="quiz-step" data-step="3">
+                    <h3 style="font-size: 22px; margin-bottom: 20px; font-weight: 300;">Шаг 3: Сколько этажей планируете?</h3>
+                    <div class="quiz-options">
+                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'floors')">
+                            <input type="radio" name="floors" value="1"> 1 этаж
+                        </label>
+                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'floors')">
+                            <input type="radio" name="floors" value="2"> 2 этажа
+                        </label>
+                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'floors')">
+                            <input type="radio" name="floors" value="mansard"> С мансардой
+                        </label>
+                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'floors')">
+                            <input type="radio" name="floors" value="flat"> Одноэтажный с плоской кровлей
+                        </label>
+                    </div>
+                    <div class="quiz-navigation">
+                        <button type="button" class="btn-quiz-nav btn-quiz-prev" onclick="changeStep(-1)">&larr; Назад</button>
+                        <button type="button" class="btn-quiz-nav btn-quiz-next" onclick="changeStep(1)">Далее &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="quiz-step" data-step="4">
+                    <h3 style="font-size: 22px; margin-bottom: 10px; font-weight: 300;">Получить расчет стоимости</h3>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Закрепим за вашим номером персональную скидку на проектирование и вышлем предварительную смету.</p>
+                    
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="tel" placeholder="Номер телефона" required>
+                    
+                    <div class="quiz-navigation">
+                        <button type="button" class="btn-quiz-nav btn-quiz-prev" onclick="changeStep(-1)">&larr; Назад</button>
+                        <button type="submit" class="btn-quiz-nav btn-quiz-next" style="background:#dfb77d;">Рассчитать проект</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>
