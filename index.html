@@ -185,25 +185,8 @@
         /* ВСПЛЫВАЮЩЕЕ ОКНО */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-window { background: #ffffff; padding: 40px; max-width: 550px; width: 90%; position: relative; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .modal-window { background: #ffffff; padding: 40px; max-width: 450px; width: 90%; position: relative; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
         .modal-close { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #aaa; }
-        
-        /* СТИЛИ ДЛЯ КВИЗ-ФОРМЫ ВНУТРИ МОДАЛКИ */
-        .quiz-step { display: none; }
-        .quiz-step.active { display: block; }
-        .quiz-progress { height: 6px; background: #f0f0f0; border-radius: 3px; margin-bottom: 25px; overflow: hidden; }
-        .quiz-progress-bar { height: 100%; background: #dfb77d; width: 25%; transition: 0.3s; }
-        .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 25px; }
-        .quiz-option-label { display: flex; align-items: center; justify-content: center; padding: 16px; border: 1px solid #ddd; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 500; text-align: center; transition: 0.2s; }
-        .quiz-option-label:hover { border-color: #dfb77d; background: #fcf9f5; }
-        .quiz-option-label input { display: none; }
-        .quiz-option-label.selected { border-color: #dfb77d; background: #fcf9f5; color: #dfb77d; font-weight: 700; }
-        .quiz-navigation { display: flex; justify-content: space-between; gap: 15px; margin-top: 20px; }
-        .btn-quiz-nav { flex: 1; padding: 14px; border: none; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; cursor: pointer; border-radius: 6px; transition: 0.2s; }
-        .btn-quiz-prev { background: #f5f5f5; color: #4a4a4a; }
-        .btn-quiz-prev:hover { background: #e8e8e8; }
-        .btn-quiz-next { background: #26221c; color: white; }
-        .btn-quiz-next:hover { background: #dfb77d; }
 
         @media (max-width: 992px) {
             header nav { display: none; } .hero h1 { font-size: 36px; }
@@ -213,7 +196,6 @@
         }
         @media (max-width: 576px) {
             .project-card { flex: 1 1 100%; }
-            .quiz-options { grid-template-columns: 1fr; gap: 10px; }
         }
     </style>
 </head>
@@ -337,42 +319,42 @@
                 <img src="./panoramic-4.jpg" alt="Панорамный проект" class="project-img h-med" loading="lazy">
             </div>
 
-            <div class="project-card usa">
+            <div class="project-card usa" style="display: none;">
                 <img src="./usa-1.jpg" alt="Американский проект" class="project-img h-high" loading="lazy">
             </div>
-            <div class="project-card usa">
+            <div class="project-card usa" style="display: none;">
                 <img src="./usa-4.jpg" alt="Американский проект" class="project-img h-low" loading="lazy">
             </div>
-            <div class="project-card usa">
+            <div class="project-card usa" style="display: none;">
                 <img src="./usa-5.jpg" alt="Американский проект" class="project-img h-med" loading="lazy">
             </div>
-            <div class="project-card usa">
+            <div class="project-card usa" style="display: none;">
                 <img src="./usa-6.jpg" alt="Американский проект" class="project-img h-high" loading="lazy">
             </div>
 
-            <div class="project-card canada">
+            <div class="project-card canada" style="display: none;">
                 <img src="./canada-1.jpg" alt="Канадский проект" class="project-img h-med" loading="lazy">
             </div>
-            <div class="project-card canada">
+            <div class="project-card canada" style="display: none;">
                 <img src="./canada-2.jpg" alt="Канадский проект" class="project-img h-low" loading="lazy">
             </div>
-            <div class="project-card canada">
+            <div class="project-card canada" style="display: none;">
                 <img src="./canada-3.jpg" alt="Канадский проект" class="project-img h-high" loading="lazy">
             </div>
-            <div class="project-card canada">
+            <div class="project-card canada" style="display: none;">
                 <img src="./canada-4.jpg" alt="Канадский проект" class="project-img h-med" loading="lazy">
             </div>
 
-            <div class="project-card europe">
+            <div class="project-card europe" style="display: none;">
                 <img src="./europe-1.jpg" alt="Европейский проект" class="project-img h-high" loading="lazy">
             </div>
-            <div class="project-card europe">
+            <div class="project-card europe" style="display: none;">
                 <img src="./europe-2.jpg" alt="Европейский проект" class="project-img h-med" loading="lazy">
             </div>
-            <div class="project-card europe">
+            <div class="project-card europe" style="display: none;">
                 <img src="./europe-3.jpg" alt="Европейский проект" class="project-img h-low" loading="lazy">
             </div>
-            <div class="project-card europe">
+            <div class="project-card europe" style="display: none;">
                 <img src="./europe-4.jpg" alt="Европейский проект" class="project-img h-high" loading="lazy">
             </div>
         </div>
@@ -541,7 +523,7 @@
 
     <script>
         function openModal() { document.querySelector('.modal-overlay').classList.add('active'); }
-        function closeModal() { document.querySelector('.modal-overlay').classList.remove('active'); resetQuiz(); }
+        function closeModal() { document.querySelector('.modal-overlay').classList.remove('active'); }
         
         document.querySelector('.modal-overlay').addEventListener('click', function(e) {
             if (e.target === this) closeModal();
@@ -575,135 +557,18 @@
             tabs[index].classList.add('active');
             contents[index].classList.add('active');
         }
-
-        /* СКРИПТ УПРАВЛЕНИЯ КВИЗОМ */
-        let currentStep = 1;
-        const totalSteps = 4;
-
-        function selectQuizOption(element, inputName) {
-            const options = element.parentElement.querySelectorAll('.quiz-option-label');
-            options.forEach(opt => opt.classList.remove('selected'));
-            element.classList.add('selected');
-            element.querySelector('input').checked = true;
-        }
-
-        function changeStep(direction) {
-            if (direction === 1) {
-                const currentStepElement = document.querySelector(`.quiz-step[data-step="${currentStep}"]`);
-                const hasSelected = currentStepElement.querySelector('input:checked');
-                if (currentStep < 4 && !hasSelected) {
-                    alert('Пожалуйста, выберите один из вариантов решения.');
-                    return;
-                }
-            }
-
-            document.querySelector(`.quiz-step[data-step="${currentStep}"]`).classList.remove('active');
-            currentStep += direction;
-            document.querySelector(`.quiz-step[data-step="${currentStep}"]`).classList.add('active');
-
-            const progressPercent = (currentStep / totalSteps) * 100;
-            document.querySelector('.quiz-progress-bar').style.width = `${progressPercent}%`;
-        }
-
-        function resetQuiz() {
-            document.querySelectorAll('.quiz-step').forEach(step => step.classList.remove('active'));
-            currentStep = 1;
-            document.querySelector('.quiz-step[data-step="1"]').classList.add('active');
-            document.querySelector('.quiz-progress-bar').style.width = '25%';
-            document.querySelectorAll('.quiz-option-label').forEach(opt => opt.classList.remove('selected'));
-            document.getElementById('quizForm').reset();
-        }
     </script>
 
+    <!-- ВСПЛЫВАЮЩЕЕ ОКНО (ВОЗВРАЩЕНО В ИСХОДНЫЙ ВИД) -->
     <div class="modal-overlay">
         <div class="modal-window">
             <span class="modal-close" onclick="closeModal()">&times;</span>
-            
-            <div class="quiz-progress">
-                <div class="quiz-progress-bar"></div>
-            </div>
-
-            <form id="quizForm" class="form-large" style="margin: 0;" onsubmit="alert('Параметры приняты! Расчет отправлен на ваш номер.'); closeModal(); return false;">
-                
-                <div class="quiz-step active" data-step="1">
-                    <h3 style="font-size: 22px; margin-bottom: 20px; font-weight: 300;">Шаг 1: Из чего планируете строить?</h3>
-                    <div class="quiz-options">
-                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'tech')">
-                            <input type="radio" name="tech" value="gasblock"> Газобетонные блоки
-                        </label>
-                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'tech')">
-                            <input type="radio" name="tech" value="brick"> Кирпич / Керамика
-                        </label>
-                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'tech')">
-                            <input type="radio" name="tech" value="timber"> Клееный брус
-                        </label>
-                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'tech')">
-                            <input type="radio" name="tech" value="frame"> Каркасный метод
-                        </label>
-                    </div>
-                    <div class="quiz-navigation">
-                        <span style="flex:1;"></span>
-                        <button type="button" class="btn-quiz-nav btn-quiz-next" onclick="changeStep(1)">Далее &rarr;</button>
-                    </div>
-                </div>
-
-                <div class="quiz-step" data-step="2">
-                    <h3 style="font-size: 22px; margin-bottom: 20px; font-weight: 300;">Шаг 2: Желаемая площадь дома?</h3>
-                    <div class="quiz-options">
-                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'size')">
-                            <input type="radio" name="size" value="small"> До 100 кв.м
-                        </label>
-                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'size')">
-                            <input type="radio" name="size" value="medium"> 100 - 200 кв.м
-                        </label>
-                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'size')">
-                            <input type="radio" name="size" value="large"> 200 - 350 кв.m
-                        </label>
-                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'size')">
-                            <input type="radio" name="size" value="huge"> Более 350 кв.м
-                        </label>
-                    </div>
-                    <div class="quiz-navigation">
-                        <button type="button" class="btn-quiz-nav btn-quiz-prev" onclick="changeStep(-1)">&larr; Назад</button>
-                        <button type="button" class="btn-quiz-nav btn-quiz-next" onclick="changeStep(1)">Далее &rarr;</button>
-                    </div>
-                </div>
-
-                <div class="quiz-step" data-step="3">
-                    <h3 style="font-size: 22px; margin-bottom: 20px; font-weight: 300;">Шаг 3: Сколько этажей планируете?</h3>
-                    <div class="quiz-options">
-                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'floors')">
-                            <input type="radio" name="floors" value="1"> 1 этаж
-                        </label>
-                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'floors')">
-                            <input type="radio" name="floors" value="2"> 2 этажа
-                        </label>
-                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'floors')">
-                            <input type="radio" name="floors" value="mansard"> С мансардой
-                        </label>
-                        <label class="quiz-option-label" onclick="selectQuizOption(this, 'floors')">
-                            <input type="radio" name="floors" value="flat"> Одноэтажный с плоской кровлей
-                        </label>
-                    </div>
-                    <div class="quiz-navigation">
-                        <button type="button" class="btn-quiz-nav btn-quiz-prev" onclick="changeStep(-1)">&larr; Назад</button>
-                        <button type="button" class="btn-quiz-nav btn-quiz-next" onclick="changeStep(1)">Далее &rarr;</button>
-                    </div>
-                </div>
-
-                <div class="quiz-step" data-step="4">
-                    <h3 style="font-size: 22px; margin-bottom: 10px; font-weight: 300;">Получить расчет стоимости</h3>
-                    <p style="font-size: 14px; color: #666; margin-bottom: 20px;">Закрепим за вашим номером персональную скидку на проектирование и вышлем предварительную смету.</p>
-                    
-                    <input type="text" placeholder="Ваше имя" required>
-                    <input type="tel" placeholder="Номер телефона" required>
-                    
-                    <div class="quiz-navigation">
-                        <button type="button" class="btn-quiz-nav btn-quiz-prev" onclick="changeStep(-1)">&larr; Назад</button>
-                        <button type="submit" class="btn-quiz-nav btn-quiz-next" style="background:#dfb77d;">Рассчитать проект</button>
-                    </div>
-                </div>
-
+            <h3 style="font-size: 24px; margin-bottom: 15px; font-weight: 300;">Заказать обратный звонок</h3>
+            <p style="font-size: 14px; color: #666; margin-bottom: 25px;">Оставьте контакты, и наш специалист свяжется с вами в течение 15 минут.</p>
+            <form class="form-large" style="margin: 0;" onsubmit="alert('Заявка успешно отправлена!'); closeModal(); return false;">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Номер телефона" required>
+                <button class="btn-dark" type="submit">Жду звонка</button>
             </form>
         </div>
     </div>
