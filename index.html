@@ -140,7 +140,7 @@
         /* ИПОТЕКА */
         .ipoteka-banner { background: #26221c; color: white; padding: 60px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
         .ipoteka-text h3 { font-size: 32px; font-weight: 300; margin-bottom: 15px; }
-        .ipoteka-text p { color: #ccc5ba; font-size: 16px; max-width: 600px; line-height: 1.6; text-align: left; }
+        .ipoteka-text p { color: #ccc5ba; font-size: 16px; max-width: 600px; line-height: 1.6; text-align: justify; }
         .btn-white { display: inline-block; padding: 18px 35px; background: #dfb77d; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; }
         .btn-white:hover { background: #cb9f62; }
 
@@ -159,7 +159,7 @@
         /* ОБРАТНАЯ СВЯЗЬ */
         .feedback-box { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; background: #ffffff; border: 1px solid #eee; padding: 60px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
         .feedback-info h3 { font-size: 32px; margin-bottom: 20px; font-weight: 300; }
-        .feedback-info p { color: #666; line-height: 1.6; margin-bottom: 30px; text-align: left; }
+        .feedback-info p { color: #666; line-height: 1.6; margin-bottom: 30px; text-align: justify; }
         .form-large input, .form-large select { width: 100%; padding: 16px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; outline: none; }
         .form-large input:focus, .form-large select:focus { border-color: #dfb77d; }
         .btn-dark { width: 100%; padding: 18px; background: #26221c; color: white; border: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 2px; cursor: pointer; transition: 0.3s; border-radius: 6px; }
@@ -199,7 +199,7 @@
         }
     </style>
 </head>
-<body oncontextmenu="return false;" onload="filterProjects('panoramic')">
+<body oncontextmenu="return false;">
 
     <header>
         <a href="./index.html" class="logo">1<span>HOUSE</span></a>
@@ -364,7 +364,7 @@
         <h2 class="section-title">Технологии <strong>Строительства</strong></h2>
         
         <div class="tech-tabs">
-            <div class="tech-tab active" onclick="switchTech(0)">Газобетонные блоки</div>
+            <div class="tech-tab active" onclick="switchTech(0)">Газобетонные blocks</div>
             <div class="tech-tab" onclick="switchTech(1)">Кирпичные дома</div>
             <div class="tech-tab" onclick="switchTech(2)">Клееный брус</div>
             <div class="tech-tab" onclick="switchTech(3)">Каркасная технология</div>
@@ -533,10 +533,8 @@
             const cards = document.querySelectorAll('.project-card');
             const buttons = document.querySelectorAll('.filter-btn');
             
-            if (event && event.target && event.target.classList.contains('filter-btn')) {
-                buttons.forEach(btn => btn.classList.remove('active'));
-                event.target.classList.add('active');
-            }
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
 
             cards.forEach(card => {
                 if (card.classList.contains(category)) {
