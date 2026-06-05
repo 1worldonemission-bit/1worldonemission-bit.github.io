@@ -165,7 +165,7 @@
         
         .btn-gold { display: inline-block; padding: 18px 35px; background: #dfb77d; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; }
         .btn-gold:hover { background: #cb9f62; }
-        .btn-dark { display: inline-block; padding: 18px 35px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 6px; width: 100%; text-align: center; }
+        .btn-dark { display: inline-block; padding: 16px 35px; background: #26221c; color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; cursor: pointer; transition: 0.3s; border-radius: 6px; width: 100%; text-align: center; }
         .btn-dark:hover { background: #dfb77d; }
 
         .form-container { max-width: 500px; background: #ffffff; border: 1px solid #eee; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.01); margin: 0 auto; }
@@ -176,43 +176,51 @@
         footer { background: #1a1815; color: #ffffff; padding: 40px 4%; text-align: center; font-size: 14px; border-top: 1px solid #2e2a24; }
         footer p { color: #8c8273; }
 
-        /* ПОЛНОСТЬЮ ПЕРЕРАБОТАННОЕ ПРЕМИАЛЬНОЕ МОДАЛЬНОЕ ОКНО */
+        /* ИСПРАВЛЕННОЕ КОМПАКТНОЕ ПРЕМИАЛЬНОЕ МОДАЛЬНОЕ ОКНО */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: 0.3s; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
         
         .modal-window { 
             background: #ffffff; 
-            padding: 45px; 
-            max-width: 520px; 
+            padding: 30px 35px; 
+            max-width: 500px; 
             width: 92%; 
             position: relative; 
             border-radius: 12px; 
             box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            max-height: 94vh;
+            overflow-y: auto;
         }
-        .modal-close { position: absolute; top: 20px; right: 25px; font-size: 28px; cursor: pointer; color: #aaa; transition: 0.2s; }
+        .modal-close { position: absolute; top: 15px; right: 20px; font-size: 26px; cursor: pointer; color: #aaa; transition: 0.2s; }
         .modal-close:hover { color: #1a1a1a; }
         
-        .modal-window h3 { font-size: 26px; font-weight: 300; margin-bottom: 10px; text-align: center; letter-spacing: -0.5px; }
-        .modal-window p.modal-subtitle { font-size: 14px; color: #666; text-align: center; margin-bottom: 30px; font-weight: 300; line-height: 1.4; }
+        .modal-window h3 { font-size: 22px; font-weight: 300; margin-bottom: 6px; text-align: center; letter-spacing: -0.5px; }
+        .modal-window p.modal-subtitle { font-size: 13px; color: #666; text-align: center; margin-bottom: 20px; font-weight: 300; line-height: 1.4; }
 
-        /* Полноразмерные стильные инпуты */
-        .modal-group { margin-bottom: 22px; position: relative; }
-        .modal-group label { display: block; font-size: 13px; font-weight: 500; color: #333; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        /* Сетка 2х2 для полей ввода */
+        .modal-grid-inputs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        .modal-group { position: relative; }
+        .modal-group label { display: block; font-size: 11px; font-weight: 700; color: #444; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
         .modal-input { 
             width: 100%; 
-            padding: 16px 18px; 
+            padding: 12px 14px; 
             border: 1px solid #dcdcdc; 
             border-radius: 6px; 
-            font-size: 15px; 
+            font-size: 14px; 
             outline: none; 
             background: #fcfcfc;
             transition: 0.3s;
         }
-        .modal-input:focus { border-color: #dfb77d; background: #fff; box-shadow: 0 0 0 3px rgba(223,183,125,0.15); }
+        .modal-input:focus { border-color: #dfb77d; background: #fff; box-shadow: 0 0 0 3px rgba(223,183,125,0.12); }
         
         /* Сетка каналов связи */
-        .channels-title { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 30px; }
+        .channels-title { font-size: 12px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: center; }
+        .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 22px; }
         
         .channel-option { position: relative; }
         .channel-option input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
@@ -220,8 +228,8 @@
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            gap: 8px;
-            padding: 14px; 
+            gap: 6px;
+            padding: 11px; 
             border: 1px solid #e0e0e0; 
             border-radius: 6px; 
             cursor: pointer; 
@@ -253,9 +261,10 @@
             .mid-page-banner { height: 260px; }
         }
         @media (max-width: 576px) { 
+            .modal-grid-inputs { grid-template-columns: 1fr; gap: 10px; }
             .gallery-item { flex: 1 1 100%; } 
             .channels-grid { grid-template-columns: 1fr; gap: 8px; }
-            .modal-window { padding: 30px 20px; }
+            .modal-window { padding: 25px 20px; }
         }
     </style>
 </head>
@@ -430,7 +439,7 @@
         <p>&copy; 2026 1 HOUSE. Международный консалтинг и миграционное право. Все права защищены.</p>
     </footer>
 
-    <!-- НОВОЕ ПРЕМИАЛЬНОЕ МОДАЛЬНОЕ ОКНО С ВЫБОРОМ КАНАЛА СВЯЗИ -->
+    <!-- ОБНОВЛЕННОЕ КОМПАКТНОЕ ПРЕМИАЛЬНОЕ МОДАЛЬНОЕ ОКНО -->
     <div class="modal-overlay" id="callbackModal" onclick="if(event.target == this) closeModal()">
         <div class="modal-window">
             <span class="modal-close" onclick="closeModal()">&times;</span>
@@ -439,24 +448,27 @@
             
             <form onsubmit="alert('Спасибо! Персональный план переезда уже генерируется и будет отправлен вам в ближайшее время через выбранные каналы.'); closeModal(); return false;">
                 
-                <div class="modal-group">
-                    <label>Ваше имя</label>
-                    <input type="text" class="modal-input" placeholder="Как к вам обращаться" required>
-                </div>
+                <!-- Поля ввода выстроены компактно 2х2 -->
+                <div class="modal-grid-inputs">
+                    <div class="modal-group">
+                        <label>Ваше имя</label>
+                        <input type="text" class="modal-input" placeholder="Имя" required>
+                    </div>
 
-                <div class="modal-group">
-                    <label>Telegram username</label>
-                    <input type="text" class="modal-input" placeholder="@username">
-                </div>
+                    <div class="modal-group">
+                        <label>Telegram</label>
+                        <input type="text" class="modal-input" placeholder="@username">
+                    </div>
 
-                <div class="modal-group">
-                    <label>WhatsApp / Телефон</label>
-                    <input type="tel" class="modal-input" placeholder="+7 (900) 000-00-00">
-                </div>
+                    <div class="modal-group">
+                        <label>WhatsApp</label>
+                        <input type="tel" class="modal-input" placeholder="+7...">
+                    </div>
 
-                <div class="modal-group">
-                    <label>Email адрес</label>
-                    <input type="email" class="modal-input" placeholder="example@mail.com">
+                    <div class="modal-group">
+                        <label>Email адрес</label>
+                        <input type="email" class="modal-input" placeholder="mail@example.com">
+                    </div>
                 </div>
 
                 <p class="channels-title">Куда отправить план?</p>
