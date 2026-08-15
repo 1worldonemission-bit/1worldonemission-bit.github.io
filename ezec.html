@@ -16,7 +16,9 @@
             font-family: 'Manrope', sans-serif;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             background: #ffffff;
@@ -254,7 +256,12 @@
             position: absolute;
             inset: 0;
             background:
-                linear-gradient(to top, rgba(20,18,15,0.94) 0%, rgba(20,18,15,0.48) 48%, rgba(20,18,15,0.08) 100%),
+                linear-gradient(
+                    to top,
+                    rgba(20,18,15,0.94) 0%,
+                    rgba(20,18,15,0.48) 48%,
+                    rgba(20,18,15,0.08) 100%
+                ),
                 var(--service-image) center/cover no-repeat;
             transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -364,37 +371,27 @@
             padding: 90px 4%;
         }
 
-        .process-flow {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .process-node {
-            position: relative;
-            padding-top: 28px;
-            border-top: 2px solid #dfb77d;
-        }
-
-        .process-number {
-            font-size: 13px;
-            font-weight: 700;
-            color: #dfb77d;
-            margin-bottom: 10px;
-        }
-
-        .process-node h3 {
-            font-size: 19px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .process-node p {
-            font-size: 14px;
+        .process-subtitle-line {
             color: #666;
-            line-height: 1.6;
+            font-size: 16px;
+            line-height: 1.7;
             font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .process-image-wrap {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            background: #1a2028;
+            box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+        }
+
+        .process-image {
+            display: block;
+            width: 100%;
+            height: auto;
         }
 
         /* =========================
@@ -566,10 +563,17 @@
            RESPONSIVE
         ========================= */
         @media (max-width: 1050px) {
-            .nav-container { display: none; }
-            .services-grid { grid-template-columns: 1fr 1fr; }
-            .advantages,
-            .process-flow { grid-template-columns: repeat(2, 1fr); }
+            .nav-container {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .advantages {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 700px) {
@@ -602,8 +606,7 @@
             }
 
             .services-grid,
-            .advantages,
-            .process-flow {
+            .advantages {
                 grid-template-columns: 1fr;
             }
 
@@ -613,6 +616,14 @@
 
             .service-content {
                 padding: 27px;
+            }
+
+            .process-subtitle-line {
+                font-size: 15px;
+            }
+
+            .process-image-wrap {
+                border-radius: 7px;
             }
 
             .cta-section {
@@ -641,7 +652,7 @@
         <a href="./spain.html" class="nav-link">ВНЖ в Испании</a>
         <a href="./accounting.html" class="nav-link">Бухгалтерия</a>
         <a href="./legal.html" class="nav-link">Юридические услуги</a>
-        <a href="./auctions.html" class="nav-link">Торги и Азия</a>
+        <a href="./auctions.html" class="nav-link">Международная логистика</a>
     </nav>
 
     <button class="btn-callback-header" onclick="openModal()">Связаться с нами</button>
@@ -654,15 +665,11 @@
         <div class="hero-content">
             <span class="eyebrow">Единый центр экспертного сопровождения</span>
 
-            <h1>
-                Решения для бизнеса,
-                документов и <strong>международных задач</strong>
-            </h1>
+            <h1>Решения для ваших задач — в одном центре</h1>
 
             <p>
-                ЕЦЭС объединяет экспертное сопровождение в четырех ключевых направлениях:
-                миграция, бухгалтерия, право, торги и международная логистика.
-                Один центр — полный цикл решения вашей задачи.
+                В ЕЦЭС вы найдете экспертное сопровождение по вопросам ВНЖ в Испании,
+                бухгалтерии, права, международной логистики и доставки товаров из Азии.
             </p>
 
             <div class="hero-actions">
@@ -676,6 +683,7 @@
     <section class="services" id="services">
         <div class="section-inner">
             <h2 class="section-title">Наши <strong>направления</strong></h2>
+
             <p class="section-subtitle">
                 Выберите направление, которое вам необходимо. На каждой странице
                 подробно описаны услуги, порядок работы и варианты сопровождения.
@@ -687,14 +695,18 @@
                 <a class="service-card"
                    href="./spain.html"
                    style="--service-image: url('./spain-hero.jpg');">
+
                     <div class="service-content">
                         <div class="service-number">01 / МИГРАЦИЯ</div>
+
                         <h3>ВНЖ в <strong>Испании</strong></h3>
+
                         <p>
                             Полное сопровождение переезда и оформления документов:
                             подбор подходящей программы, подготовка досье,
                             юридическое сопровождение и помощь на всех этапах.
                         </p>
+
                         <span class="service-link">Подробнее →</span>
                     </div>
                 </a>
@@ -703,14 +715,18 @@
                 <a class="service-card"
                    href="./accounting.html"
                    style="--service-image: url('./accounting.jpg');">
+
                     <div class="service-content">
                         <div class="service-number">02 / БИЗНЕС</div>
+
                         <h3>Бухгалтерское сопровождение <strong>под ключ</strong></h3>
+
                         <p>
                             Комплексное ведение бухгалтерии юридических лиц,
                             отчетность, первичные документы, налоги, зарплата
                             и постоянная экспертная поддержка бизнеса.
                         </p>
+
                         <span class="service-link">Подробнее →</span>
                     </div>
                 </a>
@@ -719,14 +735,18 @@
                 <a class="service-card"
                    href="./legal.html"
                    style="--service-image: url('./legal.jpg');">
+
                     <div class="service-content">
                         <div class="service-number">03 / ПРАВО</div>
+
                         <h3>Юридические <strong>услуги</strong></h3>
+
                         <p>
                             Гражданские и уголовные дела, консультации,
                             подготовка документов, представительство,
                             досудебное и судебное сопровождение.
                         </p>
+
                         <span class="service-link">Подробнее →</span>
                     </div>
                 </a>
@@ -734,15 +754,19 @@
                 <!-- 4 -->
                 <a class="service-card"
                    href="./auctions.html"
-                   style="--service-image: url('./japan-auction.jpg');">
+                   style="--service-image: url('./japan_auction.jpg');">
+
                     <div class="service-content">
-                        <div class="service-number">04 / ТОРГИ И АЗИЯ</div>
-                        <h3>Торги, аукционы и <strong>Азия</strong></h3>
+                        <div class="service-number">04 / МЕЖДУНАРОДНАЯ ЛОГИСТИКА</div>
+
+                        <h3>Международная <strong>логистика</strong></h3>
+
                         <p>
-                            Покупка автомобилей с японских торгов, поиск запчастей
-                            и товаров в Японии, Корее и Китае, оплата, логистика
-                            и доставка грузов в Россию.
+                            Покупка и доставка автомобилей, запчастей и товаров
+                            из Японии, Кореи и Китая. Организуем оплату,
+                            логистику и доставку в Россию.
                         </p>
+
                         <span class="service-link">Подробнее →</span>
                     </div>
                 </a>
@@ -754,7 +778,9 @@
     <!-- WHY US -->
     <section class="why-us">
         <div class="section-inner">
+
             <h2 class="section-title">Почему <strong>ЕЦЭС</strong></h2>
+
             <p class="section-subtitle">
                 Мы объединяем разные виды экспертной помощи в одном центре,
                 чтобы клиенту не приходилось самостоятельно координировать
@@ -762,29 +788,43 @@
             </p>
 
             <div class="advantages">
+
                 <div class="advantage">
                     <div class="advantage-number">01</div>
                     <h3>Один центр</h3>
-                    <p>Несколько профессиональных направлений в единой системе сопровождения.</p>
+                    <p>
+                        Несколько профессиональных направлений
+                        в единой системе сопровождения.
+                    </p>
                 </div>
 
                 <div class="advantage">
                     <div class="advantage-number">02</div>
                     <h3>Полный цикл</h3>
-                    <p>От первичной консультации и подготовки до получения результата.</p>
+                    <p>
+                        От первичной консультации и подготовки
+                        до получения результата.
+                    </p>
                 </div>
 
                 <div class="advantage">
                     <div class="advantage-number">03</div>
                     <h3>Персональный подход</h3>
-                    <p>Сначала разбираемся в задаче клиента, затем предлагаем подходящий вариант.</p>
+                    <p>
+                        Сначала разбираемся в задаче клиента,
+                        затем предлагаем подходящий вариант.
+                    </p>
                 </div>
 
                 <div class="advantage">
                     <div class="advantage-number">04</div>
                     <h3>Экспертное сопровождение</h3>
-                    <p>Координация специалистов и процессов без необходимости клиента разбираться во всем самостоятельно.</p>
+                    <p>
+                        Координация специалистов и процессов без необходимости
+                        клиента разбираться во всем самостоятельно.
+                    </p>
                 </div>
+
             </div>
         </div>
     </section>
@@ -792,53 +832,46 @@
     <!-- PROCESS -->
     <section class="process">
         <div class="section-inner">
+
             <h2 class="section-title">Как мы <strong>работаем</strong></h2>
-            <p class="section-subtitle">
-                Независимо от направления начинаем с анализа вашей задачи и только
-                после этого формируем конкретный план действий.
+
+            <p class="process-subtitle-line">
+                Независимо от направления начинаем с анализа вашей задачи и только после этого формируем конкретный план действий.
             </p>
 
-            <div class="process-flow">
-                <div class="process-node">
-                    <div class="process-number">01. ЗАПРОС</div>
-                    <h3>Рассказываете о задаче</h3>
-                    <p>Получаем исходные данные и определяем, какая помощь вам необходима.</p>
-                </div>
-
-                <div class="process-node">
-                    <div class="process-number">02. АНАЛИЗ</div>
-                    <h3>Изучаем ситуацию</h3>
-                    <p>Проверяем документы, условия, сроки и возможные варианты решения.</p>
-                </div>
-
-                <div class="process-node">
-                    <div class="process-number">03. ПЛАН</div>
-                    <h3>Формируем решение</h3>
-                    <p>Согласовываем порядок действий, стоимость и дальнейшие этапы работы.</p>
-                </div>
-
-                <div class="process-node">
-                    <div class="process-number">04. РЕЗУЛЬТАТ</div>
-                    <h3>Сопровождаем до конца</h3>
-                    <p>Координируем процесс и остаемся на связи до завершения согласованной задачи.</p>
-                </div>
+            <div class="process-image-wrap">
+                <img src="./ezes-process.jpg"
+                     alt="Как работает ЕЦЭС: запрос, анализ, план, результат"
+                     class="process-image">
             </div>
+
         </div>
     </section>
 
     <!-- CTA -->
     <section class="cta-section">
+
         <div class="cta-box">
+
             <div class="cta-text">
-                <h2>Не знаете, с чего <strong>начать?</strong></h2>
+
+                <h2>
+                    Не знаете, с чего <strong>начать?</strong>
+                </h2>
+
                 <p>
                     Опишите вашу задачу — мы определим нужное направление
                     и предложим понятный план дальнейших действий.
                 </p>
+
             </div>
 
-            <button class="btn-gold" onclick="openModal()">Получить консультацию</button>
+            <button class="btn-gold" onclick="openModal()">
+                Получить консультацию
+            </button>
+
         </div>
+
     </section>
 
 </main>
@@ -849,52 +882,88 @@
 </footer>
 
 <!-- MODAL -->
-<div class="modal-overlay" id="callbackModal" onclick="if(event.target === this) closeModal()">
+<div class="modal-overlay"
+     id="callbackModal"
+     onclick="if(event.target === this) closeModal()">
+
     <div class="modal-window">
+
         <span class="modal-close" onclick="closeModal()">&times;</span>
 
         <h3>Получить консультацию</h3>
+
         <p class="modal-subtitle">
             Оставьте контактные данные и кратко опишите вашу задачу.
             Специалист свяжется с вами.
         </p>
 
         <form onsubmit="sendForm(event)">
-            <input class="modal-input" type="text" placeholder="Ваше имя" required>
-            <input class="modal-input" type="tel" placeholder="Телефон" required>
+
+            <input
+                class="modal-input"
+                type="text"
+                placeholder="Ваше имя"
+                required
+            >
+
+            <input
+                class="modal-input"
+                type="tel"
+                placeholder="Телефон"
+                required
+            >
 
             <select required>
-                <option value="" disabled selected>Выберите направление</option>
+                <option value="" disabled selected>
+                    Выберите направление
+                </option>
+
                 <option>ВНЖ в Испании</option>
                 <option>Бухгалтерское сопровождение</option>
                 <option>Юридические услуги</option>
-                <option>Торги, аукционы и Азия</option>
+                <option>Международная логистика</option>
             </select>
 
-            <textarea placeholder="Кратко опишите вашу задачу"></textarea>
+            <textarea
+                placeholder="Кратко опишите вашу задачу">
+            </textarea>
 
-            <button class="modal-submit" type="submit">Отправить заявку</button>
+            <button class="modal-submit" type="submit">
+                Отправить заявку
+            </button>
+
         </form>
+
     </div>
 </div>
 
 <script>
     function openModal() {
-        document.getElementById('callbackModal').classList.add('active');
+        document
+            .getElementById('callbackModal')
+            .classList.add('active');
     }
 
     function closeModal() {
-        document.getElementById('callbackModal').classList.remove('active');
+        document
+            .getElementById('callbackModal')
+            .classList.remove('active');
     }
 
     function sendForm(event) {
         event.preventDefault();
-        alert('Спасибо! Ваша заявка принята. Специалист свяжется с вами.');
+
+        alert(
+            'Спасибо! Ваша заявка принята. Специалист свяжется с вами.'
+        );
+
         closeModal();
     }
 
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') closeModal();
+        if (event.key === 'Escape') {
+            closeModal();
+        }
     });
 </script>
 
