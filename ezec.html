@@ -16,9 +16,7 @@
             font-family: 'Manrope', sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             background: #ffffff;
@@ -137,11 +135,12 @@
         }
 
         .hero h1 {
-            font-size: clamp(42px, 6vw, 76px);
-            line-height: 1.05;
+            font-size: clamp(34px, 3.35vw, 48px);
+            line-height: 1.08;
             font-weight: 300;
-            letter-spacing: -2px;
-            max-width: 900px;
+            letter-spacing: -1.2px;
+            max-width: none;
+            white-space: nowrap;
         }
 
         .hero h1 strong {
@@ -256,12 +255,7 @@
             position: absolute;
             inset: 0;
             background:
-                linear-gradient(
-                    to top,
-                    rgba(20,18,15,0.94) 0%,
-                    rgba(20,18,15,0.48) 48%,
-                    rgba(20,18,15,0.08) 100%
-                ),
+                linear-gradient(to top, rgba(20,18,15,0.94) 0%, rgba(20,18,15,0.48) 48%, rgba(20,18,15,0.08) 100%),
                 var(--service-image) center/cover no-repeat;
             transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -371,6 +365,39 @@
             padding: 90px 4%;
         }
 
+        .process-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .process-node {
+            position: relative;
+            padding-top: 28px;
+            border-top: 2px solid #dfb77d;
+        }
+
+        .process-number {
+            font-size: 13px;
+            font-weight: 700;
+            color: #dfb77d;
+            margin-bottom: 10px;
+        }
+
+        .process-node h3 {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .process-node p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
         .process-subtitle-line {
             color: #666;
             font-size: 16px;
@@ -436,101 +463,25 @@
         /* =========================
            MODAL
         ========================= */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            opacity: 0;
-            pointer-events: none;
-            transition: 0.3s;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-window {
-            background: #ffffff;
-            padding: 32px 35px;
-            max-width: 500px;
-            width: 92%;
-            position: relative;
-            border-radius: 12px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 14px;
-            right: 20px;
-            font-size: 26px;
-            cursor: pointer;
-            color: #aaa;
-        }
-
-        .modal-window h3 {
-            font-size: 24px;
-            font-weight: 300;
-            margin-bottom: 8px;
-            text-align: center;
-        }
-
-        .modal-subtitle {
-            font-size: 13px;
-            color: #666;
-            text-align: center;
-            margin-bottom: 22px;
-            line-height: 1.5;
-        }
-
-        .modal-input,
-        .modal-window select,
-        .modal-window textarea {
-            width: 100%;
-            padding: 14px;
-            margin-bottom: 14px;
-            border: 1px solid #dcdcdc;
-            border-radius: 6px;
-            font-size: 14px;
-            outline: none;
-            background: #fcfcfc;
-        }
-
-        .modal-window textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .modal-input:focus,
-        .modal-window select:focus,
-        .modal-window textarea:focus {
-            border-color: #dfb77d;
-            background: #ffffff;
-        }
-
-        .modal-submit {
-            width: 100%;
-            padding: 15px;
-            background: #26221c;
-            color: #ffffff;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .modal-submit:hover {
-            background: #dfb77d;
-        }
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.62); display: flex; justify-content: center; align-items: center; padding: 20px; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal-window { background: #fff; padding: 30px 34px 32px; max-width: 560px; width: 100%; max-height: calc(100vh - 40px); overflow-y: auto; position: relative; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.18); }
+        .modal-close { position: absolute; top: 10px; right: 16px; font-size: 27px; line-height: 1; cursor: pointer; color: #aaa; }
+        .modal-window h3 { font-size: 23px; font-weight: 300; margin: 0 28px 7px; text-align: center; letter-spacing: -0.4px; }
+        .modal-subtitle { font-size: 13px; color: #666; text-align: center; margin: 0 auto 20px; max-width: 440px; line-height: 1.45; }
+        .modal-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+        .modal-field-full { grid-column: 1 / -1; }
+        .modal-input, .modal-window select, .modal-window textarea { width: 100%; padding: 12px 14px; margin: 0; border: 1px solid #dcdcdc; border-radius: 6px; font-size: 14px; outline: none; background: #fcfcfc; transition: 0.2s; }
+        .modal-window textarea { min-height: 82px; resize: vertical; }
+        .modal-input:focus, .modal-window select:focus, .modal-window textarea:focus { border-color: #dfb77d; background: #fff; }
+        .contact-choice-title { font-size: 11px; font-weight: 700; color: #444; margin: 17px 0 8px; text-transform: uppercase; letter-spacing: 0.7px; }
+        .contact-choice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 17px; }
+        .contact-choice { position: relative; }
+        .contact-choice input { position: absolute; opacity: 0; pointer-events: none; }
+        .contact-choice-label { display: flex; align-items: center; justify-content: center; min-height: 42px; padding: 9px 8px; border: 1px solid #dedede; border-radius: 6px; cursor: pointer; color: #555; background: #fff; font-size: 13px; font-weight: 500; text-align: center; transition: 0.2s; user-select: none; }
+        .contact-choice input:checked + .contact-choice-label { border-color: #dfb77d; background: #fbf9f6; color: #cb9f62; font-weight: 700; box-shadow: inset 0 0 0 1px #dfb77d; }
+        .modal-submit { width: 100%; padding: 14px 15px; background: #26221c; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .modal-submit:hover { background: #dfb77d; }
 
         /* =========================
            FOOTER
@@ -563,83 +514,53 @@
            RESPONSIVE
         ========================= */
         @media (max-width: 1050px) {
-            .nav-container {
-                display: none;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .advantages {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .nav-container { display: none; }
+            .hero h1 { font-size: 42px; }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .advantages { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 700px) {
-            header {
-                padding: 0 5%;
-            }
-
-            .btn-callback-header {
-                padding: 9px 13px;
-                font-size: 10px;
-            }
-
-            .hero {
-                min-height: 78vh;
-                padding: 55px 5%;
-            }
-
-            .hero h1 {
-                letter-spacing: -1px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .services,
-            .why-us,
-            .process {
-                padding: 65px 5%;
-            }
-
-            .services-grid,
-            .advantages {
-                grid-template-columns: 1fr;
-            }
-
-            .service-card {
-                min-height: 430px;
-            }
-
-            .service-content {
-                padding: 27px;
-            }
-
-            .process-subtitle-line {
-                font-size: 15px;
-            }
-
-            .process-image-wrap {
-                border-radius: 7px;
-            }
-
-            .cta-section {
-                padding: 20px 5% 65px;
-            }
-
-            .cta-box {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 38px 25px;
-            }
-
-            .cta-text h2 {
-                font-size: 28px;
-            }
+            header { height: 68px; padding: 0 5%; }
+            .logo { font-size: 21px; }
+            .btn-callback-header { padding: 9px 12px; font-size: 9px; letter-spacing: 0.7px; }
+            .hero { min-height: 78vh; margin-top: 68px; padding: 58px 5% 52px; }
+            .hero h1 { font-size: 30px; line-height: 1.12; letter-spacing: -0.7px; white-space: normal; max-width: 100%; }
+            .hero p { font-size: 15px; line-height: 1.58; margin-top: 20px; max-width: 100%; }
+            .hero-actions { margin-top: 26px; gap: 10px; }
+            .btn-gold, .btn-outline { padding: 13px 18px; font-size: 10px; }
+            .services, .why-us, .process { padding: 58px 5%; }
+            .section-title { font-size: 29px; line-height: 1.15; }
+            .section-subtitle { font-size: 15px; line-height: 1.6; margin-bottom: 28px; }
+            .services-grid, .advantages { grid-template-columns: 1fr; gap: 15px; }
+            .service-card { min-height: 390px; }
+            .service-content { padding: 24px; }
+            .service-content h3 { font-size: 27px; }
+            .service-content p { font-size: 13px; line-height: 1.55; }
+            .process-subtitle-line { font-size: 15px; line-height: 1.6; margin-bottom: 22px; }
+            .process-image-wrap { border-radius: 7px; }
+            .cta-section { padding: 8px 5% 58px; }
+            .cta-box { flex-direction: column; align-items: flex-start; gap: 24px; padding: 34px 24px; }
+            .cta-text h2 { font-size: 27px; line-height: 1.15; }
+            .cta-text p { font-size: 14px; line-height: 1.55; }
+            .cta-box .btn-gold { width: 100%; text-align: center; }
+            footer { padding: 34px 5%; }
+            .modal-overlay { align-items: flex-end; padding: 10px; }
+            .modal-window { width: 100%; max-height: calc(100vh - 20px); padding: 27px 18px 20px; border-radius: 12px 12px 8px 8px; }
+            .modal-window h3 { font-size: 21px; }
+            .modal-fields { grid-template-columns: 1fr; gap: 9px; }
+            .modal-field-full { grid-column: auto; }
+            .contact-choice-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+            .contact-choice-label { min-height: 40px; font-size: 11px; padding: 8px 5px; }
         }
+
+        @media (max-width: 380px) {
+            .hero h1 { font-size: 27px; }
+            .btn-callback-header { padding: 8px 9px; font-size: 8px; }
+            .logo { font-size: 19px; }
+            .contact-choice-grid { grid-template-columns: 1fr; }
+        }
+
     </style>
 </head>
 
@@ -668,8 +589,8 @@
             <h1>Решения для ваших задач — в одном центре</h1>
 
             <p>
-                В ЕЦЭС вы найдете экспертное сопровождение по вопросам ВНЖ в Испании,
-                бухгалтерии, права, международной логистики и доставки товаров из Азии.
+                В ЕЦЭС вы найдете экспертное сопровождение по самым разным вопросам — от бухгалтерских услуг для вашего ИП до помощи в получении европейского ВНЖ и доставки любых товаров из Японии или Китая.
+                Под нашей крышей собраны десятки специалистов из разных правовых и профессиональных сфер, чтобы мы могли оказывать комплексные услуги для самых разнообразных задач вашей семьи и вашего бизнеса.
             </p>
 
             <div class="hero-actions">
@@ -683,7 +604,6 @@
     <section class="services" id="services">
         <div class="section-inner">
             <h2 class="section-title">Наши <strong>направления</strong></h2>
-
             <p class="section-subtitle">
                 Выберите направление, которое вам необходимо. На каждой странице
                 подробно описаны услуги, порядок работы и варианты сопровождения.
@@ -695,18 +615,14 @@
                 <a class="service-card"
                    href="./spain.html"
                    style="--service-image: url('./spain-hero.jpg');">
-
                     <div class="service-content">
                         <div class="service-number">01 / МИГРАЦИЯ</div>
-
                         <h3>ВНЖ в <strong>Испании</strong></h3>
-
                         <p>
                             Полное сопровождение переезда и оформления документов:
                             подбор подходящей программы, подготовка досье,
                             юридическое сопровождение и помощь на всех этапах.
                         </p>
-
                         <span class="service-link">Подробнее →</span>
                     </div>
                 </a>
@@ -715,18 +631,14 @@
                 <a class="service-card"
                    href="./accounting.html"
                    style="--service-image: url('./accounting.jpg');">
-
                     <div class="service-content">
                         <div class="service-number">02 / БИЗНЕС</div>
-
                         <h3>Бухгалтерское сопровождение <strong>под ключ</strong></h3>
-
                         <p>
                             Комплексное ведение бухгалтерии юридических лиц,
                             отчетность, первичные документы, налоги, зарплата
                             и постоянная экспертная поддержка бизнеса.
                         </p>
-
                         <span class="service-link">Подробнее →</span>
                     </div>
                 </a>
@@ -735,18 +647,14 @@
                 <a class="service-card"
                    href="./legal.html"
                    style="--service-image: url('./legal.jpg');">
-
                     <div class="service-content">
                         <div class="service-number">03 / ПРАВО</div>
-
                         <h3>Юридические <strong>услуги</strong></h3>
-
                         <p>
                             Гражданские и уголовные дела, консультации,
                             подготовка документов, представительство,
                             досудебное и судебное сопровождение.
                         </p>
-
                         <span class="service-link">Подробнее →</span>
                     </div>
                 </a>
@@ -755,18 +663,14 @@
                 <a class="service-card"
                    href="./auctions.html"
                    style="--service-image: url('./japan_auction.jpg');">
-
                     <div class="service-content">
                         <div class="service-number">04 / МЕЖДУНАРОДНАЯ ЛОГИСТИКА</div>
-
                         <h3>Международная <strong>логистика</strong></h3>
-
                         <p>
                             Покупка и доставка автомобилей, запчастей и товаров
                             из Японии, Кореи и Китая. Организуем оплату,
                             логистику и доставку в Россию.
                         </p>
-
                         <span class="service-link">Подробнее →</span>
                     </div>
                 </a>
@@ -778,9 +682,7 @@
     <!-- WHY US -->
     <section class="why-us">
         <div class="section-inner">
-
             <h2 class="section-title">Почему <strong>ЕЦЭС</strong></h2>
-
             <p class="section-subtitle">
                 Мы объединяем разные виды экспертной помощи в одном центре,
                 чтобы клиенту не приходилось самостоятельно координировать
@@ -788,43 +690,29 @@
             </p>
 
             <div class="advantages">
-
                 <div class="advantage">
                     <div class="advantage-number">01</div>
                     <h3>Один центр</h3>
-                    <p>
-                        Несколько профессиональных направлений
-                        в единой системе сопровождения.
-                    </p>
+                    <p>Несколько профессиональных направлений в единой системе сопровождения.</p>
                 </div>
 
                 <div class="advantage">
                     <div class="advantage-number">02</div>
                     <h3>Полный цикл</h3>
-                    <p>
-                        От первичной консультации и подготовки
-                        до получения результата.
-                    </p>
+                    <p>От первичной консультации и подготовки до получения результата.</p>
                 </div>
 
                 <div class="advantage">
                     <div class="advantage-number">03</div>
                     <h3>Персональный подход</h3>
-                    <p>
-                        Сначала разбираемся в задаче клиента,
-                        затем предлагаем подходящий вариант.
-                    </p>
+                    <p>Сначала разбираемся в задаче клиента, затем предлагаем подходящий вариант.</p>
                 </div>
 
                 <div class="advantage">
                     <div class="advantage-number">04</div>
                     <h3>Экспертное сопровождение</h3>
-                    <p>
-                        Координация специалистов и процессов без необходимости
-                        клиента разбираться во всем самостоятельно.
-                    </p>
+                    <p>Координация специалистов и процессов без необходимости клиента разбираться во всем самостоятельно.</p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -832,46 +720,30 @@
     <!-- PROCESS -->
     <section class="process">
         <div class="section-inner">
-
             <h2 class="section-title">Как мы <strong>работаем</strong></h2>
-
-            <p class="process-subtitle-line">
-                Независимо от направления начинаем с анализа вашей задачи и только после этого формируем конкретный план действий.
-            </p>
+            <p class="process-subtitle-line">Независимо от направления начинаем с анализа вашей задачи и только после этого формируем конкретный план действий.</p>
 
             <div class="process-image-wrap">
                 <img src="./ezes-process.jpg"
                      alt="Как работает ЕЦЭС: запрос, анализ, план, результат"
                      class="process-image">
             </div>
-
         </div>
     </section>
 
     <!-- CTA -->
     <section class="cta-section">
-
         <div class="cta-box">
-
             <div class="cta-text">
-
-                <h2>
-                    Не знаете, с чего <strong>начать?</strong>
-                </h2>
-
+                <h2>Не знаете, с чего <strong>начать?</strong></h2>
                 <p>
                     Опишите вашу задачу — мы определим нужное направление
                     и предложим понятный план дальнейших действий.
                 </p>
-
             </div>
 
-            <button class="btn-gold" onclick="openModal()">
-                Получить консультацию
-            </button>
-
+            <button class="btn-gold" onclick="openModal()">Получить консультацию</button>
         </div>
-
     </section>
 
 </main>
@@ -882,88 +754,52 @@
 </footer>
 
 <!-- MODAL -->
-<div class="modal-overlay"
-     id="callbackModal"
-     onclick="if(event.target === this) closeModal()">
-
+<div class="modal-overlay" id="callbackModal" onclick="if(event.target === this) closeModal()">
     <div class="modal-window">
-
         <span class="modal-close" onclick="closeModal()">&times;</span>
-
         <h3>Получить консультацию</h3>
-
-        <p class="modal-subtitle">
-            Оставьте контактные данные и кратко опишите вашу задачу.
-            Специалист свяжется с вами.
-        </p>
-
+        <p class="modal-subtitle">Оставьте контакты и кратко опишите задачу. Мы свяжемся удобным для вас способом.</p>
         <form onsubmit="sendForm(event)">
-
-            <input
-                class="modal-input"
-                type="text"
-                placeholder="Ваше имя"
-                required
-            >
-
-            <input
-                class="modal-input"
-                type="tel"
-                placeholder="Телефон"
-                required
-            >
-
-            <select required>
-                <option value="" disabled selected>
-                    Выберите направление
-                </option>
-
-                <option>ВНЖ в Испании</option>
-                <option>Бухгалтерское сопровождение</option>
-                <option>Юридические услуги</option>
-                <option>Международная логистика</option>
-            </select>
-
-            <textarea
-                placeholder="Кратко опишите вашу задачу">
-            </textarea>
-
-            <button class="modal-submit" type="submit">
-                Отправить заявку
-            </button>
-
+            <div class="modal-fields">
+                <input class="modal-input" type="text" placeholder="Ваше имя" required>
+                <input class="modal-input" type="tel" placeholder="Телефон" required>
+                <select class="modal-field-full" required>
+                    <option value="" disabled selected>Выберите направление</option>
+                    <option>ВНЖ в Испании</option>
+                    <option>Бухгалтерское сопровождение</option>
+                    <option>Юридические услуги</option>
+                    <option>Международная логистика</option>
+                </select>
+                <textarea class="modal-field-full" placeholder="Кратко опишите вашу задачу"></textarea>
+            </div>
+            <div class="contact-choice-title">Предпочтительный способ связи</div>
+            <div class="contact-choice-grid">
+                <label class="contact-choice"><input type="radio" name="contact_method" value="phone" checked><span class="contact-choice-label">Телефон</span></label>
+                <label class="contact-choice"><input type="radio" name="contact_method" value="whatsapp"><span class="contact-choice-label">WhatsApp</span></label>
+                <label class="contact-choice"><input type="radio" name="contact_method" value="telegram"><span class="contact-choice-label">Telegram</span></label>
+            </div>
+            <button class="modal-submit" type="submit">Отправить заявку</button>
         </form>
-
     </div>
 </div>
 
 <script>
     function openModal() {
-        document
-            .getElementById('callbackModal')
-            .classList.add('active');
+        document.getElementById('callbackModal').classList.add('active');
     }
 
     function closeModal() {
-        document
-            .getElementById('callbackModal')
-            .classList.remove('active');
+        document.getElementById('callbackModal').classList.remove('active');
     }
 
     function sendForm(event) {
         event.preventDefault();
-
-        alert(
-            'Спасибо! Ваша заявка принята. Специалист свяжется с вами.'
-        );
-
+        alert('Спасибо! Ваша заявка принята. Мы свяжемся с вами выбранным способом.');
         closeModal();
     }
 
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeModal();
-        }
+        if (event.key === 'Escape') closeModal();
     });
 </script>
 
